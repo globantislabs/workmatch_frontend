@@ -790,7 +790,7 @@
     });
 
     // Jobs API
-    const JOBS_API = 'http://localhost:8000/api/jobs';
+    const JOBS_API = 'https://admin.theworkmatch.com/api/jobs';
     let allJobs = [];
     let currentFilter = 'all';
     let searchQuery = '';
@@ -1125,6 +1125,35 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Fetch Jobs from API
+    async function fetchJobs() {
+      const tb = document.getElementById('tb-jobs');
+      const sp = document.getElementById('sp-jobs');
+      
+      try {
+        const response = await fetch(`${JOBS_API}`);
+        if (!response.ok) throw new Error('Failed to fetch jobs');
+        
+        allJobs = await response.json();
+        
+        // Populate positions filter
+        const posSet = new Set(allJobs.map(j => j.location).filter(Boolean));
+        const posSelect = document.getElementById('fc-pos');
+        if (posSelect) {
+            posSelect.innerHTML = '<option value="">All</option>' + 
+                Array.from(posSet).map(l => `<option value="${esc(l)}">${esc(l)}</option>`).join('');
+        }
+        
+        document.getElementById('mJobs').textContent = allJobs.length;
+        renderJobs(allJobs);
+        sp.classList.remove('on');
+      } catch (error) {
+        console.error('Error fetching jobs:', error);
+        tb.innerHTML = '<tr><td colspan="8"><div class="empty">Failed to load job listings. Please try again later.</div></td></tr>';
+        sp.classList.remove('on');
+      }
+    }
 
     // Initialize
     fetchJobs();
