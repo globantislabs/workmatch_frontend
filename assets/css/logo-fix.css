@@ -1,0 +1,83 @@
+/* Logo size adjustment */
+.header-logo img,
+.header-logo .mask-icon + img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.mobile-logo img,
+.mobile-logo .mask-icon + img {
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Fixed header positioning */
+.th-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to body to prevent content from going under header */
+body {
+    padding-top: 80px;
+}
+
+/* Fixed header spacing */
+.th-header .menu-area {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.th-header .menu-area .container {
+    width: 100%;
+}
+
+.th-header .menu-area .row {
+    min-height: 80px;
+    align-items: center;
+}
+
+.header-logo {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure consistent spacing on sticky header */
+.sticky-wrapper.sticky .menu-area {
+    min-height: 70px;
+}
+
+.sticky-wrapper.sticky .menu-area .row {
+    min-height: 70px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .th-header .menu-area {
+        min-height: 70px;
+    }
+    
+    .th-header .menu-area .row {
+        min-height: 70px;
+    }
+}

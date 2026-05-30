@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <link href="https://theworkmatch.com/img/WorkMatch_Logo.png" rel="icon" type="image/png"/>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>Company Overview ? WorkMatch</title>
+  <meta content="WorkMatch" name="author"/>
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','sans-serif'], poppins: ['Poppins','sans-serif'] },
+          colors: { primary: '#3B82F6', indigo: { 600: '#4f46e5' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    .mobile-menu { transform:translateX(-100%); transition:transform .3s ease; }
+    .mobile-menu.active { transform:translateX(0); }
+
+    /* --------------------------------------
+       PREMIUM SERVICE CARD ? SMOOTH RADIAL FILL
+       Cursor-origin radial expand, silky easing, no hard edges
+    -------------------------------------- */
+
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition:
+        box-shadow .6s cubic-bezier(.22,1,.36,1),
+        border-color .5s ease,
+        transform .5s cubic-bezier(.34,1.4,.64,1);
+      will-change: transform;
+    }
+
+    .svc-card:hover {
+      transform: translateY(-5px) scale(1.012);
+      box-shadow: 0 28px 70px rgba(67,56,202,.3), 0 6px 20px rgba(67,56,202,.12);
+      border-color: rgba(99,102,241,.5) !important;
+    }
+
+    /* -- Radial fill: starts at cursor, expands to cover card -- */
+    .svc-card .fill {
+      position: absolute;
+      /* sized and positioned via JS inline style */
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center,
+        #5b5ef4 0%,
+        #4f46e5 40%,
+        #4338ca 100%
+      );
+      transform: scale(0);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      /* smooth expand + fade */
+      transition:
+        transform .7s cubic-bezier(.22,1,.36,1),
+        opacity .35s ease;
+    }
+    .svc-card:hover .fill {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* smooth collapse on leave */
+    .svc-card .fill.leaving {
+      transform: scale(0);
+      opacity: 0;
+      transition:
+        transform .55s cubic-bezier(.55,0,1,.45),
+        opacity .4s ease;
+    }
+
+    /* -- Soft glow halo behind card on hover -- */
+    .svc-card::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #818cf8 0%, #4f46e5 50%, #6366f1 100%);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity .5s ease;
+      filter: blur(12px);
+    }
+    .svc-card:hover::after { opacity: .35; }
+
+    /* -- Floating orbs (soft, slow, atmospheric) -- */
+    .svc-card .orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .6s ease, transform .9s cubic-bezier(.22,1,.36,1);
+    }
+    .svc-card .orb1 {
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, rgba(165,180,252,.4) 0%, transparent 65%);
+      bottom: -50px; right: -30px;
+      transform: scale(0.3);
+      transition-delay: .08s;
+    }
+    .svc-card .orb2 {
+      width: 90px; height: 90px;
+      background: radial-gradient(circle, rgba(224,231,255,.5) 0%, transparent 65%);
+      top: -20px; left: -20px;
+      transform: scale(0.3);
+      transition-delay: .14s;
+    }
+    .svc-card:hover .orb { opacity: 1; transform: scale(1); }
+
+    /* -- Content sits above all layers -- */
+    .svc-card > *:not(.fill):not(.orb):not(.orb1):not(.orb2) {
+      position: relative;
+      z-index: 4;
+    }
+
+    /* -- Text transitions ? all silky .5s -- */
+    .svc-card .svc-icon   { transition: background .5s ease, box-shadow .5s ease; }
+    .svc-card .svc-icon i { transition: color .5s ease; }
+    .svc-card .svc-num    { transition: color .5s ease; }
+    .svc-card .svc-title a{ transition: color .45s ease; }
+    .svc-card p           { transition: color .45s ease; }
+
+    .svc-card:hover .svc-icon {
+      background: rgba(255,255,255,.15) !important;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 4px 14px rgba(0,0,0,.12);
+    }
+    .svc-card:hover .svc-icon i  { color: #fff !important; }
+    .svc-card:hover .svc-num     { color: rgba(255,255,255,.12) !important; }
+    .svc-card:hover .svc-title a { color: #fff !important; }
+    .svc-card:hover p            { color: rgba(255,255,255,.8) !important; }
+
+    /* -- Scroll reveal -- */
+    .reveal { opacity:1;  transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    /* -- Why Choose Us ? animated blob image -- */
+    .why-img-wrap {
+      position: relative;
+      width: 560px;
+      height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .why-blob {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 45%, #ddd6fe 100%);
+      border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+      animation: whyBlobMorph 9s ease-in-out infinite;
+      z-index: 0;
+    }
+    @keyframes whyBlobMorph {
+      0%   { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
+      25%  { border-radius: 42% 58% 62% 38% / 48% 62% 38% 52%; }
+      50%  { border-radius: 56% 44% 38% 62% / 38% 56% 44% 62%; }
+      75%  { border-radius: 38% 62% 54% 46% / 54% 38% 62% 46%; }
+      100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
+    }
+    .why-img {
+      position: relative;
+      z-index: 1;
+      width: 86%;
+      height: 86%;
+      object-fit: cover;
+      border-radius: 58% 42% 50% 50% / 46% 54% 46% 54%;
+      animation: whyImgMorph 9s ease-in-out infinite;
+    }
+    @keyframes whyImgMorph {
+      0%   { border-radius: 58% 42% 50% 50% / 46% 54% 46% 54%; }
+      25%  { border-radius: 44% 56% 60% 40% / 52% 44% 56% 48%; }
+      50%  { border-radius: 52% 48% 42% 58% / 40% 58% 42% 60%; }
+      75%  { border-radius: 40% 60% 52% 48% / 56% 40% 60% 44%; }
+      100% { border-radius: 58% 42% 50% 50% / 46% 54% 46% 54%; }
+    }
+
+
+  
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b">
+      <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-8">
+      <button id="close-menu" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block py-2 text-gray-700 hover:text-gray-900">Home</a></li>
+        
+        <!-- Company Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Company <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="company-overview.html" class="block py-1 text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="careers.html" class="block py-1 text-gray-600 hover:text-gray-900">Careers</a></li>
+            <li><a href="clients.html" class="block py-1 text-gray-600 hover:text-gray-900">Clients</a></li>
+          </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="talent-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">CMS Solutions</a></li>
+            <li><a href="managed-services.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Managed Services</a></li>
+            <li><a href="accounting-as-a-service.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Accounting as a Service</a></li>
+          </ul>
+        </li>
+        
+        <!-- Industries Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Industries <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="bfsi.html" class="block py-1 text-gray-600 hover:text-gray-900">BFSI</a></li>
+            <li><a href="healthcare.html" class="block py-1 text-gray-600 hover:text-gray-900">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="block py-1 text-gray-600 hover:text-gray-900">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="block py-1 text-gray-600 hover:text-gray-900">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="block py-1 text-gray-600 hover:text-gray-900">SaaS & Startups</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="blog.html" class="block py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+        <li><a href="hire-talent.html" class="block py-2 text-gray-700 hover:text-gray-900">Hire Developer</a></li>
+        <li><a href="contact.html" class="block py-2 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white shadow-lg" id="main-header">
+    <!-- Main nav -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 lg:h-28">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-9 lg:h-14 w-auto max-w-[130px] lg:max-w-none">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Home</a>
+
+          <!-- Company -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Company <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="company-overview.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-building text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">About Us</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Discover who we are</div>
+                  </div>
+                </a>
+                <a href="careers.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-briefcase text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Careers</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Join our passionate team</div>
+                  </div>
+                </a>
+                <a href="clients.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-handshake text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Clients</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Our trusted partners</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Services <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="talent-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-users text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Talent Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Hire skilled technology professionals with confidence</div>
+                  </div>
+                </a>
+                <a href="custom-software-engineering.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-code text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Custom Software Engineering</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Build scalable and high-performance digital solutions</div>
+                  </div>
+                </a>
+                <a href="cloud-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cloud text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Cloud Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Accelerate growth with secure cloud transformation</div>
+                  </div>
+                </a>
+                <a href="data-ai-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-brain text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Data &amp; AI Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Transform data into intelligent business insights</div>
+                  </div>
+                </a>
+                <a href="cms-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-file-lines text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">CMS Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Manage digital content with flexibility and control</div>
+                  </div>
+                </a>
+                <a href="managed-services.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cogs text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Managed Services</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Ensure seamless IT operations with expert support</div>
+                  </div>
+                </a>
+                <a href="accounting-as-a-service.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-calculator text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Accounting as a Service</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Fully managed finance function for your business</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industries -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Industries <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="bfsi.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-landmark text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">BFSI</span>
+                </a>
+                <a href="healthcare.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-hospital text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Healthcare</span>
+                </a>
+                <a href="retail-ecommerce.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-shopping-cart text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Retail & E-commerce</span>
+                </a>
+                <a href="manufacturing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-industry text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Manufacturing</span>
+                </a>
+                <a href="saas-startups.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-rocket text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">SaaS & Startups</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="blog.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Blog</a>
+
+          <!-- Hire Developer -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Hire Developer <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-max bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-5">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Skills</p>
+                <div class="grid grid-cols-4 gap-1 mb-3">
+                  <a href="hire-talent.html?skill=React.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fab fa-react text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">React.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Salesforce Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-cloud text-blue-400 text-sm w-4"></i><span class="text-sm text-gray-700">Salesforce Developers</span></a>
+                  <a href="hire-talent.html?skill=Node.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-node-js text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Node.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Flutter Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cyan-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-screen text-cyan-500 text-sm w-4"></i><span class="text-sm text-gray-700">Flutter Developers</span></a>
+                  <a href="hire-talent.html?skill=Xamarin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-alt text-purple-500 text-sm w-4"></i><span class="text-sm text-gray-700">Xamarin Developers</span></a>
+                  <a href="hire-talent.html?skill=Python Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-python text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Python Developers</span></a>
+                  <a href="hire-talent.html?skill=AI Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-brain text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">AI Developers</span></a>
+                  <a href="hire-talent.html?skill=Android Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-android text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Android Developers</span></a>
+                  <a href="hire-talent.html?skill=DevOps Engineer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"><i class="fas fa-infinity text-orange-500 text-sm w-4"></i><span class="text-sm text-gray-700">DevOps Developers</span></a>
+                  <a href="hire-talent.html?skill=Shopify Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-shopify text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Shopify Developers</span></a>
+                  <a href="hire-talent.html?skill=Angular Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fab fa-angular text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Angular Developers</span></a>
+                  <a href="hire-talent.html?skill=SAP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-database text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">SAP Developers</span></a>
+                  <a href="hire-talent.html?skill=Blockchain Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-link text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Blockchain Developers</span></a>
+                  <a href="hire-talent.html?skill=Kotlin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-android text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Kotlin Developers</span></a>
+                  <a href="hire-talent.html?skill=Golang Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-code text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Golang Developers</span></a>
+                  <a href="hire-talent.html?skill=Full Stack Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-layer-group text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Full Stack Developers</span></a>
+                  <a href="hire-talent.html?skill=Java Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-java text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Java Developers</span></a>
+                  <a href="hire-talent.html?skill=PHP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-php text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">PHP Developers</span></a>
+                  <a href="hire-talent.html?skill=Azure Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-microsoft text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Azure Developers</span></a>
+                  <a href="skills-listing.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap text-gray-700 font-semibold"><i class="fas fa-arrow-right text-gray-700 text-sm w-4"></i><span class="text-sm">See all 50+ Skills</span></a>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Industry</p>
+                  <div class="grid grid-cols-4 gap-1">
+                    <a href="healthcare.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fas fa-hospital text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Healthcare</span></a>
+                    <a href="hire-talent.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-robot text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">Generative AI</span></a>
+                    <a href="bfsi.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-landmark text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">Fintech</span></a>
+                    <a href="saas-startups.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"><i class="fas fa-rocket text-emerald-500 text-sm w-4"></i><span class="text-sm text-gray-700">Startups</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="ml-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-black transition-all shadow-md hover:shadow-lg">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+</span>i>
+
+<!-- -------------------------------------------
+     ABOUT SECTION
+-------------------------------------------- -->
+<section class="pt-14 lg:pt-36 pb-20 bg-white" id="about-sec">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-center">
+
+      <!-- Image side -->
+      <div class="reveal flex justify-center">
+        <div class="relative w-full max-w-lg">
+          <img src="assets/img/normal/about_1_1.png" alt="About WorkMatch" class="w-full rounded-2xl object-cover">
+          <div class="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl p-4 flex flex-col items-center gap-1.5 border border-gray-100">
+            <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 w-auto">
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest text-center">WorkMatch Excellence</p>
+          </div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 opacity-20" style="background-image:radial-gradient(circle,#6366f1 1.5px,transparent 1.5px);background-size:10px 10px;"></div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">
+          <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> About WorkMatch
+        </span>
+        <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+          Your Trusted Partner for
+          <span class="text-blue-600"> Integrated Talent Solutions & IT Services</span>
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-5 text-justify">
+          WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions. By bringing consulting, development, and staffing together, we enable teams to scale smarter and deliver better technology outcomes.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8 text-justify">
+          We are a trusted partner delivering integrated Talent Solutions and IT Services that help organizations scale efficiently and stay competitive. With a strong focus on quality, reliability, and innovation, we provide industry-ready talent and technology-driven solutions tailored to your business needs.
+        </p>
+
+        <!-- Vision & Mission -->
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-eye text-indigo-600 text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-poppins font-bold text-gray-900 mb-1">Vision</h3>
+              <p class="text-gray-600 text-sm leading-relaxed text-justify">To become a globally trusted partner in digital transformation, redefining how businesses scale through technology and talent.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-bullseye text-blue-600 text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-poppins font-bold text-gray-900 mb-1">Mission</h3>
+              <p class="text-gray-600 text-sm leading-relaxed text-justify">To accelerate business growth by delivering digital engineering excellence, cloud innovation, and high-impact IT talent solutions enabling organizations to scale smarter, operate faster, and achieve measurable outcomes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a href="contact.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl text-sm">
+            GET IN TOUCH <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------
+     SERVICES SECTION
+-------------------------------------------- -->
+<section class="py-20 bg-gray-50" id="service-sec">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">
+        <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> Our Services <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span>
+      </span>
+      <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+        Comprehensive <span class="text-blue-600">Technology Solutions</span> For Your Business
+      </h2>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.05s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-users text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">01</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="talent-solutions.html">Talent Solutions</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Connect with top-tier, industry-ready professionals for full-time, contract, and project-based roles across IT and emerging technologies.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.1s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-code text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">02</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="custom-software-engineering.html">Custom Software Engineering</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Design, develop, and maintain custom software solutions tailored to your unique business requirements and operational goals.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.15s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-cloud text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">03</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="cloud-solutions.html">Cloud Solutions</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Enterprise-grade cloud solutions for infrastructure modernization, scalability, and operational resilience across public, private, and hybrid environments.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.2s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-brain text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">04</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="data-ai-solutions.html">Data & AI Solutions</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Transform data into actionable insights with advanced analytics, AI-driven solutions, and intelligent decision-making platforms.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.25s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-file-lines text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">05</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="cms-solutions.html">CMS Solutions</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Secure and scalable content management systems that simplify content creation, management, and delivery across digital channels.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8" style="transition-delay:.3s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-cogs text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">06</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="managed-services.html">Managed Services</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Comprehensive managed services ensuring stability, performance, and continuous optimization of enterprise IT and digital platforms.</p>
+      </div>
+
+      <!-- Card 7 � centered in last row -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 md:col-start-1 md:col-end-3 xl:col-start-2 xl:col-end-3" style="transition-delay:.35s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center">
+            <i class="fas fa-calculator text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-poppins text-5xl font-black text-gray-100 leading-none">07</span>
+        </div>
+        <h3 class="svc-title font-poppins font-bold text-gray-900 text-lg mb-3 relative z-10"><a href="accounting-as-a-service.html">Accounting as a Service</a></h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify">Fully managed accounting and finance function for your business from bookkeeping to financial reporting and compliance.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------
+     WHY CHOOSE US
+-------------------------------------------- -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-center">
+
+      <!-- Text side -->
+      <div class="reveal order-2 xl:order-1">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">
+          <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> Why Choose WorkMatch
+        </span>
+        <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+          Your Dependable Partner for
+          <span class="text-blue-600"> Technology & Talent Excellence</span>
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-8 text-justify">
+          Our experienced professionals, structured processes, and client-centric approach ensure faster delivery, cost optimization, and long-term value, making us a dependable choice for enterprises seeking sustainable growth and digital excellence.
+        </p>
+
+        <div class="grid grid-cols-2 gap-x-8 gap-y-3 mb-8">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Industry-Ready Talent</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Faster Time-to-Market</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Digital Engineering Excellence</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Cost Optimization</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Cloud Innovation</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">24/7 Support</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Data & AI Solutions</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-blue-600 text-xs"></i></span>
+            <span class="text-sm font-medium text-gray-700">Long-term Partnership</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl text-sm">
+          PARTNER WITH US <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Image side -->
+      <div class="reveal order-1 xl:order-2 flex justify-center items-center">
+        <div class="why-img-wrap">
+          <div class="why-blob"></div>
+          <img src="assets/img/normal/why_1_1.jpg" alt="Why Choose WorkMatch" class="why-img">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- -------------------------------------------
+     FOOTER
+-------------------------------------------- -->
+  <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <!-- Main Footer -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 mb-4">
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions.
+          </p>
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-4">
+            <span class="mt-0.5 w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-location-dot text-blue-400 text-xs"></i>
+            </span>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              The Work Match, Old No 178/B1, New No 766/1,<br>
+              Shakthi Towers 1, Thousand Lights,<br>
+              Annasalai, Chennai - 600 002
+            </p>
+          </div>
+          <!-- Contact -->
+          <div class="flex flex-col gap-2 mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-blue-400 text-xs"></i>
+              </span>
+              <a href="mailto:info@theworkmatch.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">info@theworkmatch.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-blue-400 text-xs"></i>
+              </span>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                <a href="tel:+919176351712" class="text-gray-400 hover:text-white transition-colors">+91 91763 51712</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+919344051712" class="text-gray-400 hover:text-white transition-colors">+91 93440 51712</a>
+              </div>
+            </div>
+          </div>
+          <!-- Social -->
+          <div class="flex space-x-3">
+            <a href="https://x.com/theworkmatch" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/theworkmatch/about/?viewAsMember=true" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="talent-solutions.html" class="text-gray-400 hover:text-white transition-colors">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="text-gray-400 hover:text-white transition-colors">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="text-gray-400 hover:text-white transition-colors">CMS Solutions</a></li>
+            <li><a href="accounting-as-a-service.html" class="text-gray-400 hover:text-white transition-colors"> Accounting as a Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="company-overview.html" class="text-gray-400 hover:text-white transition-colors">Company Overview</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="hire-talent.html" class="text-gray-400 hover:text-white transition-colors">Hire Talent</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Industries</h3>
+          <ul class="space-y-3">
+            <li><a href="bfsi.html" class="text-gray-400 hover:text-white transition-colors">BFSI</a></li>
+            <li><a href="healthcare.html" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="text-gray-400 hover:text-white transition-colors">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="text-gray-400 hover:text-white transition-colors">SaaS & Startups</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 py-6">
+        <div class="text-center">
+          <p class="text-gray-400">
+            Copyright <i class="far fa-copyright"></i> 2026
+            <a href="index.html" class="text-white hover:text-primary transition-colors">WorkMatch</a>.
+            All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+          if (dropdown !== content) {
+            dropdown.classList.add('hidden');
+            dropdown.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll to top functionality
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'invisible');
+        scrollTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        header.classList.add('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+        header.classList.remove('bg-white/95');
+      } else {
+        header.classList.remove('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+      }
+    });
+
+    // Premium Service Card - Radial Fill Animation
+    document.querySelectorAll('.svc-card').forEach(card => {
+      const fill = card.querySelector('.fill');
+      if (!fill) return;
+
+      card.addEventListener('mouseenter', (e) => {
+        fill.classList.remove('leaving');
+      });
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate the maximum dimension to ensure full coverage
+        const maxDim = Math.max(rect.width, rect.height) * 2.5;
+        
+        fill.style.width = maxDim + 'px';
+        fill.style.height = maxDim + 'px';
+        fill.style.left = (x - maxDim / 2) + 'px';
+        fill.style.top = (y - maxDim / 2) + 'px';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        fill.classList.add('leaving');
+      });
+    });
+
+    // Reveal animation on scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

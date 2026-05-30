@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Developers - All Skills | WorkMatch</title>
+  <link href="assets/img/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    
+    .skill-link {
+      display: block;
+      padding: 14px 18px;
+      color: #1e40af;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .skill-link:hover {
+      background-color: #eff6ff;
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    }
+    
+    .skill-link.hidden {
+      display: none;
+    }
+    
+    .skill-link i {
+      font-size: 18px;
+      width: 24px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-white">
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b">
+      <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-8">
+      <button id="close-menu" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block py-2 text-gray-700 hover:text-gray-900">Home</a></li>
+        
+        <!-- Company Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Company <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="company-overview.html" class="block py-1 text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="careers.html" class="block py-1 text-gray-600 hover:text-gray-900">Careers</a></li>
+            <li><a href="clients.html" class="block py-1 text-gray-600 hover:text-gray-900">Clients</a></li>
+          </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="talent-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">CMS Solutions</a></li>
+            <li><a href="managed-services.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Managed Services</a></li>
+            <li><a href="accounting-as-a-service.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Accounting as a Service</a></li>
+          </ul>
+        </li>
+        
+        <!-- Industries Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Industries <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="bfsi.html" class="block py-1 text-gray-600 hover:text-gray-900">BFSI</a></li>
+            <li><a href="healthcare.html" class="block py-1 text-gray-600 hover:text-gray-900">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="block py-1 text-gray-600 hover:text-gray-900">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="block py-1 text-gray-600 hover:text-gray-900">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="block py-1 text-gray-600 hover:text-gray-900">SaaS & Startups</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="blog.html" class="block py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+        <li><a href="hire-talent.html" class="block py-2 text-gray-700 hover:text-gray-900">Hire Developer</a></li>
+        <li><a href="contact.html" class="block py-2 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white shadow-lg" id="main-header">
+    <!-- Main nav -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 lg:h-28">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-9 lg:h-14 w-auto max-w-[130px] lg:max-w-none">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Home</a>
+
+          <!-- Company -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Company <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="company-overview.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-building text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">About Us</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Discover who we are</div>
+                  </div>
+                </a>
+                <a href="careers.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-briefcase text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Careers</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Join our passionate team</div>
+                  </div>
+                </a>
+                <a href="clients.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-handshake text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Clients</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Our trusted partners</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Services <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="talent-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-users text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Talent Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Hire skilled technology professionals with confidence</div>
+                  </div>
+                </a>
+                <a href="custom-software-engineering.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-code text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Custom Software Engineering</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Build scalable and high-performance digital solutions</div>
+                  </div>
+                </a>
+                <a href="cloud-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cloud text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Cloud Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Accelerate growth with secure cloud transformation</div>
+                  </div>
+                </a>
+                <a href="data-ai-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-brain text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Data &amp; AI Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Transform data into intelligent business insights</div>
+                  </div>
+                </a>
+                <a href="cms-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-file-lines text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">CMS Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Manage digital content with flexibility and control</div>
+                  </div>
+                </a>
+                <a href="managed-services.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cogs text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Managed Services</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Ensure seamless IT operations with expert support</div>
+                  </div>
+                </a>
+                <a href="accounting-as-a-service.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-calculator text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Accounting as a Service</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Fully managed finance function for your business</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industries -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Industries <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="bfsi.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-landmark text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">BFSI</span>
+                </a>
+                <a href="healthcare.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-hospital text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Healthcare</span>
+                </a>
+                <a href="retail-ecommerce.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-shopping-cart text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Retail & E-commerce</span>
+                </a>
+                <a href="manufacturing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-industry text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Manufacturing</span>
+                </a>
+                <a href="saas-startups.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-rocket text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">SaaS & Startups</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="blog.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Blog</a>
+
+          <!-- Hire Developer -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Hire Developer <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-max bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-5">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Skills</p>
+                <div class="grid grid-cols-4 gap-1 mb-3">
+                  <a href="hire-talent.html?skill=React.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fab fa-react text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">React.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Salesforce Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-cloud text-blue-400 text-sm w-4"></i><span class="text-sm text-gray-700">Salesforce Developers</span></a>
+                  <a href="hire-talent.html?skill=Node.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-node-js text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Node.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Flutter Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cyan-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-screen text-cyan-500 text-sm w-4"></i><span class="text-sm text-gray-700">Flutter Developers</span></a>
+                  <a href="hire-talent.html?skill=Xamarin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-alt text-purple-500 text-sm w-4"></i><span class="text-sm text-gray-700">Xamarin Developers</span></a>
+                  <a href="hire-talent.html?skill=Python Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-python text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Python Developers</span></a>
+                  <a href="hire-talent.html?skill=AI Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-brain text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">AI Developers</span></a>
+                  <a href="hire-talent.html?skill=Android Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-android text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Android Developers</span></a>
+                  <a href="hire-talent.html?skill=DevOps Engineer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"><i class="fas fa-infinity text-orange-500 text-sm w-4"></i><span class="text-sm text-gray-700">DevOps Developers</span></a>
+                  <a href="hire-talent.html?skill=Shopify Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-shopify text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Shopify Developers</span></a>
+                  <a href="hire-talent.html?skill=Angular Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fab fa-angular text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Angular Developers</span></a>
+                  <a href="hire-talent.html?skill=SAP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-database text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">SAP Developers</span></a>
+                  <a href="hire-talent.html?skill=Blockchain Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-link text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Blockchain Developers</span></a>
+                  <a href="hire-talent.html?skill=Kotlin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-android text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Kotlin Developers</span></a>
+                  <a href="hire-talent.html?skill=Golang Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-code text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Golang Developers</span></a>
+                  <a href="hire-talent.html?skill=Full Stack Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-layer-group text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Full Stack Developers</span></a>
+                  <a href="hire-talent.html?skill=Java Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-java text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Java Developers</span></a>
+                  <a href="hire-talent.html?skill=PHP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-php text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">PHP Developers</span></a>
+                  <a href="hire-talent.html?skill=Azure Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-microsoft text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Azure Developers</span></a>
+                  <a href="skills-listing.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap text-gray-700 font-semibold"><i class="fas fa-arrow-right text-gray-700 text-sm w-4"></i><span class="text-sm">See all 50+ Skills</span></a>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Industry</p>
+                  <div class="grid grid-cols-4 gap-1">
+                    <a href="healthcare.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fas fa-hospital text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Healthcare</span></a>
+                    <a href="hire-talent.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-robot text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">Generative AI</span></a>
+                    <a href="bfsi.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-landmark text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">Fintech</span></a>
+                    <a href="saas-startups.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"><i class="fas fa-rocket text-emerald-500 text-sm w-4"></i><span class="text-sm text-gray-700">Startups</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="ml-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-black transition-all shadow-md hover:shadow-lg">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-16 max-w-7xl mt-24">
+    
+    <!-- Page Title -->
+    <div class="mb-12 text-center">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">Hire Expert Developers</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Browse our comprehensive list of 50+ technology skills and connect with top-tier developers for your projects.</p>
+    </div>
+
+    <!-- Search Box -->
+    <div class="mb-12 max-w-2xl mx-auto">
+      <div class="relative">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search for skills (e.g., React, Python, AWS)..." 
+          class="w-full px-6 py-4 pl-14 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base shadow-sm"
+        />
+        <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+      </div>
+    </div>
+
+    <!-- All Skills in Single Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="skillsGrid">
+      <!-- Frontend -->
+      <a href="hire-talent.html?skill=React.js Developer" class="skill-link" data-skill="react"><i class="fab fa-react text-blue-500 mr-3"></i>Hire React.js Developers</a>
+      <a href="hire-talent.html?skill=Angular Developer" class="skill-link" data-skill="angular"><i class="fab fa-angular text-red-600 mr-3"></i>Hire Angular Developers</a>
+      <a href="hire-talent.html?skill=Vue.js Developer" class="skill-link" data-skill="vue"><i class="fab fa-vuejs text-green-500 mr-3"></i>Hire Vue.js Developers</a>
+      <a href="hire-talent.html?skill=Next.js Developer" class="skill-link" data-skill="nextjs"><i class="fas fa-code text-indigo-600 mr-3"></i>Hire Next.js Developers</a>
+      <a href="hire-talent.html?skill=Svelte Developer" class="skill-link" data-skill="svelte"><i class="fas fa-layer-group text-purple-600 mr-3"></i>Hire Svelte Developers</a>
+      
+      <!-- Backend -->
+      <a href="hire-talent.html?skill=Node.js Developer" class="skill-link" data-skill="nodejs"><i class="fab fa-node-js text-green-600 mr-3"></i>Hire Node.js Developers</a>
+      <a href="hire-talent.html?skill=Python Developer" class="skill-link" data-skill="python"><i class="fab fa-python text-blue-500 mr-3"></i>Hire Python Developers</a>
+      <a href="hire-talent.html?skill=Java Developer" class="skill-link" data-skill="java"><i class="fab fa-java text-orange-600 mr-3"></i>Hire Java Developers</a>
+      <a href="hire-talent.html?skill=PHP Developer" class="skill-link" data-skill="php"><i class="fab fa-php text-indigo-600 mr-3"></i>Hire PHP Developers</a>
+      <a href="hire-talent.html?skill=.NET Developer" class="skill-link" data-skill="dotnet"><i class="fab fa-microsoft text-blue-600 mr-3"></i>Hire .NET Developers</a>
+      <a href="hire-talent.html?skill=Ruby Developer" class="skill-link" data-skill="ruby"><i class="fas fa-gem text-red-600 mr-3"></i>Hire Ruby Developers</a>
+      <a href="hire-talent.html?skill=Golang Developer" class="skill-link" data-skill="golang"><i class="fas fa-code text-cyan-600 mr-3"></i>Hire Golang Developers</a>
+      <a href="hire-talent.html?skill=Rust Developer" class="skill-link" data-skill="rust"><i class="fab fa-rust text-orange-700 mr-3"></i>Hire Rust Developers</a>
+      
+      <!-- Mobile -->
+      <a href="hire-talent.html?skill=React Native Developer" class="skill-link" data-skill="react-native"><i class="fab fa-react text-cyan-500 mr-3"></i>Hire React Native Developers</a>
+      <a href="hire-talent.html?skill=Flutter Developer" class="skill-link" data-skill="flutter"><i class="fas fa-mobile-screen text-blue-500 mr-3"></i>Hire Flutter Developers</a>
+      <a href="hire-talent.html?skill=Android Developer" class="skill-link" data-skill="android"><i class="fab fa-android text-green-600 mr-3"></i>Hire Android Developers</a>
+      <a href="hire-talent.html?skill=iOS Developer" class="skill-link" data-skill="ios"><i class="fab fa-apple text-gray-800 mr-3"></i>Hire iOS Developers</a>
+      <a href="hire-talent.html?skill=Swift Developer" class="skill-link" data-skill="swift"><i class="fab fa-swift text-orange-500 mr-3"></i>Hire Swift Developers</a>
+      <a href="hire-talent.html?skill=Kotlin Developer" class="skill-link" data-skill="kotlin"><i class="fas fa-code text-purple-600 mr-3"></i>Hire Kotlin Developers</a>
+      <a href="hire-talent.html?skill=Xamarin Developer" class="skill-link" data-skill="xamarin"><i class="fas fa-mobile-alt text-indigo-600 mr-3"></i>Hire Xamarin Developers</a>
+
+
+      
+      <!-- Cloud & DevOps -->
+      <a href="hire-talent.html?skill=AWS Developer" class="skill-link" data-skill="aws"><i class="fab fa-aws text-orange-500 mr-3"></i>Hire AWS Developers</a>
+      <a href="hire-talent.html?skill=Azure Developer" class="skill-link" data-skill="azure"><i class="fab fa-microsoft text-blue-500 mr-3"></i>Hire Azure Developers</a>
+      <a href="hire-talent.html?skill=Google Cloud Developer" class="skill-link" data-skill="google-cloud"><i class="fab fa-google text-red-500 mr-3"></i>Hire Google Cloud Developers</a>
+      <a href="hire-talent.html?skill=DevOps Engineer" class="skill-link" data-skill="devops"><i class="fas fa-infinity text-purple-600 mr-3"></i>Hire DevOps Engineers</a>
+      <a href="hire-talent.html?skill=Docker Specialist" class="skill-link" data-skill="docker"><i class="fab fa-docker text-blue-600 mr-3"></i>Hire Docker Specialists</a>
+      <a href="hire-talent.html?skill=Kubernetes Expert" class="skill-link" data-skill="kubernetes"><i class="fas fa-dharmachakra text-blue-700 mr-3"></i>Hire Kubernetes Experts</a>
+      
+      <!-- Data & AI -->
+      <a href="hire-talent.html?skill=AI/ML Engineer" class="skill-link" data-skill="ai-ml"><i class="fas fa-brain text-violet-600 mr-3"></i>Hire AI/ML Engineers</a>
+      <a href="hire-talent.html?skill=Data Scientist" class="skill-link" data-skill="data-science"><i class="fas fa-database text-blue-600 mr-3"></i>Hire Data Scientists</a>
+      <a href="hire-talent.html?skill=Data Analyst" class="skill-link" data-skill="data-analytics"><i class="fas fa-chart-line text-green-600 mr-3"></i>Hire Data Analysts</a>
+      <a href="hire-talent.html?skill=Machine Learning Engineer" class="skill-link" data-skill="machine-learning"><i class="fas fa-robot text-purple-600 mr-3"></i>Hire Machine Learning Engineers</a>
+      <a href="hire-talent.html?skill=Deep Learning Specialist" class="skill-link" data-skill="deep-learning"><i class="fas fa-network-wired text-indigo-600 mr-3"></i>Hire Deep Learning Specialists</a>
+      
+      <!-- CMS & E-commerce -->
+      <a href="hire-talent.html?skill=Shopify Developer" class="skill-link" data-skill="shopify"><i class="fab fa-shopify text-green-600 mr-3"></i>Hire Shopify Developers</a>
+      <a href="hire-talent.html?skill=WordPress Developer" class="skill-link" data-skill="wordpress"><i class="fab fa-wordpress text-blue-700 mr-3"></i>Hire WordPress Developers</a>
+      <a href="hire-talent.html?skill=Magento Developer" class="skill-link" data-skill="magento"><i class="fab fa-magento text-orange-600 mr-3"></i>Hire Magento Developers</a>
+      <a href="hire-talent.html?skill=Salesforce Developer" class="skill-link" data-skill="salesforce"><i class="fas fa-cloud text-blue-500 mr-3"></i>Hire Salesforce Developers</a>
+      <a href="hire-talent.html?skill=SAP Consultant" class="skill-link" data-skill="sap"><i class="fas fa-database text-indigo-600 mr-3"></i>Hire SAP Consultants</a>
+      
+      <!-- Other -->
+      <a href="hire-talent.html?skill=Blockchain Developer" class="skill-link" data-skill="blockchain"><i class="fas fa-link text-yellow-600 mr-3"></i>Hire Blockchain Developers</a>
+      <a href="hire-talent.html?skill=Full Stack Developer" class="skill-link" data-skill="fullstack"><i class="fas fa-layer-group text-indigo-600 mr-3"></i>Hire Full Stack Developers</a>
+      <a href="hire-talent.html?skill=Frontend Developer" class="skill-link" data-skill="frontend"><i class="fas fa-desktop text-blue-600 mr-3"></i>Hire Frontend Developers</a>
+      <a href="hire-talent.html?skill=Backend Developer" class="skill-link" data-skill="backend"><i class="fas fa-server text-gray-700 mr-3"></i>Hire Backend Developers</a>
+      <a href="hire-talent.html?skill=QA Engineer" class="skill-link" data-skill="qa-testing"><i class="fas fa-vial text-green-600 mr-3"></i>Hire QA/Testing Engineers</a>
+      <a href="hire-talent.html?skill=UI/UX Designer" class="skill-link" data-skill="ui-ux"><i class="fas fa-palette text-pink-600 mr-3"></i>Hire UI/UX Designers</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <!-- Main Footer -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 mb-4">
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions.
+          </p>
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-4">
+            <span class="mt-0.5 w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-location-dot text-blue-400 text-xs"></i>
+            </span>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              The Work Match, Old No 178/B1, New No 766/1,<br>
+              Shakthi Towers 1, Thousand Lights,<br>
+              Annasalai, Chennai - 600 002
+            </p>
+          </div>
+          <!-- Contact -->
+          <div class="flex flex-col gap-2 mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-blue-400 text-xs"></i>
+              </span>
+              <a href="mailto:info@theworkmatch.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">info@theworkmatch.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-blue-400 text-xs"></i>
+              </span>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                <a href="tel:+919176351712" class="text-gray-400 hover:text-white transition-colors">+91 91763 51712</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+919344051712" class="text-gray-400 hover:text-white transition-colors">+91 93440 51712</a>
+              </div>
+            </div>
+          </div>
+          <!-- Social -->
+          <div class="flex space-x-3">
+            <a href="https://x.com/theworkmatch" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/theworkmatch/about/?viewAsMember=true" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="talent-solutions.html" class="text-gray-400 hover:text-white transition-colors">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="text-gray-400 hover:text-white transition-colors">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="text-gray-400 hover:text-white transition-colors">CMS Solutions</a></li>
+            <li><a href="accounting-as-a-service.html" class="text-gray-400 hover:text-white transition-colors"> Accounting as a Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="company-overview.html" class="text-gray-400 hover:text-white transition-colors">Company Overview</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="hire-talent.html" class="text-gray-400 hover:text-white transition-colors">Hire Talent</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Industries</h3>
+          <ul class="space-y-3">
+            <li><a href="bfsi.html" class="text-gray-400 hover:text-white transition-colors">BFSI</a></li>
+            <li><a href="healthcare.html" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="text-gray-400 hover:text-white transition-colors">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="text-gray-400 hover:text-white transition-colors">SaaS & Startups</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 py-6">
+        <div class="text-center">
+          <p class="text-gray-400">
+            Copyright <i class="far fa-copyright"></i> 2026
+            <a href="index.html" class="text-white hover:text-primary transition-colors">WorkMatch</a>.
+            All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const skillLinks = document.querySelectorAll('.skill-link');
+
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      skillLinks.forEach(link => {
+        const skillText = link.textContent.toLowerCase();
+        const skillData = link.getAttribute('data-skill').toLowerCase();
+        
+        if (skillText.includes(searchTerm) || skillData.includes(searchTerm)) {
+          link.classList.remove('hidden');
+        } else {
+          link.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+

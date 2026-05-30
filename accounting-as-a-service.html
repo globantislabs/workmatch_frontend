@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <link href="https://theworkmatch.com/img/WorkMatch_Logo.png" rel="icon" type="image/png"/>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>Accounting as a Service – WorkMatch</title>
+  <meta content="WorkMatch" name="author"/>
+  <meta content="Work Match Accounting as a Service (WMAAS) – fully managed, technology-driven finance function for startups and enterprises." name="description"/>
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','sans-serif'], poppins: ['Poppins','sans-serif'] },
+          colors: { primary: '#3B82F6' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .mobile-menu { transform:translateX(-100%); transition:transform .3s ease; }
+    .mobile-menu.active { transform:translateX(0); }
+    .reveal { opacity:1;  transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    #scroll-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,#3b82f6,#6366f1); z-index:9999; transition:width .1s linear; }
+    .service-card { transition: transform .35s cubic-bezier(.34,1.4,.64,1), box-shadow .35s ease, border-color .3s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(245,158,11,.12); border-color: rgba(245,158,11,.35) !important; }
+  
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b">
+      <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-8">
+      <button id="close-menu" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block py-2 text-gray-700 hover:text-gray-900">Home</a></li>
+        
+        <!-- Company Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Company <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="company-overview.html" class="block py-1 text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="careers.html" class="block py-1 text-gray-600 hover:text-gray-900">Careers</a></li>
+            <li><a href="clients.html" class="block py-1 text-gray-600 hover:text-gray-900">Clients</a></li>
+          </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="talent-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">CMS Solutions</a></li>
+            <li><a href="managed-services.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Managed Services</a></li>
+            <li><a href="accounting-as-a-service.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Accounting as a Service</a></li>
+          </ul>
+        </li>
+        
+        <!-- Industries Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Industries <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="bfsi.html" class="block py-1 text-gray-600 hover:text-gray-900">BFSI</a></li>
+            <li><a href="healthcare.html" class="block py-1 text-gray-600 hover:text-gray-900">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="block py-1 text-gray-600 hover:text-gray-900">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="block py-1 text-gray-600 hover:text-gray-900">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="block py-1 text-gray-600 hover:text-gray-900">SaaS & Startups</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="blog.html" class="block py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+        <li><a href="hire-talent.html" class="block py-2 text-gray-700 hover:text-gray-900">Hire Developer</a></li>
+        <li><a href="contact.html" class="block py-2 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white shadow-lg" id="main-header">
+    <!-- Main nav -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 lg:h-28">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-9 lg:h-14 w-auto max-w-[130px] lg:max-w-none">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Home</a>
+
+          <!-- Company -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Company <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="company-overview.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-building text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">About Us</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Discover who we are</div>
+                  </div>
+                </a>
+                <a href="careers.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-briefcase text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Careers</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Join our passionate team</div>
+                  </div>
+                </a>
+                <a href="clients.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-handshake text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Clients</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Our trusted partners</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Services <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="talent-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-users text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Talent Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Hire skilled technology professionals with confidence</div>
+                  </div>
+                </a>
+                <a href="custom-software-engineering.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-code text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Custom Software Engineering</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Build scalable and high-performance digital solutions</div>
+                  </div>
+                </a>
+                <a href="cloud-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cloud text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Cloud Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Accelerate growth with secure cloud transformation</div>
+                  </div>
+                </a>
+                <a href="data-ai-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-brain text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Data &amp; AI Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Transform data into intelligent business insights</div>
+                  </div>
+                </a>
+                <a href="cms-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-file-lines text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">CMS Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Manage digital content with flexibility and control</div>
+                  </div>
+                </a>
+                <a href="managed-services.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cogs text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Managed Services</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Ensure seamless IT operations with expert support</div>
+                  </div>
+                </a>
+                <a href="accounting-as-a-service.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-calculator text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Accounting as a Service</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Fully managed finance function for your business</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industries -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Industries <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="bfsi.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-landmark text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">BFSI</span>
+                </a>
+                <a href="healthcare.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-hospital text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Healthcare</span>
+                </a>
+                <a href="retail-ecommerce.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-shopping-cart text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Retail & E-commerce</span>
+                </a>
+                <a href="manufacturing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-industry text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Manufacturing</span>
+                </a>
+                <a href="saas-startups.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-rocket text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">SaaS & Startups</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="blog.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Blog</a>
+
+          <!-- Hire Developer -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Hire Developer <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-max bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-5">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Skills</p>
+                <div class="grid grid-cols-4 gap-1 mb-3">
+                  <a href="hire-talent.html?skill=React.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fab fa-react text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">React.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Salesforce Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-cloud text-blue-400 text-sm w-4"></i><span class="text-sm text-gray-700">Salesforce Developers</span></a>
+                  <a href="hire-talent.html?skill=Node.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-node-js text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Node.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Flutter Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cyan-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-screen text-cyan-500 text-sm w-4"></i><span class="text-sm text-gray-700">Flutter Developers</span></a>
+                  <a href="hire-talent.html?skill=Xamarin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-alt text-purple-500 text-sm w-4"></i><span class="text-sm text-gray-700">Xamarin Developers</span></a>
+                  <a href="hire-talent.html?skill=Python Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-python text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Python Developers</span></a>
+                  <a href="hire-talent.html?skill=AI Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-brain text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">AI Developers</span></a>
+                  <a href="hire-talent.html?skill=Android Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-android text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Android Developers</span></a>
+                  <a href="hire-talent.html?skill=DevOps Engineer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"><i class="fas fa-infinity text-orange-500 text-sm w-4"></i><span class="text-sm text-gray-700">DevOps Developers</span></a>
+                  <a href="hire-talent.html?skill=Shopify Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-shopify text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Shopify Developers</span></a>
+                  <a href="hire-talent.html?skill=Angular Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fab fa-angular text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Angular Developers</span></a>
+                  <a href="hire-talent.html?skill=SAP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-database text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">SAP Developers</span></a>
+                  <a href="hire-talent.html?skill=Blockchain Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-link text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Blockchain Developers</span></a>
+                  <a href="hire-talent.html?skill=Kotlin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-android text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Kotlin Developers</span></a>
+                  <a href="hire-talent.html?skill=Golang Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-code text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Golang Developers</span></a>
+                  <a href="hire-talent.html?skill=Full Stack Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-layer-group text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Full Stack Developers</span></a>
+                  <a href="hire-talent.html?skill=Java Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-java text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Java Developers</span></a>
+                  <a href="hire-talent.html?skill=PHP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-php text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">PHP Developers</span></a>
+                  <a href="hire-talent.html?skill=Azure Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-microsoft text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Azure Developers</span></a>
+                  <a href="skills-listing.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap text-gray-700 font-semibold"><i class="fas fa-arrow-right text-gray-700 text-sm w-4"></i><span class="text-sm">See all 50+ Skills</span></a>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Industry</p>
+                  <div class="grid grid-cols-4 gap-1">
+                    <a href="healthcare.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fas fa-hospital text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Healthcare</span></a>
+                    <a href="hire-talent.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-robot text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">Generative AI</span></a>
+                    <a href="bfsi.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-landmark text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">Fintech</span></a>
+                    <a href="saas-startups.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"><i class="fas fa-rocket text-emerald-500 text-sm w-4"></i><span class="text-sm text-gray-700">Startups</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="ml-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-black transition-all shadow-md hover:shadow-lg">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+<!-- HERO SECTION -->
+<section class="pt-14 lg:pt-36 pb-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+
+      <!-- Image side -->
+      <div class="reveal relative" style="padding-bottom:48px;">
+        <div class="relative w-full max-w-lg mx-auto xl:mx-0">
+          <div class="absolute -top-8 -left-8 w-72 h-72 bg-gradient-to-br from-amber-100 to-yellow-100 rounded-[40px] -z-10 rotate-3"></div>
+          <div class="absolute -bottom-4 -right-4 w-52 h-52 bg-gradient-to-br from-orange-100 to-amber-200 rounded-[32px] -z-10 -rotate-2"></div>
+          <div class="rounded-3xl overflow-hidden shadow-2xl">
+            <img src="assets/img/normal/about_11_1.jpg" alt="Accounting as a Service" class="w-full object-cover" style="aspect-ratio:4/3;">
+          </div>
+          <div class="absolute -bottom-10 -right-6 w-48 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-10">
+            <img src="assets/img/normal/about_11_2.jpg" alt="Finance Team" class="w-full object-cover" style="aspect-ratio:1/1;">
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute top-6 -right-4 bg-white rounded-2xl px-4 py-3 shadow-xl border border-amber-100 z-10">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center"><i class="fas fa-calculator text-white text-sm"></i></div>
+              <div><p class="text-xs font-bold text-gray-800">WMAAS</p><p class="text-xs text-gray-400">Fully Managed</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-600 mb-4">
+          <span class="w-6 h-0.5 bg-amber-600 inline-block"></span> Services – Accounting as a Service
+        </span>
+        <h1 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-2">
+          Work Match Accounting<br><span class="text-amber-600">as a Service</span>
+        </h1>
+        <p class="text-sm font-semibold text-amber-500 mb-6 tracking-wide">(WMAAS)</p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          At Work Match, our Accounting as a Service (WMAAS) model delivers a fully managed, technology-driven finance function for startups and enterprises. From company formation to financial closure, WMAAS ensures compliance, accuracy, and real-time financial visibility — empowering you to focus on scaling your business.
+        </p>
+        <!-- Key highlights -->
+        <div class="grid grid-cols-2 gap-3 mb-8">
+          <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-amber-50 border border-amber-100">
+            <span class="w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-halved text-white text-xs"></i></span>
+            <span class="text-sm font-semibold text-gray-800">Compliance-First</span>
+          </div>
+          <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-blue-50 border border-blue-100">
+            <span class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-chart-line text-white text-xs"></i></span>
+            <span class="text-sm font-semibold text-gray-800">Real-Time Insights</span>
+          </div>
+          <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-50 border border-emerald-100">
+            <span class="w-8 h-8 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-laptop text-white text-xs"></i></span>
+            <span class="text-sm font-semibold text-gray-800">Tech-Enabled</span>
+          </div>
+          <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-violet-50 border border-violet-100">
+            <span class="w-8 h-8 rounded-xl bg-violet-600 flex items-center justify-center flex-shrink-0"><i class="fas fa-user-tie text-white text-xs"></i></span>
+            <span class="text-sm font-semibold text-gray-800">Virtual CFO</span>
+          </div>
+        </div>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg text-sm">
+          Schedule a Consultation <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="py-24 bg-slate-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-600 mb-4">
+        <span class="w-6 h-0.5 bg-amber-600 inline-block"></span> What We Offer <span class="w-6 h-0.5 bg-amber-600 inline-block"></span>
+      </span>
+      <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+        10 Pillars of <span class="text-amber-600">WMAAS</span>
+      </h2>
+      <p class="text-gray-500 mt-4 max-w-2xl mx-auto text-sm leading-relaxed">A comprehensive, end-to-end accounting and finance function — from business setup to year-end closure, all under one managed service.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+
+      <!-- Card 1 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-100">
+            <i class="fas fa-building-columns text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-amber-300">01</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Business Setup &amp; Financial Foundation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS helps you build your business on the right foundation. We manage company incorporation, GST registration, PAN/TAN setup, and startup registrations. Our experts guide you in selecting the ideal business structure and establish robust financial and compliance frameworks — ensuring your business is scalable and investor-ready from day one.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-100">
+            <i class="fas fa-book-open text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-blue-300">02</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Continuous Bookkeeping &amp; Smart Accounting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">With WMAAS, your accounting is always up-to-date and audit-ready. We handle day-to-day bookkeeping, accounts payable and receivable, bank reconciliations, and ledger management using modern tools. Our structured approach provides complete financial clarity and control.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-100">
+            <i class="fas fa-file-invoice-dollar text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-emerald-300">03</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Integrated Taxation &amp; Compliance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS embeds tax compliance into your daily operations. We manage GST filings, income tax returns, and TDS compliance while offering proactive tax planning strategies. Our approach ensures you remain compliant while optimizing tax efficiency.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-violet-600 flex items-center justify-center shadow-lg shadow-violet-100">
+            <i class="fas fa-users text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-violet-300">04</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Payroll &amp; Workforce Compliance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Leveraging Work Match's Talent Solutions expertise, WMAAS delivers seamless payroll management. We manage salary processing, payslip generation, and statutory compliance including PF, ESI, and professional tax — ensuring accurate and compliant workforce financial operations.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-sky-500 flex items-center justify-center shadow-lg shadow-sky-100">
+            <i class="fas fa-chart-bar text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-sky-300">05</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Real-Time Financial Reporting &amp; Insights</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS transforms financial data into actionable insights. We provide Profit &amp; Loss statements, Balance Sheets, Cash Flow reports, and MIS dashboards, along with budgeting and forecasting. This enables leadership teams to track performance and make informed decisions.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-rose-500 flex items-center justify-center shadow-lg shadow-rose-100">
+            <i class="fas fa-shield-halved text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-rose-300">06</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Audit-Ready Systems &amp; Financial Governance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Be audit-ready at all times with WMAAS. We support internal and statutory audits by maintaining organized financial records, preparing documentation, and ensuring compliance. Our services strengthen governance and reduce financial risks.</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-100">
+            <i class="fas fa-landmark text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-indigo-300">07</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">ROC &amp; Regulatory Compliance Management</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS ensures continuous regulatory compliance. We handle ROC filings, annual compliance, director KYC, and event-based filings. Our proactive management keeps your business compliant and penalty-free.</p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600 flex items-center justify-center shadow-lg shadow-teal-100">
+            <i class="fas fa-user-tie text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-teal-300">08</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Virtual CFO &amp; Strategic Advisory</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS goes beyond accounting to deliver strategic value. Our Virtual CFO services include financial planning, cost optimization, fundraising support, and performance monitoring — helping you scale with confidence and clarity.</p>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-orange-500 flex items-center justify-center shadow-lg shadow-orange-100">
+            <i class="fas fa-calendar-check text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-orange-300">09</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Year-End Closure &amp; Financial Finalization</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We ensure seamless financial closure under WMAAS. Our team manages book closing, reconciliations, and finalization of financial statements, including Balance Sheet and Profit &amp; Loss, along with tax provisioning and audit readiness.</p>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="service-card bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex gap-5">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-pink-500 flex items-center justify-center shadow-lg shadow-pink-100">
+            <i class="fas fa-microchip text-white text-lg"></i>
+          </div>
+          <div class="text-center mt-2"><span class="text-xs font-black text-pink-300">10</span></div>
+        </div>
+        <div>
+          <h3 class="font-poppins font-bold text-gray-900 text-base mb-2">Technology-Enabled Accounting Ecosystem</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">WMAAS is powered by a digital-first approach. We implement and manage platforms like Tally, Zoho Books, and QuickBooks, enabling automation, integration, and real-time reporting — making your finance function efficient and future-ready.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECH PLATFORMS STRIP -->
+<section class="py-12 bg-white border-y border-gray-100">
+  <div class="max-w-5xl mx-auto px-6 reveal">
+    <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Platforms We Work With</p>
+    <div class="flex flex-wrap items-center justify-center gap-8">
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-calculator text-blue-600 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">Tally</span>
+      </div>
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-book text-orange-500 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">Zoho Books</span>
+      </div>
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-chart-pie text-green-600 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">QuickBooks</span>
+      </div>
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-file-invoice text-indigo-600 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">GST Portal</span>
+      </div>
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-users-gear text-violet-600 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">EPFO / ESIC</span>
+      </div>
+      <div class="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-50 border border-gray-100">
+        <i class="fas fa-building text-teal-600 text-lg"></i>
+        <span class="text-sm font-bold text-gray-700">MCA / ROC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-20 overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);">
+  <div class="max-w-4xl mx-auto px-6 text-center reveal">
+    <div class="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center mx-auto mb-6 shadow-xl shadow-amber-900/30">
+      <i class="fas fa-calculator text-white text-2xl"></i>
+    </div>
+    <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-white mb-4">
+      Ready to Transform Your<br><span style="background: linear-gradient(90deg,#fbbf24,#f59e0b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Finance Function?</span>
+    </h2>
+    <p class="text-blue-200 text-base mb-8 max-w-xl mx-auto leading-relaxed">Get in touch with our WMAAS experts today. Let us handle your accounting so you can focus on growing your business.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl transition-all shadow-xl text-sm">
+      Schedule a Consultation <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+  <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <!-- Main Footer -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 mb-4">
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions.
+          </p>
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-4">
+            <span class="mt-0.5 w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-location-dot text-blue-400 text-xs"></i>
+            </span>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              The Work Match, Old No 178/B1, New No 766/1,<br>
+              Shakthi Towers 1, Thousand Lights,<br>
+              Annasalai, Chennai - 600 002
+            </p>
+          </div>
+          <!-- Contact -->
+          <div class="flex flex-col gap-2 mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-blue-400 text-xs"></i>
+              </span>
+              <a href="mailto:info@theworkmatch.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">info@theworkmatch.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-blue-400 text-xs"></i>
+              </span>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                <a href="tel:+919176351712" class="text-gray-400 hover:text-white transition-colors">+91 91763 51712</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+919344051712" class="text-gray-400 hover:text-white transition-colors">+91 93440 51712</a>
+              </div>
+            </div>
+          </div>
+          <!-- Social -->
+          <div class="flex space-x-3">
+            <a href="https://x.com/theworkmatch" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/theworkmatch/about/?viewAsMember=true" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="talent-solutions.html" class="text-gray-400 hover:text-white transition-colors">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="text-gray-400 hover:text-white transition-colors">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="text-gray-400 hover:text-white transition-colors">CMS Solutions</a></li>
+            <li><a href="accounting-as-a-service.html" class="text-gray-400 hover:text-white transition-colors"> Accounting as a Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="company-overview.html" class="text-gray-400 hover:text-white transition-colors">Company Overview</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="hire-talent.html" class="text-gray-400 hover:text-white transition-colors">Hire Talent</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Industries</h3>
+          <ul class="space-y-3">
+            <li><a href="bfsi.html" class="text-gray-400 hover:text-white transition-colors">BFSI</a></li>
+            <li><a href="healthcare.html" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="text-gray-400 hover:text-white transition-colors">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="text-gray-400 hover:text-white transition-colors">SaaS & Startups</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 py-6">
+        <div class="text-center">
+          <p class="text-gray-400">
+            Copyright <i class="far fa-copyright"></i> 2026
+            <a href="index.html" class="text-white hover:text-primary transition-colors">WorkMatch</a>.
+            All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+          if (dropdown !== content) {
+            dropdown.classList.add('hidden');
+            dropdown.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll to top functionality
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'invisible');
+        scrollTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        header.classList.add('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+        header.classList.remove('bg-white/95');
+      } else {
+        header.classList.remove('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+      }
+    });
+  </script>
+</body>
+</html>

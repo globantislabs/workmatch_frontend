@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <link href="https://theworkmatch.com/img/WorkMatch_Logo.png" rel="icon" type="image/png"/>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>Careers  WorkMatch</title>
+  <meta content="WorkMatch" name="author"/>
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','sans-serif'], poppins: ['Poppins','sans-serif'] },
+          colors: { primary: '#3B82F6' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .mobile-menu { transform:translateX(-100%); transition:transform .3s ease; }
+    .mobile-menu.active { transform:translateX(0); }
+    .reveal { opacity:1;  transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    /* Job card hover */
+    .job-card { transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease; }
+    .job-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(67,56,202,.15); border-color: rgba(99,102,241,.4) !important; }
+
+    /* Modal */
+    #apply-modal { transition: opacity .25s ease; }
+    #apply-modal.hidden { pointer-events:none; }
+
+    /* Shimmer */
+    @keyframes shimmer { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+    .shimmer { background: linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%); background-size:800px 100%; animation: shimmer 1.4s infinite; border-radius:6px; }
+
+    /* Filter pill active */
+    .filter-pill.active { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+
+    /* Scroll progress */
+    #scroll-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,#4f46e5,#818cf8); z-index:9999; transition:width .1s linear; }
+    
+    /* Share menu */
+    .share-menu { animation: fadeInUp 0.2s ease; }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b">
+      <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-8">
+      <button id="close-menu" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block py-2 text-gray-700 hover:text-gray-900">Home</a></li>
+        
+        <!-- Company Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Company <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="company-overview.html" class="block py-1 text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="careers.html" class="block py-1 text-gray-600 hover:text-gray-900">Careers</a></li>
+            <li><a href="clients.html" class="block py-1 text-gray-600 hover:text-gray-900">Clients</a></li>
+          </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="talent-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="block py-1.5 text-gray-600 hover:text-gray-900">CMS Solutions</a></li>
+            <li><a href="managed-services.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Managed Services</a></li>
+            <li><a href="accounting-as-a-service.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Accounting as a Service</a></li>
+          </ul>
+        </li>
+        
+        <!-- Industries Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Industries <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="bfsi.html" class="block py-1 text-gray-600 hover:text-gray-900">BFSI</a></li>
+            <li><a href="healthcare.html" class="block py-1 text-gray-600 hover:text-gray-900">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="block py-1 text-gray-600 hover:text-gray-900">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="block py-1 text-gray-600 hover:text-gray-900">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="block py-1 text-gray-600 hover:text-gray-900">SaaS & Startups</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="blog.html" class="block py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+        <li><a href="hire-talent.html" class="block py-2 text-gray-700 hover:text-gray-900">Hire Developer</a></li>
+        <li><a href="contact.html" class="block py-2 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white shadow-lg" id="main-header">
+    <!-- Main nav -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 lg:h-28">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-9 lg:h-14 w-auto max-w-[130px] lg:max-w-none">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Home</a>
+
+          <!-- Company -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Company <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="company-overview.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-building text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">About Us</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Discover who we are</div>
+                  </div>
+                </a>
+                <a href="careers.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-briefcase text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Careers</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Join our passionate team</div>
+                  </div>
+                </a>
+                <a href="clients.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-handshake text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Clients</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Our trusted partners</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Services <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="talent-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-users text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Talent Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Hire skilled technology professionals with confidence</div>
+                  </div>
+                </a>
+                <a href="custom-software-engineering.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-code text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Custom Software Engineering</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Build scalable and high-performance digital solutions</div>
+                  </div>
+                </a>
+                <a href="cloud-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cloud text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Cloud Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Accelerate growth with secure cloud transformation</div>
+                  </div>
+                </a>
+                <a href="data-ai-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-brain text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Data &amp; AI Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Transform data into intelligent business insights</div>
+                  </div>
+                </a>
+                <a href="cms-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-file-lines text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">CMS Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Manage digital content with flexibility and control</div>
+                  </div>
+                </a>
+                <a href="managed-services.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cogs text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Managed Services</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Ensure seamless IT operations with expert support</div>
+                  </div>
+                </a>
+                <a href="accounting-as-a-service.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-calculator text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Accounting as a Service</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Fully managed finance function for your business</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industries -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Industries <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="bfsi.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-landmark text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">BFSI</span>
+                </a>
+                <a href="healthcare.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-hospital text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Healthcare</span>
+                </a>
+                <a href="retail-ecommerce.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-shopping-cart text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Retail & E-commerce</span>
+                </a>
+                <a href="manufacturing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-industry text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Manufacturing</span>
+                </a>
+                <a href="saas-startups.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-rocket text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">SaaS & Startups</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="blog.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Blog</a>
+
+          <!-- Hire Developer -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Hire Developer <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-max bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-5">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Skills</p>
+                <div class="grid grid-cols-4 gap-1 mb-3">
+                  <a href="hire-talent.html?skill=React.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fab fa-react text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">React.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Salesforce Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-cloud text-blue-400 text-sm w-4"></i><span class="text-sm text-gray-700">Salesforce Developers</span></a>
+                  <a href="hire-talent.html?skill=Node.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-node-js text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Node.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Flutter Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cyan-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-screen text-cyan-500 text-sm w-4"></i><span class="text-sm text-gray-700">Flutter Developers</span></a>
+                  <a href="hire-talent.html?skill=Xamarin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-alt text-purple-500 text-sm w-4"></i><span class="text-sm text-gray-700">Xamarin Developers</span></a>
+                  <a href="hire-talent.html?skill=Python Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-python text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Python Developers</span></a>
+                  <a href="hire-talent.html?skill=AI Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-brain text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">AI Developers</span></a>
+                  <a href="hire-talent.html?skill=Android Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-android text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Android Developers</span></a>
+                  <a href="hire-talent.html?skill=DevOps Engineer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"><i class="fas fa-infinity text-orange-500 text-sm w-4"></i><span class="text-sm text-gray-700">DevOps Developers</span></a>
+                  <a href="hire-talent.html?skill=Shopify Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-shopify text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Shopify Developers</span></a>
+                  <a href="hire-talent.html?skill=Angular Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fab fa-angular text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Angular Developers</span></a>
+                  <a href="hire-talent.html?skill=SAP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-database text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">SAP Developers</span></a>
+                  <a href="hire-talent.html?skill=Blockchain Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-link text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Blockchain Developers</span></a>
+                  <a href="hire-talent.html?skill=Kotlin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-android text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Kotlin Developers</span></a>
+                  <a href="hire-talent.html?skill=Golang Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-code text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Golang Developers</span></a>
+                  <a href="hire-talent.html?skill=Full Stack Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-layer-group text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Full Stack Developers</span></a>
+                  <a href="hire-talent.html?skill=Java Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-java text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Java Developers</span></a>
+                  <a href="hire-talent.html?skill=PHP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-php text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">PHP Developers</span></a>
+                  <a href="hire-talent.html?skill=Azure Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-microsoft text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Azure Developers</span></a>
+                  <a href="skills-listing.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap text-gray-700 font-semibold"><i class="fas fa-arrow-right text-gray-700 text-sm w-4"></i><span class="text-sm">See all 50+ Skills</span></a>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Industry</p>
+                  <div class="grid grid-cols-4 gap-1">
+                    <a href="healthcare.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fas fa-hospital text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Healthcare</span></a>
+                    <a href="hire-talent.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-robot text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">Generative AI</span></a>
+                    <a href="bfsi.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-landmark text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">Fintech</span></a>
+                    <a href="saas-startups.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"><i class="fas fa-rocket text-emerald-500 text-sm w-4"></i><span class="text-sm text-gray-700">Startups</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="ml-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-black transition-all shadow-md hover:shadow-lg">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+<!-- --- HERO --- -->
+<section class="pt-14 lg:pt-40 pb-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle,#818cf8 1px,transparent 1px);background-size:32px 32px;"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 mb-5">
+        <span class="w-6 h-0.5 bg-indigo-400 inline-block"></span> Join Our Team
+      </span>
+      <h1 class="font-poppins text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        Build Your Career<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">With WorkMatch</span>
+      </h1>
+      <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-xl">
+        Join a team of passionate technologists shaping the future of digital engineering, cloud transformation, and IT talent solutions.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#open-positions" class="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg text-sm">
+          View Open Positions <i class="fas fa-arrow-down text-xs"></i>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all text-sm">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- --- WHY WORK WITH US --- -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">
+        <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> Why WorkMatch <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span>
+      </span>
+      <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+        A Place Where <span class="text-blue-600">Talent Thrives</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div class="reveal bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-7 border border-blue-100" style="transition-delay:.05s">
+        <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-5"><i class="fas fa-rocket text-white text-lg"></i></div>
+        <h3 class="font-poppins font-bold text-gray-900 mb-2">Fast Growth</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Accelerate your career with real projects, mentorship, and clear progression paths.</p>
+      </div>
+      <div class="reveal bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-7 border border-purple-100" style="transition-delay:.1s">
+        <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center mb-5"><i class="fas fa-globe text-white text-lg"></i></div>
+        <h3 class="font-poppins font-bold text-gray-900 mb-2">Global Exposure</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Work with international clients across diverse industries and cutting-edge technologies.</p>
+      </div>
+      <div class="reveal bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-7 border border-emerald-100" style="transition-delay:.15s">
+        <div class="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center mb-5"><i class="fas fa-users text-white text-lg"></i></div>
+        <h3 class="font-poppins font-bold text-gray-900 mb-2">Collaborative Culture</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Join a team that values openness, innovation, and continuous learning every day.</p>
+      </div>
+      <div class="reveal bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-7 border border-orange-100" style="transition-delay:.2s">
+        <div class="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center mb-5"><i class="fas fa-medal text-white text-lg"></i></div>
+        <h3 class="font-poppins font-bold text-gray-900 mb-2">Competitive Benefits</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Attractive compensation, flexible work options, and a supportive work environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- --- OPEN POSITIONS --- -->
+<section class="py-20 bg-gray-50" id="open-positions">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-3">
+          <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> Open Roles
+        </span>
+        <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-gray-900">Current Openings</h2>
+      </div>
+      <!-- Search -->
+      <div class="relative w-full md:w-72">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+        <input id="job-search" type="text" placeholder="Search roles..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition-all">
+      </div>
+    </div>
+
+    <!-- Filter pills -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal" id="filter-pills">
+      <button class="filter-pill active px-4 py-1.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-all" data-filter="all">All Roles</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-all" data-filter="Full Time">Full Time</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-all" data-filter="Contract">Contract</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:border-indigo-400 hover:text-indigo-600 transition-all" data-filter="Remote">Remote</button>
+    </div>
+
+    <!-- Skeleton loaders -->
+    <div id="jobs-skeleton" class="space-y-4">
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center gap-4">
+        <div class="flex-1 space-y-3"><div class="shimmer h-5 w-48 rounded"></div><div class="shimmer h-4 w-72 rounded"></div><div class="flex gap-2"><div class="shimmer h-6 w-20 rounded-full"></div><div class="shimmer h-6 w-24 rounded-full"></div></div></div>
+        <div class="shimmer h-10 w-32 rounded-xl"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center gap-4">
+        <div class="flex-1 space-y-3"><div class="shimmer h-5 w-56 rounded"></div><div class="shimmer h-4 w-64 rounded"></div><div class="flex gap-2"><div class="shimmer h-6 w-20 rounded-full"></div><div class="shimmer h-6 w-28 rounded-full"></div></div></div>
+        <div class="shimmer h-10 w-32 rounded-xl"></div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center gap-4">
+        <div class="flex-1 space-y-3"><div class="shimmer h-5 w-40 rounded"></div><div class="shimmer h-4 w-80 rounded"></div><div class="flex gap-2"><div class="shimmer h-6 w-24 rounded-full"></div><div class="shimmer h-6 w-20 rounded-full"></div></div></div>
+        <div class="shimmer h-10 w-32 rounded-xl"></div>
+      </div>
+    </div>
+
+    <!-- Jobs list -->
+    <div id="jobs-list" class="space-y-4 hidden"></div>
+
+    <!-- Empty state -->
+    <div id="jobs-empty" class="hidden text-center py-20">
+      <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mx-auto mb-4"><i class="fas fa-briefcase text-gray-400 text-2xl"></i></div>
+      <h3 class="font-poppins font-bold text-gray-700 mb-2">No positions found</h3>
+      <p class="text-gray-500 text-sm">Try adjusting your search or filter criteria.</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="jobs-error" class="hidden text-center py-20">
+      <div class="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center mx-auto mb-4"><i class="fas fa-exclamation-triangle text-red-400 text-2xl"></i></div>
+      <h3 class="font-poppins font-bold text-gray-700 mb-2">Failed to load positions</h3>
+      <p class="text-gray-500 text-sm mb-4">Please check your connection and try again.</p>
+      <button onclick="fetchJobs()" class="px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-colors">Retry</button>
+    </div>
+  </div>
+</section>
+
+<!-- --- CTA BAND --- -->
+<section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:24px 24px;"></div>
+  <div class="max-w-4xl mx-auto px-6 text-center relative">
+    <h2 class="font-poppins text-3xl lg:text-4xl font-bold text-white mb-4">Don't see the right role?</h2>
+    <p class="text-blue-100 text-lg mb-8">Send us your resume and we'll reach out when a matching opportunity opens up.</p>
+    <button onclick="openApplyModal('General Application')" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-xl text-sm">
+      Submit Open Application <i class="fas fa-arrow-right text-xs"></i>
+    </button>
+  </div>
+</section>
+
+<!-- --- APPLICATION MODAL --- -->
+<div id="apply-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeApplyModal()"></div>
+  <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <!-- Modal header -->
+    <div class="sticky top-0 bg-white border-b border-gray-100 px-8 py-5 flex items-center justify-between rounded-t-2xl z-10">
+      <div>
+        <h3 class="font-poppins font-bold text-gray-900 text-lg">Apply Now</h3>
+        <p id="modal-job-title" class="text-indigo-600 text-sm font-medium mt-0.5"></p>
+      </div>
+      <button onclick="closeApplyModal()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"><i class="fas fa-times"></i></button>
+    </div>
+    <!-- Modal body -->
+    <div class="px-8 py-6">
+      <form id="apply-form" novalidate>
+        <input type="hidden" id="form-position" name="position">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Full Name -->
+          <div class="md:col-span-2">
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+              <input type="text" name="full_name" id="f-name" placeholder="Your full name" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition-all">
+            </div>
+          </div>
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+              <input type="email" name="email" id="f-email" placeholder="you@email.com" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition-all">
+            </div>
+          </div>
+          <!-- Phone -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+              <input type="tel" name="phone" id="f-phone" placeholder="+91 98765 43210" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition-all">
+            </div>
+          </div>
+          <!-- Resume upload -->
+          <div class="md:col-span-2">
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Resume / CV <span class="text-gray-400 font-normal">(PDF, DOC, DOCX)</span></label>
+            <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/50 transition-all group" id="cv-drop-zone">
+              <i class="fas fa-cloud-upload-alt text-2xl text-gray-300 group-hover:text-indigo-400 transition-colors mb-2"></i>
+              <span class="text-sm text-gray-500 group-hover:text-indigo-500 transition-colors" id="cv-label">Click to upload or drag &amp; drop</span>
+              <input type="file" name="cv" id="f-cv" accept=".pdf,.doc,.docx" class="hidden">
+            </label>
+          </div>
+          <!-- Consent -->
+          <div class="md:col-span-2">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="consent" id="f-consent" required class="mt-0.5 w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+              <span class="text-sm text-gray-600">I consent to WorkMatch processing my personal data for recruitment purposes. <span class="text-red-500">*</span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="mt-6">
+          <button type="submit" id="apply-submit-btn" class="w-full py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+            Submit Application <i class="fas fa-paper-plane text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Messages -->
+        <div id="apply-msg" class="hidden mt-4 p-4 rounded-xl text-sm font-medium text-center"></div>
+        <p class="text-center text-xs text-gray-400 mt-4">We'll review your application and get back to you within 35 business days.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- --- JOB DETAIL MODAL --- -->
+<div id="job-detail-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeJobDetail()"></div>
+  <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div class="sticky top-0 bg-white border-b border-gray-100 px-8 py-5 flex items-center justify-between rounded-t-2xl z-10">
+      <h3 class="font-poppins font-bold text-gray-900 text-lg" id="detail-title">Job Details</h3>
+      <div class="flex items-center gap-2">
+        <div class="relative">
+          <button onclick="toggleModalShareMenu(event)" class="w-9 h-9 flex items-center justify-center rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors" title="Share Job">
+            <i class="fas fa-share-alt"></i>
+          </button>
+          <div id="modal-share-menu" class="share-menu hidden absolute top-full right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 p-2 min-w-[140px] z-30">
+            <button onclick="shareModalJob(event, 'linkedin')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <i class="fab fa-linkedin text-blue-600"></i> LinkedIn
+            </button>
+            <button onclick="shareModalJob(event, 'twitter')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-sky-50 hover:text-sky-500 rounded-lg transition-colors">
+              <i class="fab fa-twitter text-sky-500"></i> Twitter
+            </button>
+            <button onclick="shareModalJob(event, 'whatsapp')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors">
+              <i class="fab fa-whatsapp text-green-600"></i> WhatsApp
+            </button>
+            <button onclick="shareModalJob(event, 'copy')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+              <i class="fas fa-link text-gray-500"></i> Copy Link
+            </button>
+          </div>
+        </div>
+        <button onclick="closeJobDetail()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="px-8 py-6" id="detail-body"></div>
+  </div>
+</div>
+
+<!-- --- FOOTER --- -->
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <!-- Main Footer -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 mb-4">
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions.
+          </p>
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-4">
+            <span class="mt-0.5 w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-location-dot text-blue-400 text-xs"></i>
+            </span>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              The Work Match, Old No 178/B1, New No 766/1,<br>
+              Shakthi Towers 1, Thousand Lights,<br>
+              Annasalai, Chennai - 600 002
+            </p>
+          </div>
+          <!-- Contact -->
+          <div class="flex flex-col gap-2 mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-blue-400 text-xs"></i>
+              </span>
+              <a href="mailto:info@theworkmatch.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">info@theworkmatch.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-blue-400 text-xs"></i>
+              </span>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                <a href="tel:+919176351712" class="text-gray-400 hover:text-white transition-colors">+91 91763 51712</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+919344051712" class="text-gray-400 hover:text-white transition-colors">+91 93440 51712</a>
+              </div>
+            </div>
+          </div>
+          <!-- Social -->
+          <div class="flex space-x-3">
+            <a href="https://x.com/theworkmatch" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/theworkmatch/about/?viewAsMember=true" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="talent-solutions.html" class="text-gray-400 hover:text-white transition-colors">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="text-gray-400 hover:text-white transition-colors">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">Data & AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="text-gray-400 hover:text-white transition-colors">CMS Solutions</a></li>
+            <li><a href="accounting-as-a-service.html" class="text-gray-400 hover:text-white transition-colors"> Accounting as a Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="company-overview.html" class="text-gray-400 hover:text-white transition-colors">Company Overview</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="hire-talent.html" class="text-gray-400 hover:text-white transition-colors">Hire Talent</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Industries</h3>
+          <ul class="space-y-3">
+            <li><a href="bfsi.html" class="text-gray-400 hover:text-white transition-colors">BFSI</a></li>
+            <li><a href="healthcare.html" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="text-gray-400 hover:text-white transition-colors">Retail & E-commerce</a></li>
+            <li><a href="manufacturing.html" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="text-gray-400 hover:text-white transition-colors">SaaS & Startups</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 py-6">
+        <div class="text-center">
+          <p class="text-gray-400">
+            Copyright <i class="far fa-copyright"></i> 2026
+            <a href="index.html" class="text-white hover:text-primary transition-colors">WorkMatch</a>.
+            All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+          if (dropdown !== content) {
+            dropdown.classList.add('hidden');
+            dropdown.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll to top functionality
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'invisible');
+        scrollTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        header.classList.add('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+        header.classList.remove('bg-white/95');
+      } else {
+        header.classList.remove('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+      }
+    });
+
+    // Jobs API
+    const JOBS_API = 'https://admin.theworkmatch.com/api/jobs';
+    let allJobs = [];
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    // Fetch jobs from API
+    async function fetchJobs() {
+      const skeleton = document.getElementById('jobs-skeleton');
+      const list = document.getElementById('jobs-list');
+      const empty = document.getElementById('jobs-empty');
+      const error = document.getElementById('jobs-error');
+
+      skeleton.classList.remove('hidden');
+      list.classList.add('hidden');
+      empty.classList.add('hidden');
+      error.classList.add('hidden');
+
+      try {
+        const res = await fetch(JOBS_API);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        allJobs = Array.isArray(data) ? data : (data.jobs || data.data || data.results || []);
+        renderJobs();
+        // Auto-open job from URL param ?job=ID
+        const urlJobId = new URLSearchParams(window.location.search).get('job');
+        if (urlJobId) {
+          const targetJob = allJobs.find(j => String(j.id) === String(urlJobId));
+          if (targetJob) {
+            setTimeout(() => openJobDetail(targetJob.id), 300);
+          } else {
+            showToast('Job not found or no longer available.');
+          }
+        }
+      } catch (err) {
+        console.error('Failed to fetch jobs:', err);
+        skeleton.classList.add('hidden');
+        error.classList.remove('hidden');
+      }
+    }
+
+    // Render jobs list
+    function renderJobs() {
+      const skeleton = document.getElementById('jobs-skeleton');
+      const list = document.getElementById('jobs-list');
+      const empty = document.getElementById('jobs-empty');
+
+      let filtered = allJobs;
+
+      // Apply filter
+      if (currentFilter !== 'all') {
+        filtered = filtered.filter(job => {
+          const type = (job.type || job.employment_type || '').toLowerCase();
+          const location = (job.location || '').toLowerCase();
+          if (currentFilter === 'Full Time') return type.includes('full') || type.includes('permanent');
+          if (currentFilter === 'Contract') return type.includes('contract');
+          if (currentFilter === 'Remote') return location.includes('remote') || type.includes('remote');
+          return true;
+        });
+      }
+
+      // Apply search
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        filtered = filtered.filter(job => 
+          (job.job_title || job.title || '').toLowerCase().includes(q) ||
+          (job.primary_skills || '').toLowerCase().includes(q) ||
+          (job.location || '').toLowerCase().includes(q) ||
+          (job.job_description || job.description || '').toLowerCase().includes(q)
+        );
+      }
+
+      skeleton.classList.add('hidden');
+
+      if (!filtered.length) {
+        list.classList.add('hidden');
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      empty.classList.add('hidden');
+      list.classList.remove('hidden');
+
+      list.innerHTML = filtered.map((job, i) => {
+        const title = job.job_title || job.title || 'Untitled Position';
+        const location = job.location || 'Chennai, India';
+        const type = job.type || job.employment_type || 'Full Time';
+        const experience = job.experience || '';
+        const openings = job.openings || 1;
+        const id = job.id || i;
+
+        return `
+          <div class="job-card bg-white rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center gap-4 reveal" style="transition-delay:${i * 0.05}s">
+            <div class="flex-1">
+              <h3 class="font-poppins font-bold text-gray-900 text-lg mb-1">${title}</h3>
+              <p class="text-gray-500 text-sm mb-3">${location}${experience ? ' • ' + experience : ''}${openings > 1 ? ' • ' + openings + ' openings' : ''}</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-semibold rounded-full">${type}</span>
+                ${location.toLowerCase().includes('remote') ? '<span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-semibold rounded-full">Remote</span>' : ''}
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="relative share-dropdown">
+                <button onclick="toggleJobShareMenu(event, 'job-share-${id}')" class="w-10 h-10 rounded-xl border border-gray-200 text-gray-500 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 flex items-center justify-center transition-colors">
+                  <i class="fas fa-share-alt text-sm"></i>
+                </button>
+                <div id="job-share-${id}" class="share-menu hidden absolute bottom-full right-0 mb-2 bg-white rounded-xl shadow-xl border border-gray-100 p-2 min-w-[140px] z-20">
+                  <button onclick="shareJob(event, 'linkedin', '${id}', '${title.replace(/'/g, "\\'")}')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <i class="fab fa-linkedin text-blue-600"></i> LinkedIn
+                  </button>
+                  <button onclick="shareJob(event, 'twitter', '${id}', '${title.replace(/'/g, "\\'")}')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-sky-50 hover:text-sky-500 rounded-lg transition-colors">
+                    <i class="fab fa-twitter text-sky-500"></i> Twitter
+                  </button>
+                  <button onclick="shareJob(event, 'whatsapp', '${id}', '${title.replace(/'/g, "\\'")}')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors">
+                    <i class="fab fa-whatsapp text-green-600"></i> WhatsApp
+                  </button>
+                  <button onclick="shareJob(event, 'copy', '${id}', '${title.replace(/'/g, "\\'")}')" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-link text-gray-500"></i> Copy Link
+                  </button>
+                </div>
+              </div>
+              <button onclick="openJobDetail('${id}')" class="px-4 py-2.5 border border-gray-200 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-50 transition-colors">
+                View Details
+              </button>
+              <button onclick="openApplyModal('${title.replace(/'/g, "\\'")}')" class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md">
+                Apply Now
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Trigger reveal animation
+      setTimeout(() => {
+        list.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+      }, 50);
+    }
+
+    // Filter pills
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentFilter = pill.dataset.filter;
+        renderJobs();
+      });
+    });
+
+    // Search input
+    const searchInput = document.getElementById('job-search');
+    let searchTimeout;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        searchQuery = e.target.value.trim();
+        renderJobs();
+      }, 300);
+    });
+
+    // Apply Modal
+    function openApplyModal(jobTitle) {
+      document.getElementById('modal-job-title').textContent = jobTitle;
+      document.getElementById('form-position').value = jobTitle;
+      document.getElementById('apply-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeApplyModal() {
+      document.getElementById('apply-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+      document.getElementById('apply-form').reset();
+      document.getElementById('apply-msg').classList.add('hidden');
+      document.getElementById('cv-label').textContent = 'Click to upload or drag & drop';
+    }
+
+    // Job Detail Modal
+    function openJobDetail(jobId) {
+      const job = allJobs.find(j => String(j.id) === String(jobId));
+      if (!job) return;
+
+      const title = job.job_title || job.title || 'Job Details';
+      document.getElementById('detail-title').textContent = title;
+      
+      // Store current job for sharing
+      currentModalJobId = jobId;
+      currentModalJobTitle = title;
+      currentModalJob = job;
+      
+      const body = document.getElementById('detail-body');
+      body.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex flex-wrap gap-3">
+            <span class="px-3 py-1.5 bg-indigo-50 text-indigo-600 text-sm font-semibold rounded-full">${job.type || 'Full Time'}</span>
+            <span class="px-3 py-1.5 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">${job.location || 'Chennai, India'}</span>
+            ${job.experience ? `<span class="px-3 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full">${job.experience}</span>` : ''}
+            ${job.openings ? `<span class="px-3 py-1.5 bg-emerald-50 text-emerald-600 text-sm font-semibold rounded-full">${job.openings} Openings</span>` : ''}
+          </div>
+          
+          ${job.job_description ? `
+            <div>
+              <h4 class="font-poppins font-bold text-gray-900 mb-2">Description</h4>
+              <p class="text-gray-600 text-sm leading-relaxed whitespace-pre-line">${job.job_description}</p>
+            </div>
+          ` : ''}
+          
+          ${job.primary_skills ? `
+            <div>
+              <h4 class="font-poppins font-bold text-gray-900 mb-3">Primary Skills</h4>
+              <div class="flex flex-wrap gap-2">
+                ${job.primary_skills.split(',').map(s => `<span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">${s.trim()}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+          
+          ${job.secondary_skills ? `
+            <div>
+              <h4 class="font-poppins font-bold text-gray-900 mb-3">Secondary Skills</h4>
+              <div class="flex flex-wrap gap-2">
+                ${job.secondary_skills.split(',').map(s => `<span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">${s.trim()}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+          
+          <div class="pt-4 border-t">
+            <button onclick="closeJobDetail(); openApplyModal('${title.replace(/'/g, "\\'")}')" class="w-full py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg text-sm">
+              Apply for this Position
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('job-detail-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeJobDetail() {
+      document.getElementById('job-detail-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // CV File upload
+    const cvInput = document.getElementById('f-cv');
+    const cvLabel = document.getElementById('cv-label');
+    const cvDropZone = document.getElementById('cv-drop-zone');
+
+    cvInput.addEventListener('change', (e) => {
+      if (e.target.files.length) {
+        cvLabel.textContent = e.target.files[0].name;
+        cvDropZone.classList.add('border-indigo-400', 'bg-indigo-50/50');
+      }
+    });
+
+    // Drag and drop
+    cvDropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      cvDropZone.classList.add('border-indigo-400', 'bg-indigo-50/50');
+    });
+
+    cvDropZone.addEventListener('dragleave', () => {
+      if (!cvInput.files.length) {
+        cvDropZone.classList.remove('border-indigo-400', 'bg-indigo-50/50');
+      }
+    });
+
+    cvDropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (e.dataTransfer.files.length) {
+        cvInput.files = e.dataTransfer.files;
+        cvLabel.textContent = e.dataTransfer.files[0].name;
+      }
+    });
+
+    // Form submission
+    document.getElementById('apply-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const btn = document.getElementById('apply-submit-btn');
+      const msg = document.getElementById('apply-msg');
+      const form = e.target;
+      
+      // Basic validation
+      if (!form.full_name.value || !form.email.value || !form.phone.value || !form.consent.checked) {
+        msg.className = 'mt-4 p-4 rounded-xl text-sm font-medium text-center bg-red-50 text-red-600';
+        msg.textContent = 'Please fill in all required fields.';
+        msg.classList.remove('hidden');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Submitting...';
+
+      try {
+        const formData = new FormData(form);
+        const res = await fetch('https://admin.theworkmatch.com/api/applications/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!res.ok) throw new Error('Submission failed');
+
+        msg.className = 'mt-4 p-4 rounded-xl text-sm font-medium text-center bg-emerald-50 text-emerald-600';
+        msg.textContent = 'Application submitted successfully! We\'ll be in touch soon.';
+        msg.classList.remove('hidden');
+        form.reset();
+        cvLabel.textContent = 'Click to upload or drag & drop';
+        cvDropZone.classList.remove('border-indigo-400', 'bg-indigo-50/50');
+      } catch (err) {
+        msg.className = 'mt-4 p-4 rounded-xl text-sm font-medium text-center bg-red-50 text-red-600';
+        msg.textContent = 'Failed to submit. Please try again or contact us directly.';
+        msg.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = 'Submit Application <i class="fas fa-paper-plane text-xs"></i>';
+      }
+    });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scroll-progress').style.width = scrolled + '%';
+    });
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Initialize
+    fetchJobs();
+
+    // Share functionality for jobs
+    let currentModalJobId = null;
+    let currentModalJobTitle = null;
+    let currentModalJob = null;
+
+    function toggleJobShareMenu(event, menuId) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      // Close all other share menus
+      document.querySelectorAll('.share-menu').forEach(menu => {
+        if (menu.id !== menuId) menu.classList.add('hidden');
+      });
+      
+      const menu = document.getElementById(menuId);
+      menu.classList.toggle('hidden');
+    }
+
+    function formatJobShareText(job, includeEmojis = false) {
+      const title = job.job_title || job.title || 'Job Opening';
+      const location = job.location || 'Chennai, India';
+      const type = job.type || job.employment_type || 'Full Time';
+      const experience = job.experience || '';
+      const openings = job.openings || 1;
+      const description = job.job_description || job.description || '';
+      const primarySkills = job.primary_skills || '';
+      const secondarySkills = job.secondary_skills || '';
+      
+      let text = '';
+      
+      if (includeEmojis) {
+        text += '\uD83D\uDE80 ' + title + '\n\n';
+        text += '\uD83D\uDCCD Location: ' + location + '\n';
+        text += '\uD83D\uDCBC Type: ' + type + '\n';
+        if (experience) text += '\u2B50 Experience: ' + experience + '\n';
+        if (openings > 1) text += '\uD83D\uDC65 Openings: ' + openings + '\n';
+        text += '\n';
+        
+        if (description) {
+          const shortDesc = description.length > 300 ? description.substring(0, 300) + '...' : description;
+          text += '\uD83D\uDCCB Description:\n' + shortDesc + '\n\n';
+        }
+        
+        if (primarySkills) {
+          text += '\uD83D\uDD27 Primary Skills: ' + primarySkills + '\n';
+        }
+        
+        if (secondarySkills) {
+          text += '\u2699\uFE0F Secondary Skills: ' + secondarySkills + '\n';
+        }
+        
+        text += '\n\u2728 Apply now at WorkMatch! \uD83C\uDFAF';
+      } else {
+        text += title + '\n\n';
+        text += 'Location: ' + location + '\n';
+        text += 'Type: ' + type + '\n';
+        if (experience) text += 'Experience: ' + experience + '\n';
+        if (openings > 1) text += 'Openings: ' + openings + '\n';
+        text += '\n';
+        
+        if (description) {
+          const shortDesc = description.length > 300 ? description.substring(0, 300) + '...' : description;
+          text += 'Description:\n' + shortDesc + '\n\n';
+        }
+        
+        if (primarySkills) {
+          text += 'Primary Skills: ' + primarySkills + '\n';
+        }
+        
+        if (secondarySkills) {
+          text += 'Secondary Skills: ' + secondarySkills + '\n';
+        }
+        
+        text += '\nApply now at WorkMatch!';
+      }
+      
+      return text;
+    }
+
+    function shareJob(event, platform, jobId, jobTitle) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      const job = allJobs.find(j => j.id === jobId);
+      if (!job) return;
+      
+      // Always use the production domain
+      const jobUrl = `https://theworkmatch.com/careers.html`;
+      const shareTextWithEmojis = formatJobShareText(job, true);
+      const encodedUrl = encodeURIComponent(jobUrl);
+      
+      let shareUrl = '';
+      
+      switch(platform) {
+        case 'linkedin': {
+          const liText = `🚀 We're Hiring: ${jobTitle} at WorkMatch!\n\n📍 ${job.location || 'Chennai'} | 💼 ${job.type || 'Full Time'}${job.experience ? ' | ⭐ ' + job.experience : ''}\n\nWe're looking for talented professionals to join our growing team. If you're passionate about technology and innovation, this is your opportunity!\n\n👉 Apply now: ${jobUrl}\n\n#Hiring #Jobs #WorkMatch #Careers #TechJobs`;
+          shareUrl = `https://linkedin.com/sharing/share-offsite/?url=${encodedUrl}&summary=${encodeURIComponent(liText)}`;
+          break;
+        }
+        case 'whatsapp': {
+          const wa = job;
+          const waTitle = wa.job_title || wa.title || 'Job Opening';
+          const waLoc = wa.location || 'Chennai, India';
+          const waType = wa.type || wa.employment_type || 'Full Time';
+          const waExp = wa.experience || '';
+          const waSkills = wa.primary_skills || '';
+          const waDesc = wa.job_description || wa.description || '';
+          const waShortDesc = waDesc.length > 200 ? waDesc.substring(0, 200) + '...' : waDesc;
+          let waText = '*We are Hiring!*\n\n';
+          waText += '*' + waTitle + '*\n\n';
+          waText += '*Location:* ' + waLoc + '\n';
+          waText += '*Type:* ' + waType + '\n';
+          if (waExp) waText += '*Experience:* ' + waExp + '\n';
+          if (waSkills) waText += '*Skills:* ' + waSkills + '\n';
+          if (waShortDesc) waText += '\n' + waShortDesc + '\n';
+          waText += '\n*Apply now:* ' + jobUrl;
+          shareUrl = 'https://wa.me/?text=' + encodeURIComponent(waText);
+          break;
+        }
+        case 'copy':
+          const copyText = `${shareTextWithEmojis}\n\n${jobUrl}`;
+          navigator.clipboard.writeText(copyText).then(() => {
+            showToast('Job details copied to clipboard!');
+          }).catch(() => showToast('Failed to copy'));
+          return;
+      }
+      
+      if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=500');
+    }
+
+    function toggleModalShareMenu(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      const menu = document.getElementById('modal-share-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function shareModalJob(event, platform) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      if (!currentModalJob) return;
+      
+      // Always use the production domain
+      const jobUrl = `https://theworkmatch.com/careers.html`;
+      const shareTextWithEmojis = formatJobShareText(currentModalJob, true);
+      const encodedUrl = encodeURIComponent(jobUrl);
+      
+      let shareUrl = '';
+      
+      switch(platform) {
+        case 'linkedin': {
+          const liText = `🚀 We're Hiring: ${currentModalJobTitle} at WorkMatch!\n\n📍 ${currentModalJob.location || 'Chennai'} | 💼 ${currentModalJob.type || 'Full Time'}${currentModalJob.experience ? ' | ⭐ ' + currentModalJob.experience : ''}\n\nWe're looking for talented professionals to join our growing team. If you're passionate about technology and innovation, this is your opportunity!\n\n👉 Apply now: ${jobUrl}\n\n#Hiring #Jobs #WorkMatch #Careers #TechJobs`;
+          shareUrl = `https://linkedin.com/sharing/share-offsite/?url=${encodedUrl}&summary=${encodeURIComponent(liText)}`;
+          break;
+        }
+        case 'whatsapp': {
+          const wa = currentModalJob;
+          const waTitle = wa.job_title || wa.title || 'Job Opening';
+          const waLoc = wa.location || 'Chennai, India';
+          const waType = wa.type || wa.employment_type || 'Full Time';
+          const waExp = wa.experience || '';
+          const waSkills = wa.primary_skills || '';
+          const waDesc = wa.job_description || wa.description || '';
+          const waShortDesc = waDesc.length > 200 ? waDesc.substring(0, 200) + '...' : waDesc;
+          let waText = '*We are Hiring!*\n\n';
+          waText += '*' + waTitle + '*\n\n';
+          waText += '*Location:* ' + waLoc + '\n';
+          waText += '*Type:* ' + waType + '\n';
+          if (waExp) waText += '*Experience:* ' + waExp + '\n';
+          if (waSkills) waText += '*Skills:* ' + waSkills + '\n';
+          if (waShortDesc) waText += '\n' + waShortDesc + '\n';
+          waText += '\n*Apply now:* ' + jobUrl;
+          shareUrl = 'https://wa.me/?text=' + encodeURIComponent(waText);
+          break;
+        }
+          break;
+        case 'copy':
+          const copyText = `${shareTextWithEmojis}\n\n${jobUrl}`;
+          navigator.clipboard.writeText(copyText).then(() => {
+            showToast('Job details copied to clipboard!');
+            document.getElementById('modal-share-menu').classList.add('hidden');
+          }).catch(() => showToast('Failed to copy'));
+          return;
+      }
+      
+      if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=500');
+        document.getElementById('modal-share-menu').classList.add('hidden');
+      }
+    }
+
+    function showLinkedInInstructions() {
+      // Remove existing modal if any
+      const existing = document.getElementById('linkedin-instructions-modal');
+      if (existing) existing.remove();
+      
+      // Create modal
+      const modal = document.createElement('div');
+      modal.id = 'linkedin-instructions-modal';
+      modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm';
+      modal.innerHTML = `
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md">
+          <div class="p-6 text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fab fa-linkedin text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="font-poppins font-bold text-gray-900 text-lg mb-2">Share on LinkedIn</h3>
+            <p class="text-gray-600 text-sm mb-4">Job details copied to clipboard! 📋</p>
+            <div class="bg-gray-50 rounded-xl p-4 mb-4 text-left">
+              <p class="text-xs text-gray-500 mb-2">Next steps:</p>
+              <ol class="text-sm text-gray-700 space-y-1">
+                <li>1. Click "Open LinkedIn" below</li>
+                <li>2. Create a new post</li>
+                <li>3. Paste (Ctrl+V) the job details</li>
+                <li>4. Add your thoughts and publish!</li>
+              </ol>
+            </div>
+            <div class="flex gap-3">
+              <button onclick="closeLinkedInModal()" class="flex-1 px-4 py-2.5 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors text-sm font-medium">
+                Cancel
+              </button>
+              <button onclick="openLinkedInAndClose()" class="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors text-sm font-medium">
+                Open LinkedIn
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+      
+      // Close on backdrop click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeLinkedInModal();
+        }
+      });
+    }
+
+    function closeLinkedInModal() {
+      const modal = document.getElementById('linkedin-instructions-modal');
+      if (modal) modal.remove();
+    }
+
+    function openLinkedInAndClose() {
+      window.open('https://www.linkedin.com/feed/', '_blank', 'width=800,height=600');
+      closeLinkedInModal();
+    }
+
+    function showToast(message) {
+      const existing = document.querySelector('.share-toast');
+      if (existing) existing.remove();
+      
+      const toast = document.createElement('div');
+      toast.className = 'share-toast fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-xl z-50 text-sm font-medium';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 2000);
+    }
+
+    // Close share menus when clicking outside
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.share-menu').forEach(menu => menu.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>

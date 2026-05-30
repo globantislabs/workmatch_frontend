@@ -1,0 +1,2215 @@
+/* WorkMatch Color Theme - Blue & Green */
+
+:root {
+    --theme-blue: #0ea5e9;
+    --theme-green: #10b981;
+    --theme-blue-dark: #0284c7;
+    --theme-green-dark: #059669;
+}
+
+/* Primary color - Blue */
+.theme-color,
+.text-theme {
+    color: var(--theme-blue) !important;
+}
+
+/* Buttons - Blue */
+.th-btn,
+.btn-primary {
+    background-color: var(--theme-blue) !important;
+    border-color: var(--theme-blue) !important;
+}
+
+.th-btn:hover,
+.btn-primary:hover {
+    background-color: var(--theme-blue-dark) !important;
+    border-color: var(--theme-blue-dark) !important;
+}
+
+/* Links - Blue */
+a {
+    color: var(--theme-blue);
+}
+
+a:hover {
+    color: var(--theme-green);
+}
+
+/* Sub-titles and accents - Blue and Bold */
+.sub-title,
+.section-subtitle {
+    color: var(--theme-blue) !important;
+    font-weight: 700 !important;
+}
+
+/* Icons - Alternating Blue & Green */
+.feature-card:nth-child(odd) .feature-card-icon,
+.service-card:nth-child(odd) .shape-icon {
+    background-color: transparent !important;
+}
+
+.feature-card:nth-child(even) .feature-card-icon,
+.service-card:nth-child(even) .shape-icon {
+    background-color: transparent !important;
+}
+
+/* Override any nth-child background patterns */
+.feature-card:nth-child(2n+1) .feature-card-icon,
+.service-card:nth-child(2n+1) .shape-icon,
+.feature-card:nth-child(2n) .feature-card-icon,
+.service-card:nth-child(2n) .shape-icon {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* SVG Icon Styling - Alternating Blue & Green */
+.feature-card:nth-child(odd) .feature-card-icon svg,
+.feature-card:nth-child(odd) .feature-card-icon img,
+.service-card:nth-child(odd) .shape-icon svg,
+.service-card:nth-child(odd) .shape-icon img,
+.about-feature:nth-child(odd) .about-feature_icon svg,
+.about-feature:nth-child(odd) .about-feature_icon img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.feature-card:nth-child(even) .feature-card-icon svg,
+.feature-card:nth-child(even) .feature-card-icon img,
+.service-card:nth-child(even) .shape-icon svg,
+.service-card:nth-child(even) .shape-icon img,
+.about-feature:nth-child(even) .about-feature_icon svg,
+.about-feature:nth-child(even) .about-feature_icon img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* SVG icon sizing */
+.feature-card-icon svg,
+.feature-card-icon img,
+.shape-icon svg,
+.shape-icon img,
+.about-feature_icon svg,
+.about-feature_icon img,
+.box-icon svg,
+.box-icon img {
+    width: 60px !important;
+    height: 60px !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Remove any background from SVG containers */
+.feature-card-icon,
+.shape-icon,
+.about-feature_icon,
+.box-icon {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Ensure all icons are visible */
+i[class*="fa-"],
+i[class*="icon"],
+svg,
+img[src*="icon"],
+img[src*="svg"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Make sure icon containers don't hide content */
+[class*="icon"],
+[class*="Icon"] {
+    overflow: visible !important;
+}
+
+/* Hover effects - Blue */
+.service-card:hover,
+.feature-card:hover {
+    border-color: var(--theme-blue) !important;
+}
+
+/* Check icons - Green */
+.checklist i,
+.fa-check,
+.fa-check-circle {
+    color: var(--theme-green) !important;
+}
+
+/* Background theme - Blue */
+.bg-theme {
+    background-color: var(--theme-blue) !important;
+}
+
+/* Scroll to top - Gradient */
+.scroll-top {
+    background: linear-gradient(135deg, var(--theme-green) 0%, var(--theme-blue) 100%) !important;
+}
+
+.scroll-top:hover {
+    background: linear-gradient(135deg, var(--theme-blue) 0%, var(--theme-green) 100%) !important;
+}
+
+/* Navigation hover - Blue */
+.main-menu > ul > li > a:hover,
+.main-menu > ul > li.active > a {
+    color: var(--theme-blue) !important;
+}
+
+/* Footer - Keep original dark style, just update link colors */
+.footer-wrapper a:hover {
+    color: var(--theme-blue) !important;
+}
+
+/* Footer logo - Small size */
+.footer-wrapper .about-logo img,
+.footer-wrapper .footer-logo img,
+.footer-widget .about-logo img {
+    max-width: 100px !important;
+    width: 100px !important;
+    height: auto !important;
+}
+
+/* Footer text - White color */
+.footer-wrapper,
+.footer-wrapper *,
+.footer-wrapper p,
+.footer-wrapper h3,
+.footer-wrapper h4,
+.footer-wrapper h5,
+.footer-wrapper h6,
+.footer-wrapper span,
+.footer-wrapper li,
+.footer-wrapper a,
+.footer-wrapper .about-text,
+.footer-wrapper .widget_title,
+.footer-wrapper .copyright-text,
+.footer-wrapper .menu li a {
+    color: #ffffff !important;
+}
+
+.footer-wrapper a:hover {
+    color: var(--theme-blue) !important;
+}
+
+/* Social icons - Alternating */
+.th-social a:nth-child(odd):hover {
+    background-color: var(--theme-blue) !important;
+}
+
+.th-social a:nth-child(even):hover {
+    background-color: var(--theme-green) !important;
+}
+
+/* Form focus - Blue */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--theme-blue) !important;
+    box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.25) !important;
+}
+
+/* Progress bars - Blue */
+.progress-bar {
+    background-color: var(--theme-blue) !important;
+}
+
+/* Badges - Green */
+.badge {
+    background-color: var(--theme-green) !important;
+}
+
+/* Counter numbers - Alternating */
+.counter-card:nth-child(odd) .counter-number {
+    color: var(--theme-blue) !important;
+}
+
+.counter-card:nth-child(even) .counter-number {
+    color: var(--theme-green) !important;
+}
+
+/* Remove all background shades and overlays */
+[data-bg-src],
+.bg-smoke,
+.bg-smoke2,
+.bg-smoke3,
+section[class*="bg-"],
+div[class*="bg-"] {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+/* Remove overlays */
+.overlay,
+.th-overlay,
+[class*="overlay"]::before,
+[class*="overlay"]::after {
+    background: transparent !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+/* Keep only white backgrounds for sections */
+.space,
+.space-top,
+.space-bottom,
+section {
+    background: #ffffff !important;
+}
+
+/* Remove shape mockups and decorative backgrounds */
+.shape-mockup {
+    opacity: 0 !important;
+    display: none !important;
+}
+
+/* Clean section backgrounds */
+.service-sec,
+.about-sec,
+.why-sec,
+.feature-sec,
+.process-sec,
+.cta-sec {
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Remove gradient backgrounds */
+[class*="gradient"] {
+    background: #ffffff !important;
+}
+
+/* Keep footer dark */
+.footer-wrapper {
+    background: #1e293b !important;
+}
+
+/* Remove background shading behind SVG icons */
+.feature-card-icon,
+.service-icon,
+.box-icon,
+.about-feature_icon,
+.shape-icon,
+.process-card_icon,
+.choose-feature3_icon {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Remove decorative background shapes only */
+.shape-mockup,
+.bg-shape img,
+img[src*="shape"],
+img[src*="bg_pattern"],
+img[src*="bg_overlay"] {
+    display: none !important;
+}
+
+/* Keep SVG icons visible with no background */
+.feature-card-icon svg,
+.service-icon svg,
+.box-icon svg,
+.about-feature_icon svg,
+.shape-icon svg,
+.icon-masking svg,
+.th-social svg {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Remove background from icon containers */
+.feature-card-icon img,
+.service-icon img,
+.box-icon img,
+.about-feature_icon img,
+.shape-icon img {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Clean icon wrapper backgrounds */
+.icon-box,
+.feature-box,
+.service-box {
+    background: transparent !important;
+}
+
+/* Remove hover background shades on cards */
+.service-card:hover,
+.feature-card:hover,
+.blog-card:hover,
+.team-card:hover,
+.project-card:hover,
+.about-feature:hover,
+.choose-feature3:hover,
+.process-card:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Remove hover effects on icon backgrounds */
+.service-card:hover .shape-icon,
+.feature-card:hover .feature-card-icon,
+.service-card:hover .service-icon {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Remove all box shadows */
+.service-card,
+.feature-card,
+.blog-card,
+.team-card,
+.project-card,
+.about-feature,
+.choose-feature3,
+.process-card {
+    box-shadow: none !important;
+}
+
+/* Remove hover transform effects that might show backgrounds */
+.service-card:hover,
+.feature-card:hover {
+    transform: none !important;
+}
+
+/* Remove background from card containers */
+.service-card,
+.feature-card {
+    background: #ffffff !important;
+}
+
+.service-card:hover,
+.feature-card:hover {
+    background: #ffffff !important;
+}
+
+
+/* About section styling */
+.about-sec-12 {
+    max-width: 1760px;
+    margin: auto;
+    background-color: #EFF1F900;
+}
+
+
+/* Hide newsletter subscription section */
+.footer-top,
+.footer-newsletter,
+.newsletter-form,
+.newsletter-title {
+    display: none !important;
+}
+
+
+/* Hide all action buttons */
+.th-btn,
+.btn,
+.link-btn,
+.read-more,
+.view-more,
+.learn-more,
+a[href*="learn-more"],
+a[href*="read-more"],
+a[href*="view-more"],
+.blog-card .th-btn,
+.service-card .th-btn,
+.feature-card .th-btn,
+.btn-wrap,
+.btn-group {
+    display: none !important;
+}
+
+/* Hide like buttons */
+.like-btn,
+.liked-btn,
+[class*="like"],
+[class*="liked"] {
+    display: none !important;
+}
+
+
+/* Hide video icons and play buttons */
+.play-btn,
+.video-btn,
+.popup-video,
+[class*="video-icon"],
+[class*="play-icon"],
+.video-play-btn,
+a[href*="youtube"],
+a[href*="vimeo"],
+a[href*="video"] {
+    display: none !important;
+}
+
+/* Hide video overlays */
+.video-overlay,
+[class*="video-overlay"] {
+    display: none !important;
+}
+
+
+/* Hide all contact information */
+.contact-info,
+.contact-info-wrap,
+.office-address,
+.contact-details,
+[class*="contact-info"],
+[class*="office-info"] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide specific contact elements */
+a[href*="tel:"],
+a[href*="mailto:partners"],
+a[href*="mailto:alliances"],
+.call-btn,
+.email-link,
+[href*="+1"],
+[href*="Burnsville"] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide contact sections in sidebars */
+.widget_contact,
+.contact-widget,
+.info-widget {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide address and phone text */
+p:has(a[href*="tel:"]),
+p:has(a[href*="mailto:partners"]),
+p:has(a[href*="mailto:alliances"]),
+li:has(a[href*="tel:"]),
+li:has(a[href*="mailto:partners"]) {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove space from parent containers */
+section:has(.contact-info),
+div:has(.contact-info-wrap) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+/* Add shadows to feature cards */
+.feature-card,
+.feature-card.style6,
+.feature-card.style2,
+.service-card,
+.about-feature,
+.about-feature.style3 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.feature-card:hover,
+.feature-card.style6:hover,
+.feature-card.style2:hover,
+.service-card:hover,
+.about-feature:hover,
+.about-feature.style3:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* Feature card wrappers */
+.feature-card-wrap,
+.feature-card-wrap2,
+.feature-card_wrapper {
+    transition: all 0.3s ease !important;
+}
+
+
+/* Title area paragraph styling */
+
+
+/* Form input borders */
+.form-control,
+.form-select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="file"],
+textarea,
+select {
+    border: 1px solid #d1d5db !important;
+    border-radius: 4px !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--theme-blue) !important;
+    box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.15) !important;
+}
+
+/* Show submit buttons on forms */
+form .th-btn[type="submit"],
+form button.th-btn[type="submit"],
+.form-btn .th-btn,
+.contact-form .th-btn {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+/* Fix select dropdown icon issue */
+.form-select,
+select.form-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 16px 12px !important;
+    padding-right: 2.5rem !important;
+}
+
+/* Hide the default icon if present */
+.form-group i.fa-chevron-down {
+    display: none !important;
+}
+
+/* Remove black dot from th-video2 */
+.th-video2::after {
+    display: none !important;
+}
+
+/* Justify all paragraph text */
+p {
+    text-align: justify !important;
+}
+
+/* Custom Font Fallbacks - Works without Google Fonts */
+body,
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.sec-title,
+.box-title,
+.title,
+.heading {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+p, span, div, a, li {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Ensure all text elements use system fonts */
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Hide scroll to top button */
+.scroll-top {
+    display: none !important;
+}
+
+/* Fix header menu alignment and spacing */
+.main-menu > ul > li {
+    margin: 0 20px !important;
+    position: relative !important;
+}
+
+.main-menu > ul > li > a {
+    padding: 12px 0 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    color: #374151 !important;
+    transition: all 0.3s ease !important;
+}
+
+.main-menu > ul > li > a:hover {
+    color: var(--theme-blue) !important;
+}
+
+/* Ensure proper spacing for last menu items */
+.main-menu > ul > li:last-child,
+.main-menu > ul > li:nth-last-child(2),
+.main-menu > ul > li:nth-last-child(3) {
+    margin-left: 20px !important;
+    margin-right: 0 !important;
+}
+
+/* Fix menu container alignment */
+.main-menu.style2 {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+.main-menu > ul {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Logo styling */
+.header-logo img {
+    max-height: 45px !important;
+    width: auto !important;
+}
+
+/* Remove space above header */
+body,
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.th-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.sticky-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.menu-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding: 12px 0 !important;
+}
+
+/* Fix footer overlay and positioning issues */
+.footer-wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 60px !important;
+    clear: both !important;
+}
+
+/* Ensure sections don't overlap footer */
+section,
+.about-area3,
+.service-area5 {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Remove footer shape overlays */
+.footer-wrapper .shape-mockup {
+    display: none !important;
+}
+
+/* Clean footer spacing */
+.footer-wrapper .widget-area {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+}
+
+/* Fix any absolute positioning issues */
+[data-pos-for],
+[data-sec-pos] {
+    position: relative !important;
+}
+
+/* Ensure proper stacking context */
+body {
+    position: relative !important;
+}
+
+/* Remove any negative margins that cause overlap */
+.about-area3,
+.service-area5,
+section {
+    margin-bottom: 0 !important;
+}
+
+/* Add proper spacing before footer */
+.footer-wrapper::before {
+    content: "" !important;
+    display: block !important;
+    height: 0 !important;
+    clear: both !important;
+}
+
+/* Dropdown menu spacing and icons */
+.sub-menu li a {
+    line-height: 1.6 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 20px !important;
+    white-space: nowrap !important;
+    justify-content: flex-start !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #4b5563 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Dropdown menu icon styling */
+.sub-menu li a i {
+    font-size: 16px !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    color: var(--theme-blue) !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.sub-menu li a:hover {
+    background-color: #f8fafc !important;
+    color: var(--theme-blue) !important;
+}
+
+.sub-menu li a:hover i {
+    color: var(--theme-green) !important;
+}
+
+/* FontAwesome icons visibility */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+[class*="fa-"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    color: inherit !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Header icons */
+.th-header i,
+.main-menu i,
+.sub-menu i {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+}
+
+/* Load FontAwesome 6 from CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Regular sub-menu styling - Clean & Modern */
+.sub-menu:not(.mega-menu) {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #f1f5f9 !important;
+    z-index: 999 !important;
+    min-width: 240px !important;
+    padding: 12px 0 !important;
+    margin-top: 8px !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.25s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Show sub-menu on parent hover */
+.main-menu > ul > li.menu-item-has-children:hover > .sub-menu:not(.mega-menu) {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.sub-menu:not(.mega-menu) li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sub-menu:not(.mega-menu) li a {
+    color: #475569 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-radius: 6px !important;
+    margin: 2px 8px !important;
+    position: relative !important;
+}
+
+.sub-menu:not(.mega-menu) li a:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    color: var(--theme-blue) !important;
+    transform: translateX(4px) !important;
+}
+
+/* Enhanced dropdown menu spacing and icons */
+.sub-menu:not(.mega-menu) li a {
+    line-height: 1.5 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 12px 16px !important;
+    white-space: nowrap !important;
+    justify-content: flex-start !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #475569 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Enhanced dropdown menu icon styling */
+.sub-menu:not(.mega-menu) li a i {
+    font-size: 16px !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    color: #94a3b8 !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: all 0.2s ease !important;
+}
+
+.sub-menu:not(.mega-menu) li a:hover i {
+    color: var(--theme-blue) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Add subtle animation on dropdown appearance */
+.sub-menu:not(.mega-menu) {
+    transform: translateY(-8px) !important;
+}
+
+.main-menu > ul > li.menu-item-has-children:hover > .sub-menu:not(.mega-menu) {
+    transform: translateY(0) !important;
+}
+
+/* Add separator between menu groups */
+.sub-menu:not(.mega-menu) li:nth-child(3)::after {
+    content: "" !important;
+    display: block !important;
+    height: 1px !important;
+    background: #e2e8f0 !important;
+    margin: 8px 12px !important;
+}
+
+
+
+
+
+/* Hide cursor icon and color scheme */
+.cursor,
+.cursor2,
+.color-scheme-wrap {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+
+/* Mega Menu Styling */
+.sub-menu.mega-menu {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 80px !important;
+    width: 95vw !important;
+    max-width: 1100px !important;
+    display: none !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1000 !important;
+    padding: 20px 25px !important;
+    margin-top: 0px !important;
+    overflow: visible !important;
+    margin-left: 0 !important;
+    right: auto !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Create invisible bridge to prevent menu from disappearing */
+.main-menu > ul > li.menu-item-has-children::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 10px !important;
+    background: transparent !important;
+    z-index: 999 !important;
+}
+
+/* Show mega menu on hover */
+.main-menu > ul > li.menu-item-has-children:hover > .sub-menu.mega-menu,
+.main-menu > ul > li.menu-item-has-children:hover::after,
+.sub-menu.mega-menu:hover {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Keep mega menu visible when hovering over it */
+.sub-menu.mega-menu:hover {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.mega-menu-content {
+    display: block !important;
+}
+
+.mega-menu-section {
+    display: block !important;
+}
+
+.mega-menu-section .skill-subtitle {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #6b7280 !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.mega-menu-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.mega-menu-grid .col-md-3 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+    padding-right: 15px !important;
+}
+
+.mega-menu-item {
+    margin-bottom: 14px !important;
+}
+
+.mega-menu-item a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 8px 0 !important;
+    text-decoration: none !important;
+    color: #1f2937 !important;
+    border-radius: 0px !important;
+    transition: all 0.3s ease !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    text-transform: none !important;
+}
+
+.mega-menu-item a:hover {
+    background-color: transparent !important;
+    transform: none !important;
+    color: var(--theme-blue) !important;
+}
+
+.mega-menu-item a i {
+    font-size: 18px !important;
+    min-width: 24px !important;
+    height: 24px !important;
+    transition: all 0.3s ease !important;
+    flex-shrink: 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.mega-menu-item a:hover i {
+    opacity: 0.8 !important;
+}
+
+/* Mobile responsive mega menu */
+@media (max-width: 1200px) {
+    .sub-menu.mega-menu {
+        left: auto !important;
+        margin-left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        transform: none !important;
+    }
+    
+    .mega-menu-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+    
+    .mega-menu-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub-menu.mega-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        right: auto !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+        padding: 20px 20px !important;
+        transform: none !important;
+    }
+    
+    .mega-menu-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+    }
+    
+    .mega-menu-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .mega-menu-item {
+        font-size: 13px !important;
+    }
+    
+    .mega-menu-section .skill-subtitle {
+        font-size: 10px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Responsive header menu */
+    .main-menu > ul > li {
+        margin: 0 8px !important;
+    }
+    
+    .main-menu > ul > li > a {
+        padding: 6px 0 !important;
+        font-size: 12px !important;
+    }
+    
+    .menu-area {
+        padding: 10px 0 !important;
+    }
+    
+    .header-logo img {
+        max-width: 80px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-menu {
+        display: none !important;
+    }
+    
+    .th-menu-toggle {
+        display: block !important;
+    }
+    
+    .sub-menu.mega-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px 15px !important;
+    }
+    
+    .mega-menu-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .mega-menu-item {
+        font-size: 12px !important;
+    }
+}
+
+/* Fix menu item positioning */
+.main-menu > ul > li.menu-item-has-children {
+    position: relative !important;
+}
+
+.main-menu > ul > li.menu-item-has-children > .sub-menu.mega-menu {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+
+/* Fix dropdown overflow clipping */
+.th-header,
+.sticky-wrapper,
+.menu-area,
+.th-header .container,
+.th-header .row,
+.main-menu,
+.main-menu > ul,
+.main-menu > ul > li {
+    overflow: visible !important;
+}
+
+/* Ensure header doesn't clip dropdowns */
+.th-header {
+    overflow: visible !important;
+    z-index: 999 !important;
+    position: relative !important;
+}
+
+/* Ensure menu wrapper allows overflow */
+.menu-area {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 998 !important;
+}
+
+/* Ensure container allows dropdown overflow */
+.th-container4 {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Ensure row allows dropdown overflow */
+.row {
+    overflow: visible !important;
+}
+
+/* Fix sticky wrapper overflow */
+.sticky-wrapper {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+
+/* COMPREHENSIVE ICON VISIBILITY FIX */
+
+/* All icon elements must be visible */
+i, 
+.icon,
+[class*="icon"],
+[class*="Icon"],
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-duotone,
+.fa-brands {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-style: normal !important;
+}
+
+/* Icon containers */
+.box-icon,
+.feature-card-icon,
+.service-icon,
+.about-feature_icon,
+.shape-icon,
+.process-card_icon,
+.choose-feature3_icon,
+.icon-box,
+.icon-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+}
+
+/* SVG and image icons */
+svg,
+img[src*="icon"],
+img[src*="svg"],
+.icon svg,
+.icon img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-width: 100% !important;
+}
+
+/* FontAwesome specific fixes */
+i[class^="fa-"],
+i[class*=" fa-"] {
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome', sans-serif !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Remove any hiding rules */
+.icon:before,
+.icon:after,
+i:before,
+i:after {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure icon wrappers don't clip */
+.feature-card,
+.service-card,
+.about-feature,
+.process-card {
+    overflow: visible !important;
+}
+
+/* Menu icons */
+.main-menu i,
+.sub-menu i,
+.mega-menu i,
+.th-mobile-menu i {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Social icons */
+.th-social i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Button icons */
+.th-btn i,
+.btn i,
+button i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-left: 5px !important;
+}
+
+/* Footer icons */
+.footer-wrapper i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* Hide extra SVG icons in dropdowns */
+.sub-menu .icon-masking,
+.sub-menu .mask-icon,
+.sub-menu svg:not(.fa-svg-icon),
+.mega-menu .icon-masking,
+.mega-menu .mask-icon {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    pointer-events: none !important;
+}
+
+/* Hide any background SVG shapes in dropdowns */
+.sub-menu img[src*="shape"],
+.sub-menu img[src*="bg"],
+.sub-menu .bg-shape,
+.mega-menu img[src*="shape"],
+.mega-menu img[src*="bg"],
+.mega-menu .bg-shape {
+    display: none !important;
+}
+
+/* Ensure only FontAwesome icons show in menu */
+.sub-menu li a > *:not(i):not(.fa):not([class*="fa-"]):not(:first-child) {
+    display: none !important;
+}
+
+/* Keep text visible */
+.sub-menu li a {
+    display: flex !important;
+    align-items: center !important;
+}
+
+
+/* Hide the blue circular icon/shape */
+.sub-menu::before,
+.sub-menu::after,
+.sub-menu li::before,
+.sub-menu li::after,
+.mega-menu::before,
+.mega-menu::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Hide any decorative shapes or icons */
+.sub-menu .shape,
+.sub-menu [class*="shape"],
+.mega-menu .shape,
+.mega-menu [class*="shape"] {
+    display: none !important;
+}
+
+/* Remove any background images from dropdowns */
+.sub-menu,
+.mega-menu {
+    background-image: none !important;
+}
+
+/* Hide dots or decorative elements */
+.sub-menu .dots,
+.mega-menu .dots,
+.dots {
+    display: none !important;
+}
+
+
+/* Colorful brand icons in mega menu */
+.mega-menu-item a i.fa-react {
+    color: #61DAFB !important;
+}
+
+.mega-menu-item a i.fa-python {
+    color: #3776AB !important;
+}
+
+.mega-menu-item a i.fa-angular {
+    color: #DD0031 !important;
+}
+
+.mega-menu-item a i.fa-layer-group {
+    color: #0ea5e9 !important;
+}
+
+.mega-menu-item a i.fa-salesforce {
+    color: #00A1E0 !important;
+}
+
+.mega-menu-item a i.fa-brain {
+    color: #FF6B6B !important;
+}
+
+.mega-menu-item a i.fa-database {
+    color: #0FAAFF !important;
+}
+
+.mega-menu-item a i.fa-java {
+    color: #007396 !important;
+}
+
+.mega-menu-item a i.fa-node-js {
+    color: #339933 !important;
+}
+
+.mega-menu-item a i.fa-android {
+    color: #3DDC84 !important;
+}
+
+.mega-menu-item a i.fa-bitcoin {
+    color: #F7931A !important;
+}
+
+.mega-menu-item a i.fa-php {
+    color: #777BB4 !important;
+}
+
+.mega-menu-item a i.fa-mobile-screen {
+    color: #02569B !important;
+}
+
+.mega-menu-item a i.fa-gears {
+    color: #CD3D3D !important;
+}
+
+.mega-menu-item a i.fa-code {
+    color: #7F52FF !important;
+}
+
+.mega-menu-item a i.fa-microsoft {
+    color: #0078D4 !important;
+}
+
+.mega-menu-item a i.fa-mobile {
+    color: #3498DB !important;
+}
+
+.mega-menu-item a i.fa-shopify {
+    color: #96BF48 !important;
+}
+
+.mega-menu-item a i.fa-golang {
+    color: #00ADD8 !important;
+}
+
+.mega-menu-item a i.fa-hospital {
+    color: #E74C3C !important;
+}
+
+.mega-menu-item a i.fa-robot {
+    color: #9B59B6 !important;
+}
+
+.mega-menu-item a i.fa-landmark {
+    color: #F39C12 !important;
+}
+
+.mega-menu-item a i.fa-rocket {
+    color: #E67E22 !important;
+}
+
+.mega-menu-item a i.fa-arrow-right {
+    color: var(--theme-blue) !important;
+}
+
+/* Keep icon colors on hover */
+.mega-menu-item a:hover i {
+    opacity: 0.8 !important;
+}
+
+/* Remove unwanted blue circular icons from dropdowns */
+.sub-menu:not(.mega-menu) li a::before,
+.sub-menu:not(.mega-menu) li::before,
+.sub-menu:not(.mega-menu) a::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Remove any pseudo-elements that might be creating extra icons */
+.sub-menu:not(.mega-menu) *::before,
+.sub-menu:not(.mega-menu) *::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Ensure only FontAwesome icons are visible */
+.sub-menu:not(.mega-menu) li a > *:not(i):not([class*="fa-"]) {
+    display: none !important;
+}
+
+/* Hide any background images or decorative elements */
+.sub-menu:not(.mega-menu) li,
+.sub-menu:not(.mega-menu) li a {
+    background-image: none !important;
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+/* Remove bullet points and list markers */
+.sub-menu:not(.mega-menu) ul,
+.sub-menu:not(.mega-menu) li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* FORCE ALL FONTAWESOME ICONS TO BE VISIBLE - STRONGEST PRIORITY */
+
+/* All FontAwesome icon classes */
+i[class*="fa"],
+i.fa,
+i.fas,
+i.far,
+i.fal,
+i.fat,
+i.fab,
+i.fad,
+i.fa-solid,
+i.fa-regular,
+i.fa-light,
+i.fa-thin,
+i.fa-brands,
+i.fa-duotone,
+.fa,
+.fas,
+.far,
+.fal,
+.fat,
+.fab,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-brands,
+.fa-duotone {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-weight: 900 !important;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+    overflow: visible !important;
+}
+
+/* Specific menu icons */
+.main-menu i,
+.sub-menu i,
+.mega-menu i,
+.th-mobile-menu i {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Dropdown menu icons specifically */
+.sub-menu li a i,
+.sub-menu a i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 16px !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    color: var(--theme-blue) !important;
+    flex-shrink: 0 !important;
+}
+
+/* Override any hiding rules for FontAwesome */
+i[class*="fa-"]:not(.hidden) {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure ALL logos are visible */
+.header-logo img,
+.mobile-logo img,
+.about-logo img,
+.footer-logo img,
+img[alt="WorkMatch"],
+img[src*="WorkMatch"] {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Keep icon-masking containers visible for logos */
+.icon-masking {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Only hide the mask-icon spans that create decorative effects */
+.mask-icon,
+span.mask-icon {
+    display: none !important;
+}
+
+/* Remove masking effects but keep containers */
+.icon-masking {
+    -webkit-mask: none !important;
+    mask: none !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+}
+
+/* Only hide specific decorative pseudo-elements, not all */
+.sub-menu li::marker {
+    display: none !important;
+}
+
+/* Remove list-style decorations only */
+.main-menu ul,
+.main-menu li,
+.sub-menu ul,
+.sub-menu li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+}
+
+/* MINIMAL CLEANUP - Remove only problematic elements */
+
+/* Hide data-mask-src attributes that create decorative overlays */
+[data-mask-src] {
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+}
+
+/* Clean dropdown backgrounds */
+.sub-menu:not(.mega-menu) {
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+/* ADDITIONAL ICON VISIBILITY OVERRIDES */
+
+/* Force visibility for all icon containers */
+.box-icon,
+.feature-card-icon,
+.service-icon,
+.about-feature_icon,
+.shape-icon,
+.process-card_icon,
+.choose-feature3_icon,
+.icon-box,
+.icon-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+}
+
+/* Override any CSS that might be hiding icons */
+* i[class*="fa"],
+* .fa,
+* .fas,
+* .far,
+* .fal,
+* .fab {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Specific override for menu icons */
+.main-menu i[class*="fa"],
+.sub-menu i[class*="fa"],
+.mega-menu i[class*="fa"] {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+}
+
+/* Remove any transform or positioning that might hide icons */
+i[class*="fa"] {
+    transform: none !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+
+/* FINAL OVERRIDE - ENSURE ALL ICONS ARE VISIBLE */
+/* This must be at the end to override any conflicting rules */
+
+/* Force all FontAwesome icons to be visible with highest priority */
+i[class*="fa-"],
+i.fa,
+i.fas,
+i.far,
+i.fal,
+i.fab,
+.fa::before,
+.fas::before,
+.far::before,
+.fal::before,
+.fab::before,
+i[class*="fa-"]::before {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+    overflow: visible !important;
+}
+
+/* Specific menu icon overrides */
+.main-menu i,
+.sub-menu i,
+.mega-menu i,
+.th-mobile-menu i,
+.sub-menu li a i,
+.main-menu li a i {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: inherit !important;
+}
+
+/* Override any global hiding rules */
+* {
+    /* Ensure no global rules hide FontAwesome icons */
+}
+
+i[class*="fa-"] {
+    /* Force visibility with maximum specificity */
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Company dropdown icons specifically */
+.sub-menu li a i.fa-solid.fa-building,
+.sub-menu li a i.fa-solid.fa-briefcase,
+.sub-menu li a i.fa-solid.fa-handshake {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--theme-blue) !important;
+}
+
+/* FALLBACK SOLUTION - Add FontAwesome content directly if CSS fails to load */
+
+/* Industries dropdown icons with Unicode fallbacks and colors */
+.sub-menu li a i.fa-landmark::before,
+.sub-menu li a i.fa-solid.fa-landmark::before {
+    content: "\f19c" !important; /* FontAwesome landmark icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #F39C12 !important; /* Gold for banking/finance */
+}
+
+.sub-menu li a i.fa-hospital::before,
+.sub-menu li a i.fa-solid.fa-hospital::before {
+    content: "\f0f8" !important; /* FontAwesome hospital icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #E74C3C !important; /* Red for healthcare */
+}
+
+.sub-menu li a i.fa-shopping-cart::before,
+.sub-menu li a i.fa-solid.fa-shopping-cart::before {
+    content: "\f07a" !important; /* FontAwesome shopping cart icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #27AE60 !important; /* Green for retail/commerce */
+}
+
+.sub-menu li a i.fa-industry::before,
+.sub-menu li a i.fa-solid.fa-industry::before {
+    content: "\f275" !important; /* FontAwesome industry icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #8E44AD !important; /* Purple for manufacturing */
+}
+
+.sub-menu li a i.fa-rocket::before,
+.sub-menu li a i.fa-solid.fa-rocket::before {
+    content: "\f135" !important; /* FontAwesome rocket icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #E67E22 !important; /* Orange for startups */
+}
+
+/* Company dropdown icons with Unicode fallbacks and colors */
+.sub-menu li a i.fa-building::before,
+.sub-menu li a i.fa-solid.fa-building::before {
+    content: "\f1ad" !important; /* FontAwesome building icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #3498DB !important; /* Blue for company/about */
+}
+
+.sub-menu li a i.fa-briefcase::before,
+.sub-menu li a i.fa-solid.fa-briefcase::before {
+    content: "\f0b1" !important; /* FontAwesome briefcase icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #2ECC71 !important; /* Green for careers */
+}
+
+.sub-menu li a i.fa-handshake::before,
+.sub-menu li a i.fa-solid.fa-handshake::before {
+    content: "\f2b5" !important; /* FontAwesome handshake icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #9B59B6 !important; /* Purple for clients/partnerships */
+}
+
+/* Services dropdown icons with Unicode fallbacks and colors */
+.sub-menu li a i.fa-users::before,
+.sub-menu li a i.fa-solid.fa-users::before {
+    content: "\f0c0" !important; /* FontAwesome users icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #1ABC9C !important; /* Teal for talent solutions */
+}
+
+.sub-menu li a i.fa-code::before,
+.sub-menu li a i.fa-solid.fa-code::before {
+    content: "\f121" !important; /* FontAwesome code icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #E74C3C !important; /* Red for custom software */
+}
+
+.sub-menu li a i.fa-cloud::before,
+.sub-menu li a i.fa-solid.fa-cloud::before {
+    content: "\f0c2" !important; /* FontAwesome cloud icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #3498DB !important; /* Blue for cloud solutions */
+}
+
+.sub-menu li a i.fa-brain::before,
+.sub-menu li a i.fa-solid.fa-brain::before {
+    content: "\f5dc" !important; /* FontAwesome brain icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #FF6B6B !important; /* Pink for AI solutions */
+}
+
+.sub-menu li a i.fa-file-lines::before,
+.sub-menu li a i.fa-solid.fa-file-lines::before {
+    content: "\f15c" !important; /* FontAwesome file lines icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #F39C12 !important; /* Orange for CMS solutions */
+}
+
+.sub-menu li a i.fa-cogs::before,
+.sub-menu li a i.fa-solid.fa-cogs::before {
+    content: "\f085" !important; /* FontAwesome cogs icon */
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+    color: #95A5A6 !important; /* Gray for managed services */
+}
+
+/* Ensure all dropdown icons have proper styling */
+.sub-menu li a i::before {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* COMPREHENSIVE CLEAN STYLING - CONSISTENT ACROSS ALL PAGES */
+
+/* Header consistency and alignment */
+.th-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    position: relative !important;
+    z-index: 999 !important;
+}
+
+.menu-area {
+    padding: 15px 0 !important;
+    min-height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Logo consistency */
+.header-logo {
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+}
+
+.header-logo img,
+.mobile-logo img {
+    max-height: 45px !important;
+    width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+/* Main menu alignment and spacing */
+.main-menu {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.main-menu > ul {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 0 !important;
+}
+
+.main-menu > ul > li {
+    position: relative !important;
+    margin: 0 25px !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+}
+
+.main-menu > ul > li > a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px 0 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+    height: 50px !important;
+    line-height: 1.2 !important;
+}
+
+.main-menu > ul > li > a:hover {
+    color: var(--theme-blue) !important;
+}
+
+/* Dropdown menu consistency */
+.sub-menu:not(.mega-menu) {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #f1f5f9 !important;
+    z-index: 999 !important;
+    min-width: 260px !important;
+    padding: 15px 0 !important;
+    margin-top: 8px !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.25s ease !important;
+    transform: translateY(-8px) !important;
+}
+
+.main-menu > ul > li.menu-item-has-children:hover > .sub-menu:not(.mega-menu) {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.sub-menu:not(.mega-menu) li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sub-menu:not(.mega-menu) li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 12px 20px !important;
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border-radius: 6px !important;
+    margin: 2px 10px !important;
+    min-height: 44px !important;
+    line-height: 1.4 !important;
+}
+
+.sub-menu:not(.mega-menu) li a:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    color: var(--theme-blue) !important;
+    transform: translateX(4px) !important;
+}
+
+.sub-menu:not(.mega-menu) li a i {
+    font-size: 16px !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Container and row consistency */
+.th-container4,
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+
+.row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Remove any conflicting margins and paddings */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sticky-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure consistent overflow handling */
+.th-header,
+.sticky-wrapper,
+.menu-area,
+.th-container4,
+.row,
+.main-menu,
+.main-menu > ul,
+.main-menu > ul > li {
+    overflow: visible !important;
+}
+
+/* Mobile menu toggle consistency */
+.th-menu-toggle {
+    display: none !important;
+    background: none !important;
+    border: none !important;
+    font-size: 20px !important;
+    color: #374151 !important;
+    cursor: pointer !important;
+}
+
+/* Responsive design */
+@media (max-width: 1199px) {
+    .main-menu > ul > li {
+        margin: 0 15px !important;
+    }
+    
+    .main-menu > ul > li > a {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-menu {
+        display: none !important;
+    }
+    
+    .th-menu-toggle {
+        display: block !important;
+    }
+    
+    .menu-area {
+        padding: 12px 0 !important;
+        min-height: 60px !important;
+    }
+    
+    .header-logo img {
+        max-height: 40px !important;
+    }
+}
+
+/* Clean up any inherited styles that might cause misalignment */
+.main-menu * {
+    box-sizing: border-box !important;
+}
+
+.sub-menu * {
+    box-sizing: border-box !important;
+}
+
+/* Ensure proper text alignment */
+.main-menu > ul > li > a,
+.sub-menu li a {
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
+/* Remove any transforms or positioning that might cause misalignment */
+.main-menu > ul > li,
+.sub-menu li {
+    transform: none !important;
+    position: relative !important;
+}
+
+/* Ensure consistent line heights */
+.main-menu,
+.sub-menu {
+    line-height: 1.4 !important;
+}
+
+/* Fix any potential flexbox issues */
+.main-menu > ul {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}

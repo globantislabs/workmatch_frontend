@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx"><head>
+  <link href="https://theworkmatch.com/img/WorkMatch_Logo.png" rel="icon" type="image/png">
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <title>WorkMatch - Your Technology &amp; Talent Solutions Partner</title>
+  <meta content="WorkMatch" name="author">
+  <meta content="WorkMatch - Leading provider of technology solutions and talent services" name="description">
+  <meta content="WorkMatch, Technology Solutions, Talent Solutions, IT Services" name="keywords">
+  <meta content="INDEX,FOLLOW" name="robots">
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+  
+  <!-- Favicons -->
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&amp;display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- DotLottie Web Component -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.10/dist/dotlottie-wc.js" type="module"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#3B82F6',
+            'secondary': '#1E40AF',
+            'accent': '#F59E0B',
+            'dark': '#1F2937',
+            'light': '#F8FAFC',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'bounce-slow': 'bounce 2s infinite',
+            'pulse-slow': 'pulse 3s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '1', transform: 'translateY(0)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(50px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .icon-bounce {
+      animation: bounce 2s infinite;
+    }
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-y-0{top:0px;bottom:0px}.bottom-20{bottom:5rem}.left-0{left:0px}.left-10{left:2.5rem}.left-20{left:5rem}.left-\[12\%\]{left:12%}.right-0{right:0px}.right-20{right:5rem}.right-\[12\%\]{right:12%}.top-0{top:0px}.top-20{top:5rem}.top-40{top:10rem}.top-8{top:2rem}.top-full{top:100%}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.z-0{z-index:0}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.ml-4{margin-left:1rem}.mr-3{margin-right:0.75rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-14{margin-top:3.5rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0{height:0px}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-20{height:5rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.h-7{height:1.75rem}.h-0\.5{height:0.125rem}.h-14{height:3.5rem}.min-h-\[80vh\]{min-height:80vh}.w-1\/3{width:33.333333%}.w-10{width:2.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-3\/4{width:75%}.w-4{width:1rem}.w-56{width:14rem}.w-64{width:16rem}.w-72{width:18rem}.w-8{width:2rem}.w-96{width:24rem}.w-auto{width:auto}.w-full{width:100%}.w-max{width:max-content}.w-7{width:1.75rem}.w-9{width:2.25rem}.w-14{width:3.5rem}.w-6{width:1.5rem}.max-w-2xl{max-width:42rem}.max-w-\[130px\]{max-width:130px}.max-w-none{max-width:none}.max-w-xl{max-width:36rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.translate-y-1{--tw-translate-y:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce-slow{animation:bounce 2s infinite}@keyframes fadeIn{0%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}.animate-fade-in{animation:fadeIn 0.6s ease-in-out}@keyframes pulse{50%{opacity:.5}}.animate-pulse-slow{animation:pulse 3s infinite}@keyframes slideUp{0%{opacity:0;transform:translateY(50px)}100%{opacity:1;transform:translateY(0)}}.animate-slide-up{animation:slideUp 0.8s ease-out}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0{gap:0px}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-x-3{column-gap:0.75rem}.gap-y-1{row-gap:0.25rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.divide-blue-500 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(59 130 246 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-sky-100{--tw-border-opacity:1;border-color:rgb(224 242 254 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-blue-200{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.bg-blue-300{--tw-bg-opacity:1;background-color:rgb(147 197 253 / var(--tw-bg-opacity, 1))}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-indigo-200{--tw-bg-opacity:1;background-color:rgb(199 210 254 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-orange-50{--tw-bg-opacity:1;background-color:rgb(255 247 237 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(59 130 246 / 0.1)}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-teal-50{--tw-bg-opacity:1;background-color:rgb(240 253 250 / var(--tw-bg-opacity, 1))}.bg-violet-50{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-50{--tw-gradient-from:#f9fafb var(--tw-gradient-from-position);--tw-gradient-to:rgb(249 250 251 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-blue-50{--tw-gradient-to:#eff6ff var(--tw-gradient-to-position)}.to-indigo-50{--tw-gradient-to:#eef2ff var(--tw-gradient-to-position)}.to-purple-50{--tw-gradient-to:#faf5ff var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-12{padding-left:3rem;padding-right:3rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pb-20{padding-bottom:5rem}.pb-6{padding-bottom:1.5rem}.pl-4{padding-left:1rem}.pt-14{padding-top:3.5rem}.pt-28{padding-top:7rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.text-justify{text-align:justify}.font-inter{font-family:Inter, sans-serif}.font-poppins{font-family:Poppins, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[0\.9\]{line-height:0.9}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.leading-snug{line-height:1.375}.leading-none{line-height:1}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-cyan-500{--tw-text-opacity:1;color:rgb(6 182 212 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-sky-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-teal-500{--tw-text-opacity:1;color:rgb(20 184 166 / var(--tw-text-opacity, 1))}.text-teal-600{--tw-text-opacity:1;color:rgb(13 148 136 / var(--tw-text-opacity, 1))}.text-violet-500{--tw-text-opacity:1;color:rgb(139 92 246 / var(--tw-text-opacity, 1))}.text-violet-600{--tw-text-opacity:1;color:rgb(124 58 237 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-10{opacity:0.1}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-100{--tw-shadow-color:#dbeafe;--tw-shadow:var(--tw-shadow-colored)}.shadow-emerald-100{--tw-shadow-color:#d1fae5;--tw-shadow:var(--tw-shadow-colored)}.shadow-indigo-100{--tw-shadow-color:#e0e7ff;--tw-shadow:var(--tw-shadow-colored)}.shadow-sky-100{--tw-shadow-color:#e0f2fe;--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-50:hover{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-cyan-50:hover{--tw-bg-opacity:1;background-color:rgb(236 254 255 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-50:hover{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-green-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.hover\:bg-orange-50:hover{--tw-bg-opacity:1;background-color:rgb(255 247 237 / var(--tw-bg-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/90:hover{background-color:rgb(59 130 246 / 0.9)}.hover\:bg-purple-50:hover{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-50:hover{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.hover\:text-gray-800:hover{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-primary\/80:hover{color:rgb(59 130 246 / 0.8)}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:visible{visibility:visible}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group\/item:hover .group-hover\/item\:bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.group\/item:hover .group-hover\/item\:text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:col-start-1{grid-column-start:1}.md\:col-end-3{grid-column-end:3}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:mb-0{margin-bottom:0px}.lg\:block{display:block}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:h-14{height:3.5rem}.lg\:h-28{height:7rem}.lg\:w-1\/2{width:50%}.lg\:max-w-none{max-width:none}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1280px){.xl\:col-start-2{grid-column-start:2}.xl\:col-end-3{grid-column-end:3}.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.xl\:text-4xl{font-size:2.25rem;line-height:2.5rem}.xl\:text-7xl{font-size:4.5rem;line-height:1}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-y-0{top:0px;bottom:0px}.bottom-20{bottom:5rem}.left-0{left:0px}.left-10{left:2.5rem}.left-20{left:5rem}.right-0{right:0px}.right-20{right:5rem}.top-0{top:0px}.top-20{top:5rem}.top-40{top:10rem}.top-full{top:100%}.left-\[12\%\]{left:12%}.right-\[12\%\]{right:12%}.top-8{top:2rem}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.z-0{z-index:0}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-2{margin-left:0.5rem}.ml-4{margin-left:1rem}.mr-3{margin-right:0.75rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-16{margin-bottom:4rem}.mb-5{margin-bottom:1.25rem}.mb-8{margin-bottom:2rem}.mt-12{margin-top:3rem}.mt-14{margin-top:3.5rem}.mt-4{margin-top:1rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0\.5{height:0.125rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-20{height:5rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-px{height:1px}.h-0{height:0px}.h-48{height:12rem}.h-7{height:1.75rem}.h-full{height:100%}.min-h-\[80vh\]{min-height:80vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-16{width:4rem}.w-20{width:5rem}.w-4{width:1rem}.w-56{width:14rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-72{width:18rem}.w-8{width:2rem}.w-96{width:24rem}.w-auto{width:auto}.w-full{width:100%}.w-max{width:max-content}.w-7{width:1.75rem}.w-9{width:2.25rem}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-\[130px\]{max-width:130px}.max-w-xl{max-width:36rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.translate-y-1{--tw-translate-y:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce-slow{animation:bounce 2s infinite}@keyframes fadeIn{0%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}.animate-fade-in{animation:fadeIn 0.6s ease-in-out}@keyframes pulse{50%{opacity:.5}}.animate-pulse-slow{animation:pulse 3s infinite}@keyframes slideUp{0%{opacity:0;transform:translateY(50px)}100%{opacity:1;transform:translateY(0)}}.animate-slide-up{animation:slideUp 0.8s ease-out}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0{gap:0px}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.gap-12{gap:3rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.gap-x-3{column-gap:0.75rem}.gap-y-1{row-gap:0.25rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.divide-blue-500 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(59 130 246 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-sky-100{--tw-border-opacity:1;border-color:rgb(224 242 254 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-blue-200{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.bg-blue-300{--tw-bg-opacity:1;background-color:rgb(147 197 253 / var(--tw-bg-opacity, 1))}.bg-blue-400{--tw-bg-opacity:1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-indigo-200{--tw-bg-opacity:1;background-color:rgb(199 210 254 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(59 130 246 / 0.1)}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-gray-50{--tw-gradient-from:#f9fafb var(--tw-gradient-from-position);--tw-gradient-to:rgb(249 250 251 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-indigo-50{--tw-gradient-to:#eef2ff var(--tw-gradient-to-position)}.to-blue-50{--tw-gradient-to:#eff6ff var(--tw-gradient-to-position)}.to-purple-50{--tw-gradient-to:#faf5ff var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-8{padding:2rem}.p-6{padding:1.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-12{padding-left:3rem;padding-right:3rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-16{padding-top:4rem;padding-bottom:4rem}.pb-20{padding-bottom:5rem}.pb-6{padding-bottom:1.5rem}.pl-4{padding-left:1rem}.pt-14{padding-top:3.5rem}.pt-28{padding-top:7rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.text-justify{text-align:justify}.font-inter{font-family:Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-base{font-size:1rem;line-height:1.5rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[0\.9\]{line-height:0.9}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.leading-snug{line-height:1.375}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-blue-100{--tw-text-opacity:1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-cyan-500{--tw-text-opacity:1;color:rgb(6 182 212 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-gray-100{--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-sky-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-teal-500{--tw-text-opacity:1;color:rgb(20 184 166 / var(--tw-text-opacity, 1))}.text-violet-500{--tw-text-opacity:1;color:rgb(139 92 246 / var(--tw-text-opacity, 1))}.text-violet-600{--tw-text-opacity:1;color:rgb(124 58 237 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-10{opacity:0.1}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-100{--tw-shadow-color:#dbeafe;--tw-shadow:var(--tw-shadow-colored)}.shadow-emerald-100{--tw-shadow-color:#d1fae5;--tw-shadow:var(--tw-shadow-colored)}.shadow-indigo-100{--tw-shadow-color:#e0e7ff;--tw-shadow:var(--tw-shadow-colored)}.shadow-sky-100{--tw-shadow-color:#e0f2fe;--tw-shadow:var(--tw-shadow-colored)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-50:hover{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-cyan-50:hover{--tw-bg-opacity:1;background-color:rgb(236 254 255 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-50:hover{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-green-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.hover\:bg-orange-50:hover{--tw-bg-opacity:1;background-color:rgb(255 247 237 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-50:hover{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-50:hover{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/90:hover{background-color:rgb(59 130 246 / 0.9)}.hover\:text-gray-800:hover{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.hover\:text-primary\/80:hover{color:rgb(59 130 246 / 0.8)}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.group:hover .group-hover\:visible{visibility:visible}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group\/item:hover .group-hover\/item\:bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.group\/item:hover .group-hover\/item\:text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:col-start-1{grid-column-start:1}.md\:col-end-3{grid-column-end:3}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:mb-0{margin-bottom:0px}.lg\:block{display:block}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:h-14{height:3.5rem}.lg\:h-28{height:7rem}.lg\:w-1\/2{width:50%}.lg\:max-w-none{max-width:none}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1280px){.xl\:col-span-1{grid-column:span 1 / span 1}.xl\:col-start-2{grid-column-start:2}.xl\:col-end-3{grid-column-end:3}.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.xl\:text-4xl{font-size:2.25rem;line-height:2.5rem}.xl\:text-7xl{font-size:4.5rem;line-height:1}}</style></head>
+
+<body class="font-inter bg-white" data-new-gr-c-s-check-loaded="8.937.0" data-gr-ext-installed="">
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl lg:hidden overflow-y-auto">
+    <div class="flex items-center justify-between p-4 border-b">
+      <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-8">
+      <button id="close-menu" class="text-gray-600 hover:text-gray-800">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li><a href="index.html" class="block py-2 text-gray-700 hover:text-gray-900">Home</a></li>
+        
+        <!-- Company Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Company <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="company-overview.html" class="block py-1 text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="careers.html" class="block py-1 text-gray-600 hover:text-gray-900">Careers</a></li>
+            <li><a href="clients.html" class="block py-1 text-gray-600 hover:text-gray-900">Clients</a></li>
+          </ul>
+        </li>
+        
+        <!-- Services Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="talent-solutions.html" class="block py-1 text-gray-600 hover:text-gray-900">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="block py-1 text-gray-600 hover:text-gray-900">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="block py-1 text-gray-600 hover:text-gray-900">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="block py-1 text-gray-600 hover:text-gray-900">Data &amp; AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="block py-1 text-gray-600 hover:text-gray-900">CMS Solutions</a></li>
+            <li><a href="managed-services.html" class="block py-1 text-gray-600 hover:text-gray-900">Managed Services</a></li>
+            <li><a href="accounting-as-a-service.html" class="block py-1.5 text-gray-600 hover:text-gray-900">Accounting as a Service</a></li>
+          </ul>
+        </li>
+        
+        <!-- Industries Dropdown -->
+        <li class="relative">
+          <button class="mobile-dropdown-btn flex items-center justify-between w-full py-2 text-gray-700 hover:text-gray-900">
+            Industries <i class="fas fa-chevron-down text-sm transition-transform"></i>
+          </button>
+          <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
+            <li><a href="bfsi.html" class="block py-1 text-gray-600 hover:text-gray-900">BFSI</a></li>
+            <li><a href="healthcare.html" class="block py-1 text-gray-600 hover:text-gray-900">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="block py-1 text-gray-600 hover:text-gray-900">Retail &amp; E-commerce</a></li>
+            <li><a href="manufacturing.html" class="block py-1 text-gray-600 hover:text-gray-900">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="block py-1 text-gray-600 hover:text-gray-900">SaaS &amp; Startups</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="blog.html" class="block py-2 text-gray-700 hover:text-gray-900">Blog</a></li>
+        <li><a href="hire-talent.html" class="block py-2 text-gray-700 hover:text-gray-900">Hire Developer</a></li>
+        <li><a href="contact.html" class="block py-2 text-gray-700 hover:text-gray-900">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white shadow-lg bg-gray-100 backdrop-blur-sm shadow-sm" id="main-header">
+    <!-- Main nav -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 lg:h-28">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-9 lg:h-14 w-auto max-w-[130px] lg:max-w-none">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1">
+
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Home</a>
+
+          <!-- Company -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Company <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="company-overview.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-building text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">About Us</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Discover who we are</div>
+                  </div>
+                </a>
+                <a href="careers.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-briefcase text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Careers</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Join our passionate team</div>
+                  </div>
+                </a>
+                <a href="clients.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-handshake text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Clients</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Our trusted partners</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Services <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="talent-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-users text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Talent Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Hire skilled technology professionals with confidence</div>
+                  </div>
+                </a>
+                <a href="custom-software-engineering.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-code text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Custom Software Engineering</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Build scalable and high-performance digital solutions</div>
+                  </div>
+                </a>
+                <a href="cloud-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cloud text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Cloud Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Accelerate growth with secure cloud transformation</div>
+                  </div>
+                </a>
+                <a href="data-ai-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-brain text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Data &amp; AI Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Transform data into intelligent business insights</div>
+                  </div>
+                </a>
+                <a href="cms-solutions.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-file-lines text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">CMS Solutions</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Manage digital content with flexibility and control</div>
+                  </div>
+                </a>
+                <a href="managed-services.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-cogs text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Managed Services</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Ensure seamless IT operations with expert support</div>
+                  </div>
+                </a>
+                <a href="accounting-as-a-service.html" class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-calculator text-gray-500 text-xs transition-colors"></i></span>
+                  <div>
+                    <div class="text-sm font-semibold text-gray-800 group-hover/item:text-gray-900 leading-tight">Accounting as a Service</div>
+                    <div class="text-xs text-gray-400 mt-0.5">Fully managed finance function for your business</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Industries -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Industries <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-2">
+                <a href="bfsi.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-landmark text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">BFSI</span>
+                </a>
+                <a href="healthcare.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-hospital text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Healthcare</span>
+                </a>
+                <a href="retail-ecommerce.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-shopping-cart text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Retail &amp; E-commerce</span>
+                </a>
+                <a href="manufacturing.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-industry text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">Manufacturing</span>
+                </a>
+                <a href="saas-startups.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gray-200 transition-colors"><i class="fas fa-rocket text-gray-500 text-xs transition-colors"></i></span>
+                  <span class="text-sm font-medium text-gray-700 group-hover/item:text-gray-900">SaaS &amp; Startups</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="blog.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">Blog</a>
+
+          <!-- Hire Developer -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-all">
+              Hire Developer <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+            <div class="absolute top-full right-0 mt-1 w-max bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+              <div class="p-5">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Skills</p>
+                <div class="grid grid-cols-4 gap-1 mb-3">
+                  <a href="hire-talent.html?skill=React.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fab fa-react text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">React.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Salesforce Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-cloud text-blue-400 text-sm w-4"></i><span class="text-sm text-gray-700">Salesforce Developers</span></a>
+                  <a href="hire-talent.html?skill=Node.js Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-node-js text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Node.js Developers</span></a>
+                  <a href="hire-talent.html?skill=Flutter Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-cyan-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-screen text-cyan-500 text-sm w-4"></i><span class="text-sm text-gray-700">Flutter Developers</span></a>
+                  <a href="hire-talent.html?skill=Xamarin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors whitespace-nowrap"><i class="fas fa-mobile-alt text-purple-500 text-sm w-4"></i><span class="text-sm text-gray-700">Xamarin Developers</span></a>
+                  <a href="hire-talent.html?skill=Python Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-python text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Python Developers</span></a>
+                  <a href="hire-talent.html?skill=AI Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-brain text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">AI Developers</span></a>
+                  <a href="hire-talent.html?skill=Android Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-android text-green-500 text-sm w-4"></i><span class="text-sm text-gray-700">Android Developers</span></a>
+                  <a href="hire-talent.html?skill=DevOps Engineer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"><i class="fas fa-infinity text-orange-500 text-sm w-4"></i><span class="text-sm text-gray-700">DevOps Developers</span></a>
+                  <a href="hire-talent.html?skill=Shopify Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-green-50 transition-colors whitespace-nowrap"><i class="fab fa-shopify text-green-600 text-sm w-4"></i><span class="text-sm text-gray-700">Shopify Developers</span></a>
+                  <a href="hire-talent.html?skill=Angular Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fab fa-angular text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Angular Developers</span></a>
+                  <a href="hire-talent.html?skill=SAP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-database text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">SAP Developers</span></a>
+                  <a href="hire-talent.html?skill=Blockchain Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-link text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Blockchain Developers</span></a>
+                  <a href="hire-talent.html?skill=Kotlin Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-android text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Kotlin Developers</span></a>
+                  <a href="hire-talent.html?skill=Golang Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-code text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Golang Developers</span></a>
+                  <a href="hire-talent.html?skill=Full Stack Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fas fa-layer-group text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Full Stack Developers</span></a>
+                  <a href="hire-talent.html?skill=Java Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-java text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Java Developers</span></a>
+                  <a href="hire-talent.html?skill=PHP Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-php text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">PHP Developers</span></a>
+                  <a href="hire-talent.html?skill=Azure Developer" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap"><i class="fab fa-microsoft text-gray-600 text-sm w-4"></i><span class="text-sm text-gray-700">Azure Developers</span></a>
+                  <a href="skills-listing.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap text-gray-700 font-semibold"><i class="fas fa-arrow-right text-gray-700 text-sm w-4"></i><span class="text-sm">See all 50+ Skills</span></a>
+                </div>
+                <div class="border-t pt-3">
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 px-1">By Industry</p>
+                  <div class="grid grid-cols-4 gap-1">
+                    <a href="healthcare.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap"><i class="fas fa-hospital text-red-500 text-sm w-4"></i><span class="text-sm text-gray-700">Healthcare</span></a>
+                    <a href="hire-talent.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-violet-50 transition-colors whitespace-nowrap"><i class="fas fa-robot text-violet-500 text-sm w-4"></i><span class="text-sm text-gray-700">Generative AI</span></a>
+                    <a href="bfsi.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"><i class="fas fa-landmark text-blue-500 text-sm w-4"></i><span class="text-sm text-gray-700">Fintech</span></a>
+                    <a href="saas-startups.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-emerald-50 transition-colors whitespace-nowrap"><i class="fas fa-rocket text-emerald-500 text-sm w-4"></i><span class="text-sm text-gray-700">Startups</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="ml-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-black transition-all shadow-md hover:shadow-lg">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-28 pb-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 animate-fade-in">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.3) 1px, transparent 0); background-size: 20px 20px;"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 animate-bounce-slow"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-indigo-200 rounded-full opacity-20 animate-pulse-slow"></div>
+    <div class="absolute bottom-20 left-20 w-12 h-12 bg-blue-300 rounded-full opacity-20 animate-bounce-slow" style="animation-delay: 1s;"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+        <div class="lg:w-1/2 mb-12 lg:mb-0 animate-fade-in">
+          <!-- Tagline Section -->
+          <div class="mb-10">
+            <div class="inline-flex items-center mb-4">
+              <div class="w-8 h-px bg-blue-500 mr-3"></div>
+              <span class="text-blue-500 text-xs font-bold tracking-[0.2em] uppercase">
+                TECHNOLOGY &amp; TALENT SOLUTIONS
+              </span>
+            </div>
+          </div>
+          
+          <!-- Main Heading -->
+          <div class="mb-10">
+            <h1 class="text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.9] tracking-tight mb-6">
+              <span class="text-blue-500 block mb-2">Work Match</span>
+              <span class="text-gray-900 block text-2xl lg:text-3xl xl:text-4xl font-bold">
+                Where Innovation Meets Excellence
+              </span>
+            </h1>
+          </div>
+          
+          <!-- Description -->
+          <div class="mb-12">
+            <p class="text-l lg:text-2l text-justify text-gray-600 leading-relaxed max-w-2xl font-light">
+              Work Match helps organizations transform ideas into impact through 
+              <span class="font-medium text-gray-800">advanced technology services</span> and 
+              <span class="font-medium text-gray-800">high-performing IT talent</span>. Access skilled engineers, cloud architects, and digital specialists ready to power your next big milestone.
+            </p>
+          </div>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-6 items-start">
+            <a href="contact.html" class="group inline-flex items-center justify-center px-12 py-5 bg-blue-500 text-white font-bold text-lg rounded-2xl hover:bg-blue-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+              Get Started
+              <i class="fas fa-arrow-right ml-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </a>
+            <a href="hire-talent.html" class="group inline-flex items-center justify-center px-12 py-5 border-2 border-blue-500 text-blue-500 font-bold text-lg rounded-2xl hover:bg-blue-500 hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
+              Hire Talent
+              <i class="fas fa-users ml-4 group-hover:scale-110 transition-transform duration-300"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 relative animate-slide-up">
+          <div class="flex justify-center items-center">
+            <!-- DotLottie Animation -->
+            <div class="w-full max-w-xl flex justify-center relative">
+              <!-- Glow Effect -->
+              <div class="absolute inset-0 bg-blue-400 rounded-full opacity-10 blur-3xl animate-pulse-slow"></div>
+              <dotlottie-wc src="https://lottie.host/f8b754e4-13bc-4593-b3f5-87f240cbe355/S9jkZmyWoJ.lottie" style="width: 550px; height: 550px;" autoplay="" loop="">
+              </dotlottie-wc>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Trusted Brands + Ticker Section -->
+  <style>
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 28s linear infinite;
+    }
+    .ticker-track-reverse {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll-reverse 28s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes ticker-scroll-reverse {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .ticker-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      padding: 0.4rem 1rem;
+      margin: 0 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 9999px;
+      border: 1.5px solid rgba(0,0,0,0.07);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      background: #fff;
+      color: #374151;
+    }
+    .ticker-item i {
+      font-size: 0.9rem;
+      margin-right: 0.4rem;
+    }
+  </style>
+
+  <section class="pt-14 pb-6 bg-white animate-fade-in">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h3 class="text-2xl font-bold text-gray-800">
+          Trusted by Organizations Across Technology &amp; Talent Solutions
+        </h3>
+      </div>
+    </div>
+
+    <!-- Row 1: Technologies — scroll left -->
+    <div class="ticker-wrap mb-4 ">
+      <div class="ticker-track">
+        <!-- set 1 -->
+        <span class="ticker-item"><i class="fab fa-java text-orange-500"></i>Java</span>
+        <span class="ticker-item"><i class="fab fa-python text-blue-500"></i>Python</span>
+        <span class="ticker-item"><i class="fab fa-microsoft text-purple-600"></i>.NET</span>
+        <span class="ticker-item"><i class="fab fa-react text-cyan-500"></i>React</span>
+        <span class="ticker-item"><i class="fab fa-angular text-red-600"></i>Angular</span>
+        <span class="ticker-item"><i class="fab fa-node-js text-green-600"></i>Node.js</span>
+        <span class="ticker-item"><i class="fab fa-aws text-orange-400"></i>AWS</span>
+        <span class="ticker-item"><i class="fab fa-microsoft text-blue-500"></i>Azure</span>
+        <span class="ticker-item"><i class="fas fa-infinity text-gray-600"></i>DevOps</span>
+        <span class="ticker-item"><i class="fas fa-dharmachakra text-blue-600"></i>Kubernetes</span>
+        <span class="ticker-item"><i class="fab fa-docker text-sky-500"></i>Docker</span>
+        <span class="ticker-item"><i class="fas fa-brain text-violet-600"></i>AI / ML</span>
+        <span class="ticker-item"><i class="fas fa-database text-emerald-600"></i>Data Engineering</span>
+        <span class="ticker-item"><i class="fas fa-shield-halved text-rose-600"></i>Cybersecurity</span>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <span class="ticker-item"><i class="fab fa-java text-orange-500"></i>Java</span>
+        <span class="ticker-item"><i class="fab fa-python text-blue-500"></i>Python</span>
+        <span class="ticker-item"><i class="fab fa-microsoft text-purple-600"></i>.NET</span>
+        <span class="ticker-item"><i class="fab fa-react text-cyan-500"></i>React</span>
+        <span class="ticker-item"><i class="fab fa-angular text-red-600"></i>Angular</span>
+        <span class="ticker-item"><i class="fab fa-node-js text-green-600"></i>Node.js</span>
+        <span class="ticker-item"><i class="fab fa-aws text-orange-400"></i>AWS</span>
+        <span class="ticker-item"><i class="fab fa-microsoft text-blue-500"></i>Azure</span>
+        <span class="ticker-item"><i class="fas fa-infinity text-gray-600"></i>DevOps</span>
+        <span class="ticker-item"><i class="fas fa-dharmachakra text-blue-600"></i>Kubernetes</span>
+        <span class="ticker-item"><i class="fab fa-docker text-sky-500"></i>Docker</span>
+        <span class="ticker-item"><i class="fas fa-brain text-violet-600"></i>AI / ML</span>
+        <span class="ticker-item"><i class="fas fa-database text-emerald-600"></i>Data Engineering</span>
+        <span class="ticker-item"><i class="fas fa-shield-halved text-rose-600"></i>Cybersecurity</span>
+      </div>
+    </div>
+
+    <!-- Row 2: Talent Solutions — scroll right -->
+    <div class="ticker-wrap mb-10">
+      <div class="ticker-track-reverse">
+        <!-- set 1 -->
+        <span class="ticker-item"><i class="fas fa-file-contract text-blue-500"></i>Contract Staffing</span>
+        <span class="ticker-item"><i class="fas fa-user-tie text-indigo-500"></i>Permanent Hiring</span>
+        <span class="ticker-item"><i class="fas fa-laptop-code text-purple-500"></i>Remote Development Teams</span>
+        <span class="ticker-item"><i class="fas fa-code text-teal-500"></i>Dedicated Developers</span>
+        <span class="ticker-item"><i class="fas fa-magnifying-glass text-orange-500"></i>Executive Search</span>
+        <span class="ticker-item"><i class="fas fa-globe text-green-500"></i>Global Talent Hiring</span>
+        <span class="ticker-item"><i class="fas fa-earth-asia text-sky-500"></i>Offshore Development Teams</span>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <span class="ticker-item"><i class="fas fa-file-contract text-blue-500"></i>Contract Staffing</span>
+        <span class="ticker-item"><i class="fas fa-user-tie text-indigo-500"></i>Permanent Hiring</span>
+        <span class="ticker-item"><i class="fas fa-laptop-code text-purple-500"></i>Remote Development Teams</span>
+        <span class="ticker-item"><i class="fas fa-code text-teal-500"></i>Dedicated Developers</span>
+        <span class="ticker-item"><i class="fas fa-magnifying-glass text-orange-500"></i>Executive Search</span>
+        <span class="ticker-item"><i class="fas fa-globe text-green-500"></i>Global Talent Hiring</span>
+        <span class="ticker-item"><i class="fas fa-earth-asia text-sky-500"></i>Offshore Development Teams</span>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="bg-blue-600 py-6">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0 divide-x divide-blue-500">
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">5,000+</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Candidates Screened</div>
+          </div>
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">100+</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Candidates Placed</div>
+          </div>
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">72 Hr</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Profile Turnaround</div>
+          </div>
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">95%</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Client Satisfaction</div>
+          </div>
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">5:1</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Submit-to-Hire Ratio</div>
+          </div>
+          <div class="text-center px-4 py-2">
+            <div class="text-2xl font-black text-white">&lt;1%</div>
+            <div class="text-xs text-blue-100 font-medium mt-0.5 leading-tight">Candidate Drop-Off Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <!-- Services Section -->
+<!-- Services Section -->
+<section class="py-20 bg-gray-50 animate-fade-in overflow-hidden" id="service-sec">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+    #service-sec {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Force all cards to equal height */
+    }
+
+    .svc-card .fill {
+      position: absolute;
+      background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+      border-radius: 50%;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%);
+      transition: width 0.7s ease-out, height 0.7s ease-out;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .svc-card:hover .fill {
+      width: 1000px;
+      height: 1000px;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      filter: blur(25px);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .orb1 { width: 120px; height: 120px; top: -30px; right: -30px; }
+    .orb2 { width: 80px; height: 80px; bottom: 30px; left: 20px; }
+
+    .svc-card:hover .orb {
+      opacity: 1;
+      animation: float-orb 4s infinite ease-in-out;
+    }
+
+    @keyframes float-orb {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-15px) translateX(15px); }
+    }
+
+    .svc-card:hover .svc-title,
+    .svc-card:hover .svc-title a,
+    .svc-card:hover p {
+      color: #ffffff !important;
+    }
+
+    .svc-card:hover .svc-num {
+      color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .svc-card:hover .svc-icon {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .svc-card:hover .svc-icon i {
+      color: #ffffff !important;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal in">
+      <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 mb-4">
+        <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span> Our Services <span class="w-6 h-0.5 bg-indigo-600 inline-block"></span>
+      </span>
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+        Comprehensive <span class="text-blue-600">Technology Solutions</span> For Your Business
+      </h2>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+
+      <!-- Card 1 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.05s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all duration-300">
+            <i class="fas fa-users text-indigo-600 text-xl transition-all"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">01</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="talent-solutions.html">Talent Solutions</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Connect with top-tier, industry-ready professionals for full-time, contract, and project-based roles across IT and emerging technologies.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.1s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-code text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">02</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="custom-software-engineering.html">Custom Software Engineering</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Design, develop, and maintain custom software solutions tailored to your unique business requirements and operational goals.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.15s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-cloud text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">03</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="cloud-solutions.html">Cloud Solutions</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Enterprise-grade cloud solutions for infrastructure modernization, scalability, and operational resilience across environments.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.2s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-brain text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">04</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="data-ai-solutions.html">Data &amp; AI Solutions</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Transform data into actionable insights with advanced analytics, AI-driven solutions, and intelligent decision-making platforms.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.25s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-file-lines text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">05</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="cms-solutions.html">CMS Solutions</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Secure and scalable content management systems that simplify content creation and delivery across digital channels.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 in" style="transition-delay:.3s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-cogs text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">06</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="managed-services.html">Managed Services</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Comprehensive managed services ensuring stability, performance, and continuous optimization of enterprise IT.
+        </p>
+      </div>
+
+      <!-- Card 7 - Centered on bottom row -->
+      <div class="svc-card reveal bg-white rounded-2xl border border-gray-100 p-8 md:col-span-2 xl:col-span-1 xl:col-start-2 in" style="transition-delay:.35s">
+        <div class="fill"></div>
+        <div class="orb orb1"></div><div class="orb orb2"></div>
+        <div class="flex items-start justify-between mb-6 relative z-10">
+          <div class="svc-icon w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center transition-all">
+            <i class="fas fa-calculator text-indigo-600 text-xl"></i>
+          </div>
+          <span class="svc-num font-black text-5xl text-gray-100 leading-none transition-all">07</span>
+        </div>
+        <h3 class="svc-title font-bold text-gray-900 text-lg mb-3 relative z-10 transition-all">
+          <a href="accounting-as-a-service.html">Accounting as a Service</a>
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed relative z-10 text-justify transition-all">
+          Fully managed accounting and finance function for your business from bookkeeping to financial reporting and compliance.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.svc-card');
+      cards.forEach(card => {
+        const fill = card.querySelector('.fill');
+        const updatePos = (e) => {
+          const rect = card.getBoundingClientRect();
+          fill.style.left = `${e.clientX - rect.left}px`;
+          fill.style.top = `${e.clientY - rect.top}px`;
+        };
+        card.addEventListener('mousemove', updatePos);
+        card.addEventListener('mouseleave', updatePos);
+      });
+    });
+  </script>
+</section>
+
+  <!-- About Section -->
+  <section id="about" class="py-12 bg-gradient-to-br from-gray-50 to-blue-50 animate-fade-in">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-stretch justify-between gap-8">
+        <div class="lg:w-1/2">
+          <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            About WorkMatch
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
+            Your Trusted Partner for Digital Transformation
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            We are a trusted partner delivering integrated Talent Solutions and IT Services that help organizations scale efficiently and stay competitive. With a strong focus on quality, reliability, and innovation, we provide industry-ready talent and technology-driven solutions tailored to your business needs.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-3"></i>
+              <span class="text-gray-700">Quality-Driven Execution</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-3"></i>
+              <span class="text-gray-700">Cost Optimization</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-3"></i>
+              <span class="text-gray-700">Faster Delivery</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-3"></i>
+              <span class="text-gray-700">Long-Term Value</span>
+            </div>
+          </div>
+          
+          <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+            Get Started Today
+          </a>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <img src="assets/my_images/About WorkMatch.jpg.jpeg" alt="About WorkMatch" class="w-full h-full object-cover rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose WorkMatch Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          WHY CHOOSE WORKMATCH
+        </span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800">
+          Why <span class="text-gradient">WorkMatch</span> Is The Right Choice For You
+        </h2>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <!-- Left Features -->
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="assets/img/icon/about_2_1.svg" alt="Quality" class="w-8 h-8">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Quality-Driven Execution</h3>
+              <p class="text-gray-600">We deliver high-quality solutions through structured processes and industry best practices.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="assets/img/icon/about_2_2.svg" alt="Speed" class="w-8 h-8">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Faster Delivery</h3>
+              <p class="text-gray-600">Our agile approach and experienced teams ensure rapid time-to-market without compromising quality.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Center Image -->
+        <div class="flex justify-center items-center">
+          <img src="assets/my_images/Why Choose.jpg.jpeg" alt="Why WorkMatch" class="w-full h-full max-w-none object-cover rounded-xl shadow-lg">
+        </div>
+        
+        <!-- Right Features -->
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="assets/img/icon/about_2_3.svg" alt="Cost" class="w-8 h-8">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Cost Optimization</h3>
+              <p class="text-gray-600">We help organizations achieve operational efficiency and maximize ROI through smart technology investments.</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src="assets/img/icon/about_2_4.svg" alt="Value" class="w-8 h-8">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Long-Term Value</h3>
+              <p class="text-gray-600">Our solutions are built for scalability and future growth, ensuring sustainable business success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Industries Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="lg:w-1/2 mb-12 lg:mb-0">
+          <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            Industries We Serve
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
+            WorkMatch Delivers Solutions<br>Across Key Industries
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            We provide technology-driven solutions tailored to the unique needs of Banking &amp; Financial Services, Healthcare, Manufacturing, Retail &amp; E-Commerce, and SaaS &amp; Startups. Our industry expertise enables secure operations, regulatory compliance, and digital innovation.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-check-circle text-green-500 mt-1"></i>
+              <div>
+                <h6 class="font-semibold text-gray-800 mb-1">BFSI Solutions</h6>
+                <p class="text-gray-600 text-sm">Secure, compliant platforms for banking and financial services.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <i class="fas fa-check-circle text-green-500 mt-1"></i>
+              <div>
+                <h6 class="font-semibold text-gray-800 mb-1">Healthcare Technology</h6>
+                <p class="text-gray-600 text-sm">Modernize IT infrastructure and enhance patient care delivery.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+              Contact Us
+            </a>
+            <a href="hire-talent.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+              Hire Talent <i class="fas fa-users text-sm group-hover:scale-110 transition-transform duration-300"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <img src="assets/my_images/2151917458.jpg.jpeg" alt="Industries" class="w-full h-full object-cover rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach Section — 4-Phase Hiring Process -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+
+      <!-- Section Header -->
+      <div class="text-center mb-14">
+        <span class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-xs font-bold tracking-widest uppercase rounded-full border border-blue-100 mb-4">Our Approach</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+          Our Four Phase Approach Makes Hiring <span class="text-blue-600">Seamless</span>
+        </h2>
+        <p class="text-gray-500 text-base max-w-xl mx-auto">From first call to onboarded talent — a proven process built for speed, quality, and zero friction.</p>
+      </div>
+
+      <!-- Phase Steps -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+
+      <div class="hidden lg:block absolute top-8 left-[12%] right-[12%] z-0 h-0 overflow-visible">
+        <style>
+          @keyframes dash-flow {
+            to {
+              stroke-dashoffset: -28;
+            }
+          }
+          .flow-line {
+            stroke-dasharray: 7 7;
+            animation: dash-flow 1.5s linear infinite;
+          }
+          .line-1 { animation-delay: 0s; }
+          .line-2 { animation-delay: 0.5s; }
+          .line-3 { animation-delay: 1s; }
+        </style>
+        <svg width="100%" height="2" preserveAspectRatio="none" overflow="visible" viewBox="0 0 1000 2" class="block">
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6"></path>
+            </marker>
+            <marker id="arrow-indigo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"></path>
+            </marker>
+            <marker id="arrow-sky" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"></path>
+            </marker>
+          </defs>
+
+          <line x1="10" y1="1" x2="290" y2="1" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"></line>
+          <line x1="10" y1="1" x2="290" y2="1" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" class="flow-line line-1"></line>
+
+          <line x1="345" y1="1" x2="625" y2="1" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"></line>
+          <line x1="345" y1="1" x2="625" y2="1" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow-indigo)" class="flow-line line-2"></line>
+
+          <line x1="680" y1="1" x2="960" y2="1" stroke="#bae6fd" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"></line>
+          <line x1="680" y1="1" x2="960" y2="1" stroke="#0ea5e9" stroke-width="2" marker-end="url(#arrow-sky)" class="flow-line line-3"></line>
+        </svg>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center group">
+        <div class="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center mb-5 shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-phone-volume text-white text-xl"></i>
+        </div>
+        <span class="text-xs font-bold text-blue-400 tracking-widest uppercase mb-2">Step 01</span>
+        <h3 class="text-base font-bold text-gray-900 mb-2">Calibration Call</h3>
+        <p class="text-gray-500 text-sm leading-relaxed px-2">Define role requirements, skills, and goals in one focused call.</p>
+        <div class="mt-4 px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full border border-blue-100">⚡ Save 50% time</div>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center group">
+        <div class="w-16 h-16 rounded-2xl bg-indigo-600 flex items-center justify-center mb-5 shadow-lg shadow-indigo-100 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-users-viewfinder text-white text-xl"></i>
+        </div>
+        <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase mb-2">Step 02</span>
+        <h3 class="text-base font-bold text-gray-900 mb-2">Tailored Sourcing</h3>
+        <p class="text-gray-500 text-sm leading-relaxed px-2">You'll only meet top developers — 5:1 submit-to-hire ratio.</p>
+        <div class="mt-4 px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-semibold rounded-full border border-indigo-100">🎯 5:1 ratio</div>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center group">
+        <div class="w-16 h-16 rounded-2xl bg-sky-500 flex items-center justify-center mb-5 shadow-lg shadow-sky-100 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-handshake text-white text-xl"></i>
+        </div>
+        <span class="text-xs font-bold text-sky-400 tracking-widest uppercase mb-2">Step 03</span>
+        <h3 class="text-base font-bold text-gray-900 mb-2">Interview &amp; Hire</h3>
+        <p class="text-gray-500 text-sm leading-relaxed px-2">Just 3–4 interviews to hire developers who start immediately.</p>
+        <div class="mt-4 px-3 py-1 bg-sky-50 text-sky-600 text-xs font-semibold rounded-full border border-sky-100">✅ 3–4 interviews</div>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center group">
+        <div class="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center mb-5 shadow-lg shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-chart-line text-white text-xl"></i>
+        </div>
+        <span class="text-xs font-bold text-emerald-500 tracking-widest uppercase mb-2">Step 04</span>
+        <h3 class="text-base font-bold text-gray-900 mb-2">Success Support</h3>
+        <p class="text-gray-500 text-sm leading-relaxed px-2">Daily check-ins and onboarding management to ensure a strong start.</p>
+        <div class="mt-4 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-semibold rounded-full border border-emerald-100">📊 50% less overhead</div>
+      </div>
+
+    </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg text-sm">
+          Start Hiring Now <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Partner Section -->
+  <section class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="lg:w-1/2 mb-12 lg:mb-0">
+          <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+            Partner With WorkMatch
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
+            Let's Build Something Great Together
+          </h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            We collaborate with organizations, startups, and enterprises to deliver innovative technology solutions and talent strategies that drive growth and digital transformation. By partnering with us, you gain access to our expertise in cloud, AI &amp; data, CMS, managed services, and specialized talent solutions.
+          </p>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Together, we create scalable, efficient, and future-ready solutions that help you stay competitive, accelerate business outcomes, and unlock long-term value.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="partner-with-us.html" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+              Partner With Us
+            </a>
+            <a href="hire-talent.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+              Hire Talent <i class="fas fa-users text-sm group-hover:scale-110 transition-transform duration-300"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <img src="assets/my_images/handshake-businessmen.jpg" alt="Partner with us" class="w-full h-full object-cover rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog Section -->
+  <style>
+    .blog-card-reveal {
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .blog-card-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .blog-header-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .blog-header-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .blog-img-wrap {
+      overflow: hidden;
+    }
+    .blog-img-wrap img {
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .blog-card:hover .blog-img-wrap img {
+      transform: scale(1.07);
+    }
+    .blog-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #3b82f6;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .blog-skeleton {
+      background: linear-gradient(90deg, #f0f4f8 25%, #e2e8f0 50%, #f0f4f8 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 8px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+
+  <section id="blog" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+
+      <!-- Header -->
+      <div class="text-center mb-16 blog-header-reveal">
+        <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          INSIGHTS &amp; UPDATES
+        </span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800">
+          Latest from <span class="text-gradient">WorkMatch</span>
+        </h2>
+      </div>
+
+      <!-- Blog Grid -->
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:0.00s">
+            <a href="blog-details.html?id=y9jayydg6v1wzui" class="blog-img-wrap block flex-shrink-0">
+              <img src="https://admin.theworkmatch.com/api/files/blogs/y9jayydg6v1wzui/ace196d5_9e2c_4d21_8615_e2dcd94addab_Gvmmxczjuj.png" alt="How to Foster Collaboration Between Full-Time and Contingent Workers" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='assets/img/blog/blog_2_1.jpg'">
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="blog-tag">Contingent Hiring</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1">
+                  <i class="far fa-calendar-days"></i> Apr 21, 2026
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800 mb-3 leading-snug hover:text-primary transition-colors flex-1">
+                <a href="blog-details.html?id=y9jayydg6v1wzui">How to Foster Collaboration Between Full-Time and Contingent Workers</a>
+              </h3>
+              
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                <span class="text-sm text-gray-500 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">K</span>
+                  Kumar
+                </span>
+                <a href="blog-details.html?id=y9jayydg6v1wzui" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
+                  Read More <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:0.12s">
+            <a href="blog-details.html?id=x1noxnndcl68td2" class="blog-img-wrap block flex-shrink-0">
+              <img src="https://admin.theworkmatch.com/api/files/blogs/x1noxnndcl68td2/contingent_5Mhk3CMD7G.png" alt="Contingent Workforce Strategies for Startups: Tips for Success" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='assets/img/blog/blog_2_1.jpg'">
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="blog-tag">Contingent Hiring</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1">
+                  <i class="far fa-calendar-days"></i> Apr 20, 2026
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800 mb-3 leading-snug hover:text-primary transition-colors flex-1">
+                <a href="blog-details.html?id=x1noxnndcl68td2">Contingent Workforce Strategies for Startups: Tips for Success</a>
+              </h3>
+              <p class="text-sm text-gray-500 mb-4 leading-relaxed">Startups operate in environments where speed, innovation, and scalability determine success. Buildin�</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                <span class="text-sm text-gray-500 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">K</span>
+                  Kumar
+                </span>
+                <a href="blog-details.html?id=x1noxnndcl68td2" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
+                  Read More <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </article></div>
+
+      <!-- View All -->
+      <div class="text-center mt-12 blog-header-reveal" style="transition-delay:0.3s">
+        <a href="blog.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-300">
+          View All Posts <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const BLOG_API = 'https://admin.theworkmatch.com/api/blogs?published_only=true';
+      const FALLBACK_IMG = 'assets/img/blog/blog_2_1.jpg';
+
+      function formatDate(str) {
+        if (!str) return '';
+        const d = new Date(str);
+        return d.toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' });
+      }
+
+      function truncate(text, len) {
+        if (!text) return '';
+        return text.length > len ? text.slice(0, len).trimEnd() + '�' : text;
+      }
+
+      function fixUrl(url) {
+        if (!url) return null;
+        // Replace local PocketBase URL with production
+        return url.replace('http://127.0.0.1:8090', 'https://admin.theworkmatch.com');
+      }
+
+      function buildCard(post, index) {
+        const img = fixUrl(post.banner_url) || FALLBACK_IMG;
+        const date = formatDate(post.created_at);
+        const author = post.author || 'WorkMatch';
+        const tags = post.tags ? post.tags.split(',')[0].trim() : 'Insights';
+        const delay = (index * 0.12).toFixed(2);
+        const href = `blog-details.html?id=${post.id}`;
+
+        return `
+          <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:${delay}s">
+            <a href="${href}" class="blog-img-wrap block flex-shrink-0">
+              <img src="${img}" alt="${post.title || 'Blog'}" class="w-full h-48 object-cover" loading="lazy"
+                onerror="this.src='${FALLBACK_IMG}'">
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="blog-tag">${tags}</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1">
+                  <i class="far fa-calendar-days"></i> ${date}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800 mb-3 leading-snug hover:text-primary transition-colors flex-1">
+                <a href="${href}">${truncate(post.title, 72)}</a>
+              </h3>
+              ${post.excerpt ? `<p class="text-sm text-gray-500 mb-4 leading-relaxed">${truncate(post.excerpt, 100)}</p>` : ''}
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                <span class="text-sm text-gray-500 flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">${author.charAt(0).toUpperCase()}</span>
+                  ${author}
+                </span>
+                <a href="${href}" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
+                  Read More <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </article>`;
+      }
+
+      function initScrollReveal() {
+        const revealEls = document.querySelectorAll('.blog-card-reveal:not(.is-visible), .blog-header-reveal:not(.is-visible)');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => {
+          // If already in viewport (e.g. user scrolled before load), trigger after a frame
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            requestAnimationFrame(() => setTimeout(() => el.classList.add('is-visible'), 80));
+          } else {
+            io.observe(el);
+          }
+        });
+      }
+
+      async function loadBlogs() {
+        const grid = document.getElementById('blog-grid');
+        try {
+          const res = await fetch(BLOG_API);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          // API may return array directly or wrapped in a key
+          const posts = Array.isArray(data) ? data : (data.blogs || data.data || data.results || []);
+          const latest = posts.slice(0, 3);
+          if (!latest.length) throw new Error('No posts');
+          grid.innerHTML = latest.map((p, i) => buildCard(p, i)).join('');
+        } catch (err) {
+          console.warn('Blog API error:', err);
+          grid.innerHTML = '<p class="text-gray-400 text-center col-span-3 py-8">Could not load posts.</p>';
+        } finally {
+          initScrollReveal();
+        }
+      }
+
+      // Load immediately on page load, reveal header when section enters viewport
+      loadBlogs();
+
+      const section = document.getElementById('blog');
+      const sectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          sectionObserver.disconnect();
+          document.querySelectorAll('.blog-header-reveal').forEach((el, i) => {
+            setTimeout(() => el.classList.add('is-visible'), 100 + i * 80);
+          });
+        }
+      }, { threshold: 0.05 });
+      sectionObserver.observe(section);
+    })();
+  </script>
+
+  <!-- Footer -->
+    <!-- Footer -->
+    <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <!-- Main Footer -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://theworkmatch.com/img/WorkMatch_Logo.png" alt="WorkMatch" class="h-10 mb-4">
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            WorkMatch is a technology services company helping businesses move faster through digital engineering, cloud transformation, and IT talent solutions.
+          </p>
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-4">
+            <span class="mt-0.5 w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-location-dot text-blue-400 text-xs"></i>
+            </span>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              The Work Match, Old No 178/B1, New No 766/1,<br>
+              Shakthi Towers 1, Thousand Lights,<br>
+              Annasalai, Chennai - 600 002
+            </p>
+          </div>
+          <!-- Contact -->
+          <div class="flex flex-col gap-2 mb-6">
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-blue-400 text-xs"></i>
+              </span>
+              <a href="mailto:info@theworkmatch.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">info@theworkmatch.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-blue-400 text-xs"></i>
+              </span>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                <a href="tel:+919176351712" class="text-gray-400 hover:text-white transition-colors">+91 91763 51712</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+919344051712" class="text-gray-400 hover:text-white transition-colors">+91 93440 51712</a>
+              </div>
+            </div>
+          </div>
+          <!-- Social -->
+          <div class="flex space-x-3">
+            <a href="https://x.com/theworkmatch" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/theworkmatch/about/?viewAsMember=true" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="talent-solutions.html" class="text-gray-400 hover:text-white transition-colors">Talent Solutions</a></li>
+            <li><a href="custom-software-engineering.html" class="text-gray-400 hover:text-white transition-colors">Custom Software Engineering</a></li>
+            <li><a href="cloud-solutions.html" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+            <li><a href="data-ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">Data &amp; AI Solutions</a></li>
+            <li><a href="cms-solutions.html" class="text-gray-400 hover:text-white transition-colors">CMS Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="company-overview.html" class="text-gray-400 hover:text-white transition-colors">Company Overview</a></li>
+            <li><a href="careers.html" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="hire-talent.html" class="text-gray-400 hover:text-white transition-colors">Hire Talent</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Industries</h3>
+          <ul class="space-y-3">
+            <li><a href="bfsi.html" class="text-gray-400 hover:text-white transition-colors">BFSI</a></li>
+            <li><a href="healthcare.html" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="retail-ecommerce.html" class="text-gray-400 hover:text-white transition-colors">Retail &amp; E-commerce</a></li>
+            <li><a href="manufacturing.html" class="text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="saas-startups.html" class="text-gray-400 hover:text-white transition-colors">SaaS &amp; Startups</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800">
+      <div class="container mx-auto px-4 py-6">
+        <div class="text-center">
+          <p class="text-gray-400">
+            Copyright <i class="far fa-copyright"></i> 2026
+            <a href="index.html" class="text-white hover:text-primary transition-colors">WorkMatch</a>.
+            All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg transition-all duration-300 hover:bg-primary/90 z-50 opacity-100 visible">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Mobile dropdown functionality
+    document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.mobile-dropdown-content').forEach(dropdown => {
+          if (dropdown !== content) {
+            dropdown.classList.add('hidden');
+            dropdown.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current dropdown
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll to top functionality
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'invisible');
+        scrollTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        header.classList.add('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+        header.classList.remove('bg-white/95');
+      } else {
+        header.classList.remove('bg-gray-100', 'backdrop-blur-sm', 'shadow-sm');
+      }
+    });
+  </script>
+
+
+
+
+
+</body></html>

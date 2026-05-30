@@ -1,0 +1,43 @@
+/* ICON VISIBILITY FIX - Load this after all other CSS */
+
+/* Force all FontAwesome icons to be visible */
+i[class*="fa"],
+.fa,
+.fas,
+.far,
+.fal,
+.fat,
+.fab,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-brands,
+.fa-duotone {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 6 Free', 'FontAwesome' !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-weight: 900 !important;
+}
+
+/* Regular weight icons */
+.fa-regular,
+.far {
+    font-weight: 400 !important;
+}
+
+/* Light weight icons */
+.fa-light,
+.fal {
+    font-weight: 300 !important;
+}
+
+/* Thin weight icons */
+.fa-thin,
+.f
