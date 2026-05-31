@@ -1215,8 +1215,8 @@
       const job = allJobs.find(j => String(j.id) === String(jobId));
       if (!job) return;
       
-      // Use the individual career detail page URL
-      const jobUrl = `https://theworkmatch.com/career-details.html?id=${jobId}`;
+      // Clean URL: /career-detail/Job%20Title
+      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(job.job_title || jobTitle)}`;
       const shareTextWithEmojis = formatJobShareText(job, true);
       const encodedUrl = encodeURIComponent(jobUrl);
       
@@ -1273,8 +1273,8 @@
       
       if (!currentModalJob) return;
       
-      // Use the individual career detail page URL
-      const jobUrl = `https://theworkmatch.com/career-details.html?id=${currentModalJobId}`;
+      // Clean URL: /career-detail/Job%20Title
+      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(currentModalJob.job_title || currentModalJobTitle)}`;
       const shareTextWithEmojis = formatJobShareText(currentModalJob, true);
       const encodedUrl = encodeURIComponent(jobUrl);
       
