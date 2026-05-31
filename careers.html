@@ -830,6 +830,9 @@
       }
     }
 
+    // Initialize — load jobs on page load
+    fetchJobs();
+
     // Render jobs list
     function renderJobs() {
       const skeleton = document.getElementById('jobs-skeleton');
@@ -1125,30 +1128,6 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Fetch Jobs from API
-    async function fetchJobs() {
-      const list = document.getElementById('jobs-list');
-      const skeleton = document.getElementById('jobs-skeleton');
-      const error = document.getElementById('jobs-error');
-      
-      try {
-        const response = await fetch(`${JOBS_API}`);
-        if (!response.ok) throw new Error('Failed to fetch jobs');
-        
-        allJobs = await response.json();
-        
-        renderJobs();
-        skeleton.classList.add('hidden');
-      } catch (error) {
-        console.error('Error fetching jobs:', error);
-        skeleton.classList.add('hidden');
-        error.classList.remove('hidden');
-      }
-    }
-
-    // Initialize
-    fetchJobs();
 
     // Share functionality for jobs
     let currentModalJobId = null;
