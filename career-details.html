@@ -552,16 +552,22 @@
 
     // Helper functions
     function getJobParams() {
-      const pathname = window.location.pathname;
-      const parts = pathname.split('/');
-      // If path is /career-detail/Senior-Developer, parts is ["", "career-detail", "Senior-Developer"]
-      const nameFromPath = parts.length > 2 ? decodeURIComponent(parts[parts.length - 1]) : null;
-      
       const params = new URLSearchParams(window.location.search);
-      return {
-        id: params.get('id'),
-        name: nameFromPath || params.get('name')
-      };
+      const idParam  = params.get('id');
+      const nameParam = params.get('name');
+
+      // Prefer query params (?id= or ?name=) — set correctly by nginx rewrite
+      if (idParam || nameParam) {
+        return { id: idParam, name: nameParam };
+      }
+
+      // Fallback: parse clean path /career-detail/Job%20Title
+      // Use the full encoded segment to avoid splitting on slashes inside titles
+      const pathname = window.location.pathname;
+      const match = pathname.match(/\/career-detail\/(.+)$/);
+      const nameFromPath = match ? decodeURIComponent(match[1]) : null;
+
+      return { id: null, name: nameFromPath };
     }
 
     function formatDate(dateStr) {
