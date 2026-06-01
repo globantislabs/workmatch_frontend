@@ -1189,7 +1189,7 @@
       <!-- Blog Grid -->
       <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:0.00s">
-            <a href="blog-details.html?id=y9jayydg6v1wzui" class="blog-img-wrap block flex-shrink-0">
+            <a href="/blog/y9jayydg6v1wzui" class="blog-img-wrap block flex-shrink-0">
               <img src="https://admin.theworkmatch.com/api/files/blogs/y9jayydg6v1wzui/ace196d5_9e2c_4d21_8615_e2dcd94addab_Gvmmxczjuj.png" alt="How to Foster Collaboration Between Full-Time and Contingent Workers" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='assets/img/blog/blog_2_1.jpg'">
             </a>
             <div class="p-6 flex flex-col flex-1">
@@ -1200,7 +1200,7 @@
                 </span>
               </div>
               <h3 class="text-lg font-bold text-gray-800 mb-3 leading-snug hover:text-primary transition-colors flex-1">
-                <a href="blog-details.html?id=y9jayydg6v1wzui">How to Foster Collaboration Between Full-Time and Contingent Workers</a>
+                <a href="/blog/y9jayydg6v1wzui">How to Foster Collaboration Between Full-Time and Contingent Workers</a>
               </h3>
               
               <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
@@ -1208,14 +1208,14 @@
                   <span class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">K</span>
                   Kumar
                 </span>
-                <a href="blog-details.html?id=y9jayydg6v1wzui" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
+                <a href="/blog/y9jayydg6v1wzui" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
                   Read More <i class="fas fa-arrow-right text-xs"></i>
                 </a>
               </div>
             </div>
           </article>
           <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:0.12s">
-            <a href="blog-details.html?id=x1noxnndcl68td2" class="blog-img-wrap block flex-shrink-0">
+            <a href="/blog/x1noxnndcl68td2" class="blog-img-wrap block flex-shrink-0">
               <img src="https://admin.theworkmatch.com/api/files/blogs/x1noxnndcl68td2/contingent_5Mhk3CMD7G.png" alt="Contingent Workforce Strategies for Startups: Tips for Success" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='assets/img/blog/blog_2_1.jpg'">
             </a>
             <div class="p-6 flex flex-col flex-1">
@@ -1226,7 +1226,7 @@
                 </span>
               </div>
               <h3 class="text-lg font-bold text-gray-800 mb-3 leading-snug hover:text-primary transition-colors flex-1">
-                <a href="blog-details.html?id=x1noxnndcl68td2">Contingent Workforce Strategies for Startups: Tips for Success</a>
+                <a href="/blog/x1noxnndcl68td2">Contingent Workforce Strategies for Startups: Tips for Success</a>
               </h3>
               <p class="text-sm text-gray-500 mb-4 leading-relaxed">Startups operate in environments where speed, innovation, and scalability determine success. Buildin�</p>
               <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
@@ -1234,7 +1234,7 @@
                   <span class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">K</span>
                   Kumar
                 </span>
-                <a href="blog-details.html?id=x1noxnndcl68td2" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
+                <a href="/blog/x1noxnndcl68td2" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 text-sm font-semibold">
                   Read More <i class="fas fa-arrow-right text-xs"></i>
                 </a>
               </div>
@@ -1279,7 +1279,7 @@
         const author = post.author || 'WorkMatch';
         const tags = post.tags ? post.tags.split(',')[0].trim() : 'Insights';
         const delay = (index * 0.12).toFixed(2);
-        const href = `blog-details.html?id=${post.id}`;
+        const href = `/blog/${post.slug}`;
 
         return `
           <article class="blog-card blog-card-reveal bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col" style="transition-delay:${delay}s">

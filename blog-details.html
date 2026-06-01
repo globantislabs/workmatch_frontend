@@ -670,10 +670,11 @@
     // ============================================
     const API_BASE = 'https://admin.theworkmatch.com';
 
-    // Get blog slug or ID from URL
+    // Get blog slug from URL: /blog/my-slug
     function getBlogId() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('slug') || params.get('id');
+      const pathMatch = window.location.pathname.match(/\/blog\/([^\/]+)/);
+      if (pathMatch && pathMatch[1]) return pathMatch[1];
+      return null;
     }
 
     // Format date
@@ -832,7 +833,7 @@
 
         related.forEach(blog => {
           const postEl = document.createElement('a');
-          postEl.href = `blog-details.html?slug=${blog.slug || blog.id}`;
+          postEl.href = `/blog/${blog.slug}`;
           postEl.className = 'flex gap-3 group';
           postEl.innerHTML = `
             <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100">
