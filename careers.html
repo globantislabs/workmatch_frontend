@@ -1254,9 +1254,8 @@
           break;
         }
         case 'copy':
-          const copyText = `${shareTextWithEmojis}\n\n${jobUrl}`;
-          navigator.clipboard.writeText(copyText).then(() => {
-            showToast('Job details copied to clipboard!');
+          navigator.clipboard.writeText(jobUrl).then(() => {
+            showToast('Link copied to clipboard!');
           }).catch(() => showToast('Failed to copy'));
           return;
       }
@@ -1312,9 +1311,8 @@
           break;
         }
         case 'copy':
-          const copyText = `${shareTextWithEmojis}\n\n${jobUrl}`;
-          navigator.clipboard.writeText(copyText).then(() => {
-            showToast('Job details copied to clipboard!');
+          navigator.clipboard.writeText(jobUrl).then(() => {
+            showToast('Link copied to clipboard!');
             document.getElementById('modal-share-menu').classList.add('hidden');
           }).catch(() => showToast('Failed to copy'));
           return;
