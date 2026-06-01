@@ -795,6 +795,11 @@
     let currentFilter = 'all';
     let searchQuery = '';
 
+    // Slugify: "Senior AI Engineer" → "Senior-AI-Engineer"
+    function slugify(title) {
+      return (title || '').trim().replace(/\s+/g, '-');
+    }
+
     // Fetch jobs from API
     async function fetchJobs() {
       const skeleton = document.getElementById('jobs-skeleton');
@@ -886,7 +891,7 @@
         return `
           <div class="job-card bg-white rounded-2xl p-6 border border-gray-100 flex flex-col md:flex-row md:items-center gap-4 reveal" style="transition-delay:${i * 0.05}s">
             <div class="flex-1">
-              <a href="/career-detail/${encodeURIComponent(title)}" class="group">
+              <a href="/careers/${slugify(title)}" class="group">
                 <h3 class="font-poppins font-bold text-gray-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">${title}</h3>
               </a>
               <p class="text-gray-500 text-sm mb-3">${location}${experience ? ' • ' + experience : ''}${openings > 1 ? ' • ' + openings + ' openings' : ''}</p>
@@ -915,7 +920,7 @@
                   </button>
                 </div>
               </div>
-              <a href="/career-detail/${encodeURIComponent(title)}" class="px-4 py-2.5 border border-gray-200 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-50 transition-colors">
+              <a href="/careers/${slugify(title)}" class="px-4 py-2.5 border border-gray-200 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-50 transition-colors">
                 View Details
               </a>
               <button onclick="openApplyModal('${title.replace(/'/g, "\\'")}')" class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md">
@@ -1215,8 +1220,8 @@
       const job = allJobs.find(j => String(j.id) === String(jobId));
       if (!job) return;
       
-      // Clean URL: /career-detail/Job%20Title
-      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(job.job_title || jobTitle)}`;
+      // Clean URL: /careers/Senior-AI-Engineer
+      const jobUrl = `https://theworkmatch.com/careers/${slugify(job.job_title || jobTitle)}`;
       const shareTextWithEmojis = formatJobShareText(job, true);
       const encodedUrl = encodeURIComponent(jobUrl);
       
@@ -1273,8 +1278,8 @@
       
       if (!currentModalJob) return;
       
-      // Clean URL: /career-detail/Job%20Title
-      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(currentModalJob.job_title || currentModalJobTitle)}`;
+      // Clean URL: /careers/Senior-AI-Engineer
+      const jobUrl = `https://theworkmatch.com/careers/${slugify(currentModalJob.job_title || currentModalJobTitle)}`;
       const shareTextWithEmojis = formatJobShareText(currentModalJob, true);
       const encodedUrl = encodeURIComponent(jobUrl);
       

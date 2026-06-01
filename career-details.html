@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
+  <base href="/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/favicon.png">
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
@@ -552,23 +553,30 @@
     });
 
     // Helper functions
+    // Slugify: "Senior AI Engineer" → "Senior-AI-Engineer"
+    function slugify(title) {
+      return (title || '').trim().replace(/\s+/g, '-');
+    }
+
+    // Reverse slugify: "Senior-AI-Engineer" → "Senior AI Engineer"
+    function deslugify(slug) {
+      return (slug || '').replace(/-/g, ' ');
+    }
+
     function getJobParams() {
-      const params = new URLSearchParams(window.location.search);
-      const idParam  = params.get('id');
-      const nameParam = params.get('name');
-
-      // Prefer query params (?id= or ?name=) — set correctly by nginx rewrite
-      if (idParam || nameParam) {
-        return { id: idParam, name: nameParam };
+      // Clean URL: /careers/Senior-AI-Backend-Engineer
+      const pathMatch = window.location.pathname.match(/\/careers\/([^\/]+)/);
+      if (pathMatch && pathMatch[1]) {
+        return { id: null, name: deslugify(decodeURIComponent(pathMatch[1])) };
       }
-
-      // Fallback: parse clean path /career-detail/Job%20Title
-      // Use the full encoded segment to avoid splitting on slashes inside titles
-      const pathname = window.location.pathname;
-      const match = pathname.match(/\/career-detail\/(.+)$/);
-      const nameFromPath = match ? decodeURIComponent(match[1]) : null;
-
-      return { id: null, name: nameFromPath };
+      // Legacy fallback: ?id= or ?name=
+      const params = new URLSearchParams(window.location.search);
+      const idParam   = params.get('id');
+      const nameParam = params.get('name');
+      if (idParam || nameParam) return { id: idParam, name: nameParam };
+      // Legacy fallback: /career-detail/Job%20Title
+      const legacyMatch = window.location.pathname.match(/\/career-detail\/(.+)$/);
+      return { id: null, name: legacyMatch ? decodeURIComponent(legacyMatch[1]) : null };
     }
 
     function formatDate(dateStr) {
@@ -587,8 +595,8 @@
 
     function shareJob(platform) {
       if (!currentJob) return;
-      // Clean URL: /career-detail/Job%20Title
-      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(currentJob.job_title)}`;
+      // Clean URL: /careers/Senior-AI-Engineer
+      const jobUrl = `https://theworkmatch.com/careers/${slugify(currentJob.job_title)}`;
       
       const shareTextWithEmojis = formatJobShareText(currentJob, true);
       const encodedUrl = encodeURIComponent(jobUrl);
@@ -609,8 +617,8 @@
     }
 
     function copyJobLink() {
-      // Clean URL: /career-detail/Job%20Title
-      const jobUrl = `https://theworkmatch.com/career-detail/${encodeURIComponent(currentJob.job_title)}`;
+      // Clean URL: /careers/Senior-AI-Engineer
+      const jobUrl = `https://theworkmatch.com/careers/${slugify(currentJob.job_title)}`;
       navigator.clipboard.writeText(jobUrl).then(() => {
         showToast('Link copied to clipboard!');
         document.getElementById('share-menu').classList.add('hidden');
