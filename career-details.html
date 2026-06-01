@@ -305,8 +305,8 @@
   </header>
 
   <!-- Job Header -->
-  <section class="pt-24 lg:pt-44 pb-12 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle,#818cf8 1px,transparent 1px);background-size:32px 32px;"></div>
+  <section class="pt-24 lg:pt-44 pb-12 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative">
+    <div class="absolute inset-0 opacity-10 overflow-hidden" style="background-image:radial-gradient(circle,#818cf8 1px,transparent 1px);background-size:32px 32px;"></div>
     <div class="container mx-auto px-6 relative z-10">
       <div class="max-w-4xl mx-auto">
         <a href="/careers" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-semibold mb-6">
@@ -327,7 +327,7 @@
             <button onclick="toggleShareMenu(event)" class="w-12 h-12 rounded-xl border border-white/20 text-white hover:bg-white/10 flex items-center justify-center transition-all">
               <i class="fas fa-share-alt"></i>
             </button>
-            <div id="share-menu" class="hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 p-2 min-w-[160px] z-30">
+            <div id="share-menu" class="hidden absolute bottom-full left-0 mb-2 bg-white rounded-xl shadow-2xl border border-gray-100 p-2 min-w-[160px] z-30">
               <button onclick="shareJob('linkedin')" class="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 <i class="fab fa-linkedin text-blue-600"></i> LinkedIn
               </button>
